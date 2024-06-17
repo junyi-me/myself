@@ -27,7 +27,7 @@
   <button class="outline"
     on:click={() => expanded = !expanded}
   >
-    Outline
+    Navigate in page
   </button>
 
   {#if expanded}

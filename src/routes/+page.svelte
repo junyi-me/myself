@@ -2,6 +2,8 @@
   import Article from './Article.svelte';
   import Outline from './Outline.svelte';
 
+  const headerHeight = '450px';
+
   const articles = [
     { name: 'intro', title: 'Introduction' },
     { name: 'why', title: 'Why did I make this website?' }
@@ -9,16 +11,18 @@
 </script>
 
 <!-- Header -->
-<Outline {articles} />
-
-<div class="head">
-  <h1>Junyi Wang</h1>
+<div style="--header-height: {headerHeight}">
+  <Outline {articles} />
+  <div class="head">
+    <h1>Junyi Wang</h1>
+  </div>
+  <div class="forehead" />
 </div>
-
-<div class="forehead"></div>
 
 <!-- Articles -->
 <div class="content">
+  <div style="padding: 1em" />
+  
   <div class="double-col">
     <Article name="intro" title="Introduction" doubleCol={true}>
       <p>Hi there, thanks for stopping by. My name is Junyi Wang and I'm working as a full-time software developer in the beautiful city of Devner, CO.</p>
@@ -95,26 +99,30 @@
 
 <style>
   .head {
-    height: 300px;
+    height: var(--header-height);
     position: fixed;
     top: 0;
     left: 0;
     z-index: -1;
-    background: url('backdrop.jpg') no-repeat center;
+    background: 
+      linear-gradient(
+        rgba(0, 0, 0, 0.3), 
+        rgba(0, 0, 0, 0.3)
+      ), url('images/hhkb.jpg') no-repeat center;
     background-size:cover;
-    width: 100vw;
-    padding: 1em;
+    width: 100%;
   }
   
   .forehead {
-    height: 300px;
+    height: var(--header-height);
   }
 
   .head h1 {
+    height: var(--header-height);
+    padding-top: calc(var(--header-height) / 2 - 1em);
     text-align: center;
-    padding-top: 100px;
     font-size: 3em;
-    color: var(--fg-3);
+    color: var(--bg-2);
   }
 
   .content {
