@@ -3,8 +3,9 @@
   import Outline from './Outline.svelte';
   import { t } from '$lib/i18n';
   import type { ArticleType } from '$lib/types';
+    import TechSection from './TechSection.svelte';
 
-  const articleKeys = ['intro', 'why'];
+  const articleKeys = ['intro', 'why', 'tech'];
   const articles: ArticleType[] = articleKeys.map(key => {
     return { name: key, title: $t(`home.${key}.title`), content: $t(`home.${key}.content`) };
   });
@@ -23,16 +24,17 @@
 <div class="content">
   <div style="padding: 1em" />
   
-  <div class="double-col">
+  <div class="articles">
     <Article article={articles[0]} doubleCol />
     <Article article={articles[1]} doubleCol />
+    <Article article={articles[2]}>
+      <TechSection />
+    </Article>
+    <Article article={articles[1]} />
+    <Article article={articles[1]} />
+    <Article article={articles[1]} />
+    <Article article={articles[1]} />
   </div>
-
-  <Article article={articles[1]} />
-  <Article article={articles[1]} />
-  <Article article={articles[1]} />
-  <Article article={articles[1]} />
-  <Article article={articles[1]} />
 </div>
 
 <div style="padding-top: 0.5em; padding-bottom: 3em">
@@ -80,11 +82,14 @@
 
   .content {
     background-color: var(--bg-1);
+    padding-right: 50px;
+    padding-left: 50px;
   }
 
-  .double-col {
+  .articles {
     display: flex;
     justify-content: center;
+    flex-wrap: wrap;
   }
 
   .footer {

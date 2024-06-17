@@ -25,6 +25,14 @@ export default {
           <p>As a junior developer, I'm still learning and growing. Since there's not much I can share at this point, I will just establish a foundation for this website and see where it goes from there.</p>
         `
       },
+      tech: {
+        title: "Tech",
+        content: `
+          <p>I mostly work as a backend developer, but I occasionally do frontend work too. Here is a summary of my skillset.</p>
+          <p>My career of software engineering staretd with developing web scraping program in <code>Java</code>, using <code>SpringBoot</code> and <code>Selenium</code>. From there my interest mainly grew towards full-stack web development. My current favorite are <code>Go</code> and <code>Svelte</code> (which I'm using to build this website).</p>
+          <p>Some items can be expanded by hovering over them.</p>
+          `
+      },
     }
   },
   jp: {
