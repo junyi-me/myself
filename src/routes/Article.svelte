@@ -1,6 +1,7 @@
-<script>
-  export let name;
-  export let title;
+<script lang="ts">
+  import type { ArticleType } from "$lib/types";
+
+  export let article: ArticleType;
   export let doubleCol = false;
 </script>
 
@@ -22,8 +23,9 @@
   }
 </style>
 
-<div id={name} class:double-col={doubleCol}>
-  <h1>{title}</h1>
+<div id={article.name} class:double-col={doubleCol}>
+  <h1>{article.title}</h1>
+  {@html article.content}
   <slot />
 </div>
 
