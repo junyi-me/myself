@@ -14,8 +14,9 @@
     left: 0;
     width: 100%;
     background-color: var(--bg-1);
-    border: 2px solid var(--fg-3);
-    padding: 1.5em;
+    border-bottom: 2px solid var(--fg-3);
+    padding-top: 1.5em;
+    padding-bottom: 1.5em;
     display: flex;
     justify-content: center;
   }

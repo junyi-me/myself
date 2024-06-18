@@ -14,8 +14,8 @@
 <style>
   div {
     max-width: 1200px;
-    padding: 2em;
-    margin: 0 auto;
+    padding: var(--content-padding);
+    margin: var(--content-margin);
     transition: background-color 0.3s linear;
   }
 
@@ -26,7 +26,6 @@
   div.double-col {
     max-width: 600px;
     display: inline-block;
-    margin: 0 1em;
   }
 </style>
 

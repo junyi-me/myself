@@ -67,7 +67,7 @@
 
   .head h1 {
     height: var(--header-height);
-    padding-top: calc(var(--header-height) / 2 - 1em);
+    padding-top: calc(var(--header-height) / 2);
     text-align: center;
     font-size: 3em;
     color: var(--bg-2);
@@ -76,12 +76,15 @@
   .content {
     background-color: var(--bg-1);
     padding: 4em 1em;
+    border-top: 2px solid var(--fg-3);
+    border-bottom: 2px solid var(--fg-3);
   }
 
   .intro-block img {
     max-width: 600px;
     float: right;
-    padding-bottom: 2em;
+    padding: var(--content-padding);
+    margin: var(--content-margin);
   }
 
   .articles {
@@ -93,7 +96,7 @@
   .footer {
     background-color: var(--bg-2);
     color: var(--fg-1);
-    padding: 1em;
+    padding: 2rem;
     text-align: center;
   }
 </style>
