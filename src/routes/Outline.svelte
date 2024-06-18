@@ -7,6 +7,7 @@
 
   function handleAnchorClick (event: MouseEvent) {
 		event.preventDefault();
+
 		const link = event.currentTarget as HTMLAnchorElement;
 		const anchorId = new URL(link.href).hash.replace('#', '')
 		const anchor = document.getElementById(anchorId);
@@ -15,7 +16,13 @@
 		window.scrollTo({
 			top: top,
 			behavior: 'smooth'
-		})
+		});
+    if (!anchor) return;
+
+    anchor.style.backgroundColor = '#ffffcc';
+    setTimeout(() => {
+      anchor.style.backgroundColor = '';
+    }, 1000);
 	}
 </script>
 

@@ -5,7 +5,7 @@
   import type { ArticleType } from '$lib/types';
     import TechSection from './TechSection.svelte';
 
-  const articleKeys = ['intro', 'why', 'tech'];
+  const articleKeys = ['intro', 'why', 'tech', 'exp'];
   const articles: ArticleType[] = articleKeys.map(key => {
     return { name: key, title: $t(`home.${key}.title`), content: $t(`home.${key}.content`) };
   });
@@ -22,23 +22,16 @@
 
 <!-- Articles -->
 <div class="content">
-  <div style="padding: 1em" />
-  
   <div class="articles">
-    <Article article={articles[0]} doubleCol />
-    <Article article={articles[1]} doubleCol />
-    <Article article={articles[2]}>
-      <TechSection />
-    </Article>
+    <div class="intro-block">
+      <Article article={articles[0]} doubleCol />
+      <img src="images/hhkb_black.jpg" alt="hhkb_black" />
+    </div>
     <Article article={articles[1]} />
-    <Article article={articles[1]} />
-    <Article article={articles[1]} />
-    <Article article={articles[1]} />
+    <Article article={articles[2]} />
+    <TechSection />
+    <Article article={articles[3]} />
   </div>
-</div>
-
-<div style="padding-top: 0.5em; padding-bottom: 3em">
-  <p style="text-align: center;">.</p>
 </div>
 
 <!-- Footer -->
@@ -82,8 +75,13 @@
 
   .content {
     background-color: var(--bg-1);
-    padding-right: 50px;
-    padding-left: 50px;
+    padding: 4em 1em;
+  }
+
+  .intro-block img {
+    max-width: 600px;
+    float: right;
+    padding-bottom: 2em;
   }
 
   .articles {
@@ -93,8 +91,8 @@
   }
 
   .footer {
-    background-color: var(--fg-3);
-    color: var(--bg-1);
+    background-color: var(--bg-2);
+    color: var(--fg-1);
     padding: 1em;
     text-align: center;
   }

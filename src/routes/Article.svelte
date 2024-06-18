@@ -5,11 +5,18 @@
   export let doubleCol = false;
 </script>
 
+<div id={article.name} class:double-col={doubleCol}>
+  <h1>{article.title}</h1>
+  {@html article.content}
+  <slot />
+</div>
+
 <style>
   div {
     max-width: 1200px;
     padding: 2em;
     margin: 0 auto;
+    transition: background-color 0.3s linear;
   }
 
   h1 {
@@ -22,11 +29,4 @@
     margin: 0 1em;
   }
 </style>
-
-<div id={article.name} class:double-col={doubleCol}>
-  <h1>{article.title}</h1>
-  {@html article.content}
-  <br />
-  <slot />
-</div>
 

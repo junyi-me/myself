@@ -36,11 +36,12 @@
     align-items: center;
     cursor: pointer;
     margin-right: 1em;
+    margin-bottom: 1em;
+    max-height: 60px;
   }
 
   .oval img {
-    max-height: 2em;
-    max-width: 2em;
+    height: 2em;
     margin-right: 1em;
   }
 
