@@ -1,30 +1,14 @@
 <script lang="ts">
   export let name: string;
   export let img: string;
-  export let subTechs: { name: string, link: string }[] = [];
-  export let link: string;
-  
-  let expanded = false;
+  export let onClick: () => void;
 </script>
 
 <div>
-  <div class="oval">
+  <button class="oval" on:click={onClick}>
     <img src={img} alt={name} />
     <p>{name}</p>
-  </div>
-  {#if expanded}
-    <div class="content">
-      <ul>
-        {#each subTechs as subTech}
-          <li>
-            <a href={subTech.link}>{subTech.name}</a>
-          </li>
-        {/each}
-        <li>
-          <a href={link}>Learn more about {name}</a>
-      </ul>
-    </div>
-  {/if}
+  </button>
 </div>
 
 <style>
@@ -38,6 +22,13 @@
     margin-right: 1em;
     margin-bottom: 1em;
     max-height: 60px;
+    background-color: var(--bg-1);
+    color: var(--fg-1);
+  }
+
+  .oval:hover {
+    background-color: var(--bg-2);
+    transition: background-color 0.2s linear;
   }
 
   .oval img {

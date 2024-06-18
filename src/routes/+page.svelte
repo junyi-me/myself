@@ -28,8 +28,9 @@
       <img src="images/hhkb_black.jpg" alt="hhkb_black" />
     </div>
     <Article article={articles[1]} />
-    <Article article={articles[2]} />
-    <TechSection />
+    <Article article={articles[2]} >
+      <TechSection />
+    </Article>
     <Article article={articles[3]} />
   </div>
 </div>

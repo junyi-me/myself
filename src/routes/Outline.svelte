@@ -33,6 +33,7 @@
 >
   <button class="outline"
     on:click={() => expanded = !expanded}
+    class:open={expanded}
   >
     Navigate in page
   </button>
@@ -65,10 +66,12 @@
     border: 2px solid var(--fg-1);
     font-size: 1em;
     cursor: pointer;
+    background-color: var(--bg-1);
   }
 
-  button.outline {
-    background-color: var(--bg-1);
+  .outline.open {
+    background-color: var(--bg-2);
+    transition: background-color 0.2s linear;
   }
 
   .content {
@@ -100,6 +103,7 @@
 
   .content a:hover {
     background-color: var(--bg-2);
+    transition: background-color 0.2s linear;
   }
 </style>
 

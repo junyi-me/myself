@@ -13,7 +13,7 @@
     top: 0;
     left: 0;
     width: 100%;
-    background-color: var(--bg-1);
+    background-color: var(--bg-2);
     border-bottom: 2px solid var(--fg-3);
     padding-top: 1.5em;
     padding-bottom: 1.5em;

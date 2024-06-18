@@ -26,6 +26,8 @@
   div.double-col {
     max-width: 600px;
     display: inline-block;
+    padding-left: 0;
+    padding-right: 0;
   }
 </style>
 
