@@ -26,6 +26,7 @@
 <div id={article.name} class:double-col={doubleCol}>
   <h1>{article.title}</h1>
   {@html article.content}
+  <br />
   <slot />
 </div>
 

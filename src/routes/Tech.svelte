@@ -39,8 +39,8 @@
   }
 
   .oval img {
-    width: 2em;
-    height: 2em;
+    max-height: 2em;
+    max-width: 2em;
     margin-right: 1em;
   }
 
