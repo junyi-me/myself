@@ -163,6 +163,56 @@ export default {
       name: "Amazon Web Services",
       link: "https://aws.amazon.com/",
       img: "/images/aws256.png",
+      sub: [
+        {
+          key: "lambda",
+          name: "Lambda",
+          link: "https://aws.amazon.com/lambda/",
+          img: "/images/lambda256.png",
+        },
+        {
+          key: "ec2",
+          name: "EC2",
+          link: "https://aws.amazon.com/ec2/",
+          img: "/images/ec2256.png",
+        },
+        {
+          key: "api_gw",
+          name: "API Gateway",
+          link: "https://aws.amazon.com/api-gateway/",
+          img: "/images/api_gw256.png",
+        },
+        {
+          key: "dynamodb",
+          name: "DynamoDB",
+          link: "https://aws.amazon.com/dynamodb/",
+          img: "/images/dynamodb256.png",
+        },
+        {
+          key: "s3",
+          name: "S3",
+          link: "https://aws.amazon.com/s3/",
+          img: "/images/s3256.png",
+        },
+        {
+          key: "route53",
+          name: "Route 53",
+          link: "https://aws.amazon.com/route53/",
+          img: "/images/route53256.png",
+        },
+        {
+          key: "cloudfront",
+          name: "CloudFront",
+          link: "https://aws.amazon.com/cloudfront/",
+          img: "/images/cloudfront256.png",
+        },
+        {
+          key: "iam",
+          name: "IAM",
+          link: "https://aws.amazon.com/iam/",
+          img: "/images/iam256.png",
+        },
+      ],
     },
     {
       key: "gcp",

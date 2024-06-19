@@ -70,7 +70,7 @@
   }
 
   tr.drawer:not(:last-child) {
-    border-bottom: 1px solid var(--fg-1);
+    border-bottom: 1px solid var(--bg-3);
   }
 
   h3 {
