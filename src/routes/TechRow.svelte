@@ -1,15 +1,21 @@
 <script lang="ts">
-  import tech from "$lib/techs";
-  import { fade, slide } from "svelte/transition";
+  import type { TechType } from "$lib/techs";
+  import { slide } from "svelte/transition";
   import Tech from "./Tech.svelte";
-  import { t } from '$lib/i18n';
+  import TechDrawer from "./TechDrawer.svelte";
 
   export let title: string;
-  export let key: string;
+  export let techList: TechType[];
+  export let row: number;
+  export let focusRow: number;
 
   let focusIndex: number | null = null;
+  let tech;
 
-  const techs = tech[key];
+  $: if (row !== focusRow) {
+    focusIndex = null;
+  }
+  $: tech = techList[focusIndex ?? 0]
 </script>
 
 <tr>
@@ -17,23 +23,25 @@
     <h3>{title}</h3>
   </td>
   <td class="techs">
-    {#each techs as { name, img }, i}
+    {#each techList as { name, img }, i}
       <Tech name={name} img={img} onClick={() => {
         if (focusIndex === i) {
           focusIndex = null;
         } else {
           focusIndex = i;
         }
+        focusRow = row;
       }} />
     {/each}
   </td>
 </tr>
 
 <tr class="drawer">
-  <td colspan="2" class:collapsed={focusIndex == null}>
+  <td />
+  <td class:collapsed={focusIndex == null}>
     {#if focusIndex !== null}
       <div class="tech-detail" transition:slide>
-        {@html $t(`tech.${techs[focusIndex].key}.description`)}
+        <TechDrawer tech={tech} />
       </div>
     {/if}
   </td>
@@ -67,5 +75,11 @@
 
   h3 {
     margin: auto 1em auto 0;
+  }
+
+  .tech-detail {
+    padding: 1em;
+    margin-bottom: 1em;
+    color: var(--fg-1);
   }
 </style>

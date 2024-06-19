@@ -4,7 +4,7 @@ type SubTechType = {
   link: string;
   img: string;
 }
-type TechType = SubTechType & {
+export type TechType = SubTechType & {
   projects?: {
     key: string;
     name: string;
@@ -26,7 +26,7 @@ export default {
           key: "this_website",
           name: "This Website",
           link: "/",
-          img: "/images/github.png",
+          img: "/images/github256.png",
         }
       ],
     },
@@ -60,13 +60,13 @@ export default {
           key: "cs_go",
           name: "CS in Go",
           link: "https://github.com/jywang99/cs_go",
-          img: "/images/github.png",
+          img: "/images/github256.png",
         },
         {
           key: "leetcode",
           name: "Leetcode",
           link: "https://github.com/jywang99/leetcode",
-          img: "/images/github.png",
+          img: "/images/github256.png",
         },
       ],
       sub: [
@@ -74,7 +74,7 @@ export default {
           key: "echo",
           name: "echo",
           link: "https://echo.labstack.com/",
-          img: "/images/echo256.png",
+          img: "/images/echo220.png",
         },
       ],
     },
@@ -195,6 +195,14 @@ export default {
       name: "Neovim",
       link: "https://neovim.io/",
       img: "/images/neovim256.png",
+      projects: [
+        {
+          key: "neovim",
+          name: "My Neovim Config",
+          link: "/",
+          img: "/images/github256.png",
+        }
+      ],
     },
     {
       key: "selenium",

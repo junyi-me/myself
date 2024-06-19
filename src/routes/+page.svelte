@@ -3,7 +3,7 @@
   import Outline from './Outline.svelte';
   import { t } from '$lib/i18n';
   import type { ArticleType } from '$lib/types';
-    import TechSection from './TechSection.svelte';
+  import TechSection from './TechSection.svelte';
 
   const articleKeys = ['intro', 'why', 'tech', 'exp'];
   const articles: ArticleType[] = articleKeys.map(key => {
@@ -37,8 +37,8 @@
 
 <!-- Footer -->
 <div class="footer">
-  <p>Email: junyi.wang.007@gmail.com</p>
-  <p>Location: Denver, CO</p>
+  <p>✉️ junyi.wang.007@gmail.com</p>
+  <p>📍 Denver, CO</p>
   <p>© 2024 Junyi Wang</p>
 </div>
 

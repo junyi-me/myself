@@ -50,7 +50,7 @@ export default {
         description: `<p>Used this one extensively during my time at Prussian, and also on some private projects. Also have some experience on React Native</p>`,
       },
       jquery: {
-        description: `<p>Although I mostly use Svelte or React, I do love the simplicity and portability of jQuery.</p>`,
+        description: `<p>Although I mostly use Svelte or React for bigger projects, I do love the simplicity and portability of jQuery.</p>`,
       },
       html_css_js: {
         description: `<p>Everynoe has to start somewhere.</p>`,
@@ -105,16 +105,23 @@ export default {
         description: `<p>Using this one extensively at ApolloEye. Gets its job done.</p>`,
       },
       projects: {
+        title: "Projects",
         this_website: {
-          description: `<p>The website you are currently viewing.</p>`,
+          description: "The website you are currently viewing.",
         },
         cs_go: {
-          description: `<p>Computer science algorithms and data structures implemented in Go.</p>`,
+          description: "Computer science algorithms and data structures implemented in Go.",
         },
         leetcode: {
-          description: `<p>Leetcode problems solved in Go.</p>`,
-        }
-      }
+          description: "Leetcode problems solved in Go.",
+        },
+        neovim: {
+          description: "My Neovim config.",
+        },
+      },
+      sub: {
+        title: "Familiar with",
+      },
     }
   },
   jp: {

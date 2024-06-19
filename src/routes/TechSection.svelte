@@ -1,16 +1,25 @@
 <script>
   import TechRow from "./TechRow.svelte";
+  import techs from "$lib/techs";
+
+  const techCats = [
+    { key: 'frontend', name: 'Frontend' },
+    { key: 'backend', name: 'Backend' },
+    { key: 'database', name: 'Database' },
+    { key: 'ci_cd', name: 'CI/CD' },
+    { key: 'cloud', name: 'Cloud' },
+    { key: 'others', name: 'Others' },
+  ];
+
+  let focusRow = -1;
 </script>
 
 <div>
   <table>
     <tbody>
-      <TechRow title="Frontend" key="frontend" />
-      <TechRow title="Backend" key="backend" />
-      <TechRow title="Database" key="database" />
-      <TechRow title="CI/CD" key="ci_cd" />
-      <TechRow title="Cloud" key="cloud" />
-      <TechRow title="Others" key="others" />
+      {#each techCats as { key, name }, i}
+        <TechRow title={name} techList={techs[key]} row={i} bind:focusRow={focusRow} />
+      {/each}
     </tbody>
   </table>
 </div>

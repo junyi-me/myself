@@ -12,7 +12,7 @@
 		const anchorId = new URL(link.href).hash.replace('#', '')
 		const anchor = document.getElementById(anchorId);
 
-    const top = anchor ? anchor.offsetTop : 0;
+    const top = anchor ? anchor.offsetTop - window.innerHeight/10 : 0;
 		window.scrollTo({
 			top: top,
 			behavior: 'smooth'
