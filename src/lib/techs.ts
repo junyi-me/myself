@@ -52,7 +52,7 @@ export default {
   backend: [
     {
       key: "golang",
-      name: "Golang",
+      name: "Go",
       link: "https://go.dev/",
       img: "/images/go256.png",
       projects: [
@@ -94,7 +94,7 @@ export default {
           key: "maven",
           name: "Maven",
           link: "https://maven.apache.org/",
-          img: "/images/maven256.png",
+          img: "/images/maven.ico",
         },
         {
           key: "junit",

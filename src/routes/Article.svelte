@@ -20,14 +20,14 @@
   }
 
   h1 {
-    color: #333;
+    color: var(--fg-2);
   }
 
   div.double-col {
     max-width: 600px;
     display: inline-block;
-    padding-left: 0;
-    padding-right: 0;
+    margin-left: 0;
+    margin-right: 0;
   }
 </style>
 

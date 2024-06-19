@@ -19,9 +19,9 @@
 		});
     if (!anchor) return;
 
-    anchor.style.backgroundColor = '#ffffcc';
+    anchor.classList.add('highlight');
     setTimeout(() => {
-      anchor.style.backgroundColor = '';
+      anchor.classList.remove('highlight');
     }, 1000);
 	}
 </script>
@@ -63,22 +63,25 @@
 
   .outline {
     color: var(--fg-1);
-    border: 2px solid var(--fg-1);
+    border: 1px solid var(--fg-1);
     font-size: 1em;
     cursor: pointer;
     background-color: var(--bg-1);
   }
 
-  .outline.open {
+  .outline:hover {
     background-color: var(--bg-2);
-    transition: background-color 0.2s linear;
+    transition: background-color 0.2s linear;  
+  }
+
+  .outline.open {
+    box-shadow: -2px -2px 1px 1px var(--fg-2);
+    transition: box-shadow 0.2s linear;
   }
 
   .content {
     background-color: var(--bg-1);
-    border: 2px solid var(--fg-3);
-    display: flex;
-    gap: 1em;
+    border: 1px solid var(--fg-3);
   }
 
   .content ul {

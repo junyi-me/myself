@@ -1,7 +1,7 @@
 <script lang="ts">
   import { t } from '$lib/i18n';
   import type { TechType } from '$lib/techs';
-    import { fade } from 'svelte/transition';
+  import { fade } from 'svelte/transition';
 
   export let tech: TechType;
 </script>
@@ -17,9 +17,11 @@
               <td class="link">
                 <div>
                   {#each tech.sub as sub}
-                    <a href={sub.link}>
-                      <img src={sub.img} alt={sub.name} />
-                      <span>{sub.name}</span>
+                    <a href={sub.link} target="_blank">
+                      <div>
+                        <img src={sub.img} alt={sub.name} />
+                        <span>{sub.name}</span>
+                      </div>
                     </a>
                   {/each}
                 </div>
@@ -32,7 +34,7 @@
               <td class="link">
                 <div>
                   {#each tech.projects as proj}
-                    <a href={proj.link}>
+                    <a href={proj.link} target="_blank">
                       <div>
                         <img src={proj.img} alt={proj.name} />
                         <span>{proj.name}</span>
@@ -45,6 +47,8 @@
           {/if}
         </tbody>
       </table>
+      <br />
+      <a href={tech.link} target="_blank">Learn more about {tech.name} → </a>
   </div>
 {/key}
 
@@ -58,7 +62,7 @@
     display: inline-block;
   }
 
-  .link {
+  .link div {
     display: flex;
     align-items: center;
   }
@@ -72,5 +76,9 @@
     margin-right: 1em;
     align-items: center;
     display: inline-block;
+  }
+
+  .link a {
+    text-decoration: none;
   }
 </style>

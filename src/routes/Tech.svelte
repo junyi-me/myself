@@ -2,10 +2,11 @@
   export let name: string;
   export let img: string;
   export let onClick: () => void;
+  export let focus: boolean;
 </script>
 
 <div>
-  <button class="oval" on:click={onClick}>
+  <button class="oval" on:click={onClick} class:focus={focus}>
     <img src={img} alt={name} />
     <p>{name}</p>
   </button>
@@ -29,6 +30,11 @@
   .oval:hover {
     background-color: var(--bg-2);
     transition: background-color 0.2s linear;
+  }
+
+  .oval.focus {
+    box-shadow: 2px 2px 1px 1px var(--fg-2);
+    transition: box-shadow 0.2s linear;
   }
 
   .oval img {

@@ -31,7 +31,7 @@
           focusIndex = i;
         }
         focusRow = row;
-      }} />
+      }} focus={focusIndex === i} />
     {/each}
   </td>
 </tr>

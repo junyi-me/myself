@@ -71,7 +71,7 @@
     padding-top: calc(var(--header-height) / 2);
     text-align: center;
     font-size: 3em;
-    color: var(--bg-2);
+    color: hsl(206, 20%, 90%);
   }
 
   .content {
