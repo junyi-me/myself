@@ -9,37 +9,41 @@
 {#key tech.name}
   <div class="container" in:fade>
     {@html $t(`tech.${tech.key}.description`)}
-      <table>
+      <table cellspacing="0" cellpadding="0">
         <tbody>
           {#if tech.sub}
-            <tr>
-              <td class="head"><h4>{$t('tech.sub.title')}:</h4></td>
+            <tr class="sub">
+              <td class="row-title"><h4>{$t('tech.sub.title')}</h4></td>
               <td class="link">
-                <div>
-                  {#each tech.sub as sub}
+                {#each tech.sub as sub}
+                  <div>
                     <a href={sub.link} target="_blank">
                       <div>
                         <img src={sub.img} alt={sub.name} />
                         <span>{sub.name}</span>
                       </div>
                     </a>
-                  {/each}
-                </div>
+                  </div>
+                {/each}
               </td>
             </tr>
           {/if}
           {#if tech.projects}
-            <tr>
-              <td class="head"><h4>{$t('tech.projects.title')}:</h4></td>
+            <tr class="proj">
+              <td class="row-title"><h4>{$t('tech.projects.title')}</h4></td>
               <td class="link">
                 <div>
                   {#each tech.projects as proj}
-                    <a href={proj.link} target="_blank">
-                      <div>
-                        <img src={proj.img} alt={proj.name} />
-                        <span>{proj.name}</span>
-                      </div>
-                    </a>
+                    <div>
+                      <a href={proj.link} target="_blank">
+                        <div>
+                          <img src={proj.img} alt={proj.name} />
+                          <span>{proj.name}</span>
+                        </div>
+                      </a>
+                      &nbsp-&nbsp
+                      <span>{$t(`tech.projects.${proj.key}.description`)}</span>
+                    </div>
                   {/each}
                 </div>
               </td>
@@ -53,13 +57,24 @@
 {/key}
 
 <style>
-  .head {
+  .container {
+    max-width: 900px;
+    margin: 0 auto;
+  }
+
+  .row-title {
     text-align: right;
-    padding-right: 1em;
+    text-wrap: nowrap;
+  }
+
+  table {
+    border-collapse: collapse;
+    --spacing: 0.5em;
   }
 
   h4 {
     display: inline-block;
+    margin: 0;
   }
 
   .link div {
@@ -68,17 +83,40 @@
   }
 
   .link img {
-    height: 1.5em;
+    height: 1em;
   }
 
   .link div {
-    font-weight: 500;
-    margin-right: 1em;
-    align-items: center;
     display: inline-block;
   }
 
+  .proj div:not(:last-child) {
+    margin-bottom: var(--spacing);
+  }
+
+  .sub td:last-child {
+    padding-bottom: 0;
+  }
+
+  .sub div {
+    margin-bottom: var(--spacing);
+    margin-right: var(--spacing);
+  }
+
   .link a {
-    text-decoration: none;
+    font-weight: 500;
+    height: 1.5em;
+  }
+
+  tr:not(:last-child) {
+    border-bottom: 1px solid var(--bg-3);
+  }
+
+  td:not(:last-child) {
+    border-right: 1px solid var(--bg-3);
+  }
+
+  td {
+    padding: 1em;
   }
 </style>

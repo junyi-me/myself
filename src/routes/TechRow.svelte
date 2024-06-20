@@ -37,8 +37,7 @@
 </tr>
 
 <tr class="drawer">
-  <td />
-  <td class:collapsed={focusIndex == null}>
+  <td colspan="2" class:collapsed={focusIndex == null}>
     {#if focusIndex !== null}
       <div class="tech-detail" transition:slide>
         <TechDrawer tech={tech} />
@@ -50,9 +49,9 @@
 <style>
   .title {
     text-align: right;
-    padding-left: 1em;
+    width: 8em;
   }
-  
+
   .drawer td {
     padding: 0;
   }
@@ -71,6 +70,10 @@
 
   tr.drawer:not(:last-child) {
     border-bottom: 1px solid var(--bg-3);
+  }
+
+  tr.drawer {
+    align-items: center;
   }
 
   h3 {

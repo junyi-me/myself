@@ -26,7 +26,7 @@ export default {
         `
       },
       tech: {
-        title: "Technologies",
+        title: "Skills",
         content: `
           <p>I mostly work as a backend developer, but I occasionally do frontend work too. Here is a summary of my skillset.</p>
           <p>My career of software engineering staretd with developing web scraping program in <code>Java</code>, using <code>SpringBoot</code> and <code>Selenium</code>. From there my interest mainly grew towards full-stack web development. My current favorite are <code>Go</code> and <code>Svelte</code> (which I'm using to build this website).</p>
@@ -44,47 +44,48 @@ export default {
     },
     tech: {
       svelte: {
-        description: `<p>The most recent frontend framework that I learned. Loving it.</p>`,
+        description: `<p>This is the first website I am creating using <code>Svelte</code>. I had been curious about it for quite a while, and am very excited to finally give it a try.</p>`,
       },
       react: {
-        description: `<p>Used this one extensively during my time at Prussian, and also on some private projects. Also have some experience on React Native</p>`,
-      },
-      jquery: {
-        description: `<p>Although I mostly use Svelte or React for bigger projects, I do love the simplicity and portability of jQuery.</p>`,
+        description: `<p>Used this one extensively during my time at Prussian, and also on some private projects. Also have some experience on <code>React Native</code>.</p>
+          <p>Used to be my go-to framework for any frontend development, but <code>Svelte</code> might replace it for my personal projects.</p>
+          `,
       },
       html_css_js: {
-        description: `<p>Everynoe has to start somewhere.</p>`,
+        description: `<p>Of course, this is where I started my journey of frontend development. My favorite framework change from time to time, but they have always been there.</p>`,
       },
       golang: {
-        description: `<p>Have been using Go for almost everything new I've done this year. Love the simplicity and speed.</p>`,
+        description: `<p>I started learning Go this year, and have been using it for every chance I get since then. I'm really liking the simplicity and speed of this language. Coming from <code>Java</code> as my primary language, <code>Go</code> really gave me the agility in developing these smaller projects.</p>`,
       },
       java: {
-        description: `<p>This was my first language learned. Still using it extensively at ApolloEye.</p>`,
+        description: `<p>This is the first programming language I learned (in a structured way), back in college. My dad is also a <code>Java</code> person, so he taught me a lot of fundamentals. I'm still writing a lot fo Java at ApolloEye.</p>
+        <p>My experience with <code>Java</code> is mainly in developing web apps using <code>SpringBoot</code>, along with some CLI programs that run on servers.</p>
+        `,
       },
       python: {
-        description: `<p>Not a huge fan of its syntax and dynamic typing, but have been using it in a lot of job/personal projects.</p>`,
+        description: `<p><code>Python</code> is a very versatile language. I've written web servers, CLI tools, and a little bit of GUI applications all with <code>Python</code>. Also tried learning towards the AI track with numpy/pandas and tensorflow, but didn't get too far. I might pick it up some day.</p>`,
       },
       csharp: {
-        description: `<p>Learned this one out of necessity at job, but maybe the saying "C# is Java done right" is true.</p>`,
+        description: `<p>The first time I used <code>C#</code> was purely out of necessity at work, but coming from <code>Java</code>, I could see why some people say "C# is Java done right".</p>`,
       },
       cpp: {
-        description: `<p>Also learned this one out of necessity. Lots of footguns, but the extent of freedom is insane.</p>`,
+        description: `<p><code>C++</code> is another language I learned at work. I was mainly given tasks to implement new features in some web server programs. Working with the linker was a pain.</p>`,
       },
       mysql: {
-        description: `<p>First used during my internship, still my go-to relational DB.</p>`,
+        description: `<p>I've been using <code>MySQL</code> throughout my time at ApolloEye. At my current job, I've gotten also some experience with <code>Oracle DB</code> and <code>PostgreSQL</code>.</p>`,
       },
       dynamodb: {
-        description: `<p>This was the first NoSQL DB I learned, back in Prussian. The simplicity and scalability is amazing.</p>`,
+        description: `<p>I first learned about this in Prussian. Although learning to think in the NoSQL way was hard, I ended up designing and implementing some schemas to be used in serverless stacks, and it wasn't as bad as I thought!</p>`,
       },
       docker: {
-        description: `<p>Made my life a LOT easier.</p>`,
+        description: `<p>After using it for quite some time at work, some time last year, I decided to sit down and learn thoroughly about <code>Docker</code>. I didn't regret a single bit doing that.</p>`,
       },
       kubernetes: {
-        description: `<p>It was a struggle when I first started using it at work, but I'm liking it after some learning.</p>`,
+        description: `<p>I learned quite a bit of <code>Kubernetes</code> along with <code>Docker</code>. Deploying my own web app onto a Kubernetes cluster is still on my bucket list, but deploying stuff to the testing environment at work is already giving me some acquintance with it.</p>`,
       },
       aws: {
-        description: `<p>Everything was on AWS at Prussian, and it was a truly amazing platform to work on (- the UI).</p>
-        <p>I have some certifications too, listed below.</p>`,
+        description: `<p>At Prussian, I got a lot of experience working with the serverless stack on <code>AWS</code>. Have been using it a bit at ApolloEye as well.</p>
+        <p>During my time at Prussian, I decided to get some certificates, which are listed below.</p>`,
       },
       gcp: {
         description: `<p>Mostly been using their <code>Cloud Storage</code> and <code>Compute Engine</code> at ApolloEye.</p>`,
@@ -117,6 +118,9 @@ export default {
         },
         neovim: {
           description: "My Neovim config.",
+        },
+        business_card: {
+          description: "A simple website I coded to get familiar with AWS and React.",
         },
       },
       sub: {

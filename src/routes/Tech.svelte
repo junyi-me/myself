@@ -2,7 +2,7 @@
   export let name: string;
   export let img: string;
   export let onClick: () => void;
-  export let focus: boolean;
+  export let focus = false;
 </script>
 
 <div>

@@ -35,18 +35,60 @@ export default {
       name: "React",
       link: "https://react.dev/",
       img: "/images/react128.png",
-    },
-    {
-      key: "jquery",
-      name: "jQuery",
-      link: "https://jquery.com/",
-      img: "/images/jquery256.png",
+      projects: [
+        {
+          key: "business_card",
+          name: "Business Card",
+          link: "http://businesscardjy.com.s3-website-us-east-1.amazonaws.com/",
+          img: "/images/github256.png",
+        },
+      ],
+      sub: [
+        {
+          key: "reactnative",
+          name: "React Native",
+          link: "https://reactnative.dev/",
+          img: "/images/react128.png",
+        },
+        {
+          key: "redux",
+          name: "Redux",
+          link: "https://redux.js.org/",
+          img: "/images/redux256.png",
+        },
+      ],
     },
     {
       key: "html_css_js",
       name: "HTML/CSS/JS",
       link: "https://developer.mozilla.org/en-US/docs/Web/HTML",
       img: "/images/html_css_js256.png",
+      sub: [
+        {
+          key: "htmx",
+          name: "htmx",
+          link: "https://htmx.org/",
+          img: "/images/htmx192.png",
+        },
+        {
+          key: "jquery",
+          name: "jQuery",
+          link: "https://jquery.com/",
+          img: "/images/jquery256.png",
+        },
+        {
+          key: "typescript",
+          name: "TypeScript",
+          link: "https://www.typescriptlang.org/",
+          img: "/images/typescript256.png",
+        },
+        {
+          key: "bootstrap",
+          name: "Bootstrap",
+          link: "https://getbootstrap.com/",
+          img: "/images/bootstrap256.png",
+        },
+      ],
     },
   ],
   backend: [
@@ -75,6 +117,12 @@ export default {
           name: "echo",
           link: "https://echo.labstack.com/",
           img: "/images/echo220.png",
+        },
+        {
+          key: "gosql",
+          name: "database/sql",
+          link: "https://pkg.go.dev/database/sql",
+          img: "/images/gopher.svg",
         },
       ],
     },
@@ -115,18 +163,54 @@ export default {
       name: "Python",
       link: "https://www.python.org/",
       img: "/images/python256.png",
+      sub: [
+        {
+          key: "flask",
+          name: "Flask",
+          link: "https://flask.palletsprojects.com/",
+          img: "/images/flask256.png",
+        },
+        {
+          key: "django",
+          name: "Django",
+          link: "https://www.djangoproject.com/",
+          img: "/images/django256.png",
+        },
+        {
+          key: "sqlalchemy",
+          name: "SQLAlchemy",
+          link: "https://www.sqlalchemy.org/",
+          img: "/images/sqlalchemy120.png",
+        },
+      ]
     },
     {
       key: "csharp",
       name: "C#",
       link: "https://dotnet.microsoft.com/languages/csharp",
       img: "/images/csharp256.png",
+      sub: [
+        {
+          key: "dotnet",
+          name: ".NET",
+          link: "https://dotnet.microsoft.com/",
+          img: "/images/dotnet256.png",
+        },
+      ]
     },
     {
       key: "cpp",
       name: "C++",
       link: "https://cplusplus.com/",
       img: "/images/cpp256.png",
+      sub: [
+        {
+          key: "civet",
+          name: "CivetWeb",
+          link: "https://civetweb.github.io/civetweb/",
+          img: "/images/civet64.png",
+        },
+      ]
     },
   ],
   database: [
@@ -149,6 +233,14 @@ export default {
       name: "Docker",
       link: "https://www.docker.com/",
       img: "/images/docker256.png",
+      sub: [
+        {
+          key: "compose",
+          name: "Docker Compose",
+          link: "https://docs.docker.com/compose/",
+          img: "/images/compose256.png",
+        },
+      ]
     },
     {
       key: "kubernetes",
@@ -213,12 +305,34 @@ export default {
           img: "/images/iam256.png",
         },
       ],
+      projects: [
+        {
+          key: "business_card",
+          name: "Business Card",
+          link: "http://businesscardjy.com.s3-website-us-east-1.amazonaws.com/",
+          img: "/images/github256.png",
+        },
+      ],
     },
     {
       key: "gcp",
       name: "Google Cloud Platform",
       link: "https://cloud.google.com/",
       img: "/images/gcp256.png",
+      sub: [
+        {
+          key: "gce",
+          name: "Compute Engine",
+          link: "https://cloud.google.com/compute/",
+          img: "/images/gce256.png",
+        },
+        {
+          key: "gcs",
+          name: "Cloud Storage",
+          link: "https://cloud.google.com/storage/",
+          img: "/images/gcs256.png",
+        },
+      ]
     },
   ],
   others: [
@@ -227,18 +341,54 @@ export default {
       name: "Linux",
       link: "https://archlinux.org/",
       img: "/images/linux256.png",
+      sub: [
+        {
+          key: "arch",
+          name: "Arch Linux",
+          link: "https://archlinux.org/",
+          img: "/images/arch256.png",
+        },
+        {
+          key: "ubuntu",
+          name: "Ubuntu",
+          link: "https://ubuntu.com/",
+          img: "/images/ubuntu256.png",
+        },
+      ],
     },
     {
       key: "bash",
       name: "Bash",
       link: "https://www.gnu.org/software/bash/",
       img: "/images/bash.svg",
+      sub: [
+        {
+          key: "vim",
+          name: "Vim",
+          link: "https://www.vim.org/",
+          img: "/images/vim256.png",
+        },
+        {
+          key: "tmux",
+          name: "Tmux",
+          link: "https://github.com/tmux/tmux/wiki",
+          img: "/images/tmux.svg",
+        },
+      ],
     },
     {
       key: "lua",
       name: "Lua",
       link: "https://lua.org/",
       img: "/images/lua256.png",
+      projects: [
+        {
+          key: "neovim",
+          name: "My Neovim Config",
+          link: "/",
+          img: "/images/github256.png",
+        }
+      ],
     },
     {
       key: "neovim",

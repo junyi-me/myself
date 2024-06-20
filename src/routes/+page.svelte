@@ -15,7 +15,9 @@
 <div class="head-wrap">
   <Outline {articles} />
   <div class="head">
-    <h1>Junyi Wang</h1>
+    <div>
+      <h1>Junyi Wang, <br />&nbsp&nbsp a software engineer</h1>
+    </div>
   </div>
   <div class="forehead" />
 </div>
@@ -53,25 +55,29 @@
     top: 0;
     left: 0;
     z-index: -1;
-    background: 
-      linear-gradient(
-        rgba(0, 0, 0, 0.3), 
-        rgba(0, 0, 0, 0.3)
-      ), url('images/hhkb.jpg') no-repeat center;
+    background: url('images/hhkb.jpg') no-repeat center;
     background-size:cover;
     width: 100%;
+    display: table;
   }
-  
-  .forehead {
-    height: var(--header-height);
+
+  .head div {
+    vertical-align: middle;
+    display: table-cell;
   }
 
   .head h1 {
+    display: inline-block;
+    font-size: 5em;
+    font-family: 'Brush Script MT', cursive;
+    color: var(--accent);
+    text-align: left;
+    display: table;
+    margin: 0 auto;
+  }
+
+  .forehead {
     height: var(--header-height);
-    padding-top: calc(var(--header-height) / 2);
-    text-align: center;
-    font-size: 3em;
-    color: hsl(0, 0%, 100%);
   }
 
   .content {

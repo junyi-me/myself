@@ -6,6 +6,7 @@ body {
     --fg-2: hsl(0, 0%, 20%);
     --fg-3: hsl(0, 0%, 30%);
     --highlight: #ffffcc;
+    --accent: #f73c00;
     --link: hsl(208, 77%, 47%);
     --link-hover: hsl(208, 77%, 55%);
     --link-active: hsl(208, 77%, 40%);
@@ -34,8 +35,20 @@ h6 {
     line-height: 1.1;
 }
 
+:is(h1, h2, h3, h4, h5, h6, p) {
+    margin: 1rem 0.1rem;
+}
+
 label {
     margin: 0.5rem 0.1rem;
+}
+
+:is(h1, h2, h3, h4, h5, h6, p, label):first-child {
+    margin-top: 0;
+}
+
+:is(h1, h2, h3, h4, h5, h6, p, label):last-child {
+    margin-bottom: 0;
 }
 
 a {
