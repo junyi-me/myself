@@ -304,6 +304,24 @@ export default {
           link: "https://aws.amazon.com/iam/",
           img: "/images/iam256.png",
         },
+        {
+          key: "cognito",
+          name: "Cognito",
+          link: "https://aws.amazon.com/cognito/",
+          img: "/images/cognito256.png",
+        },
+        {
+          key: "iam",
+          name: "IAM",
+          link: "https://aws.amazon.com/iam/",
+          img: "/images/iam256.png",
+        },
+        {
+          key: "iam",
+          name: "IAM",
+          link: "https://aws.amazon.com/iam/",
+          img: "/images/iam256.png",
+        },
       ],
       projects: [
         {
@@ -385,7 +403,7 @@ export default {
         {
           key: "neovim",
           name: "My Neovim Config",
-          link: "/",
+          link: "https://github.com/jywang99/neovim",
           img: "/images/github256.png",
         }
       ],
@@ -401,7 +419,7 @@ export default {
           name: "My Neovim Config",
           link: "/",
           img: "/images/github256.png",
-        }
+        },
       ],
     },
     {
@@ -409,6 +427,20 @@ export default {
       name: "Selenium",
       link: "https://www.selenium.dev/",
       img: "/images/selenium256.png",
+      sub: [
+        {
+          key: "chrome_devtool",
+          name: "Chrome DevTools",
+          link: "https://developer.chrome.com/docs/devtools/",
+          img: "/images/chrome256.png",
+        },
+        {
+          key: "selenium_ide",
+          name: "Selenium IDE",
+          link: "https://www.selenium.dev/selenium-ide/",
+          img: "/images/selenium-ide128.png",
+        },
+      ],
     },
   ],
 } as { [key: string]: TechType[] };
