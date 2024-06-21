@@ -126,6 +126,61 @@ export default {
       sub: {
         title: "Familiar with",
       },
+    },
+    exp: {
+      positions: {
+        apolloeye: {
+          name: "ApolloEye",
+          company: "ApolloEye",
+          title: "Software Engineer",
+        },
+        prussian: {
+          name: "Prussian",
+          company: "Prussian Inc",
+          title: "SaaS Software Engineer",
+        },
+      },
+      projects: {
+        logrpa: {
+          title: "Web Scraping",
+          bullets: [
+            "<li>Develop a web scraping program in Java using Selenium to collect electric power data from multiple managing companies and save in an internal database</li>",
+            "<li>Modify and maintain the program when the target website structure changes.</li>",
+            "<li>Write unit tests for the program using JUnit and Mockito</li>",
+          ],
+        },
+        aeweb: {
+          title: "Website Development",
+          bullets: [
+            "<li>Develop and maintain a customer-facing website (both front-end and back-end) using SpringBoot MVC and Thymeleaf to visualize the historical record of generated solar power</li>",
+            "<li>Implemented a feature that allows the user to download the scraped data as a CSV file</li>",
+            "<li>Write unit tests for the program using JUnit and Mockito</li>",
+          ],
+        },
+        aemonitor: {
+          title: "Healthcheck Programs",
+          bullets: [
+            "<li>Develop a healthcheck program in Java using SpringBoot and Selenium to monitor the status of the web scraping program</li>",
+            "<li>Use cron jobs to schedule the healthcheck program to run periodically</li>",
+            "<li>Deploy the program to AWS EC2 using Docker</li>",
+          ],
+        },
+        prussian: {
+          title: "Serverless full-stack Development",
+          bullets: [
+            "<li>Develop a serverless full-stack application using AWS Lambda, API Gateway, DynamoDB, and S3</li>",
+            "<li>Implement authentication using AWS Cognito</li>",
+            "<li>Develop a client-facing webpage using React</li>",
+          ],
+        },
+        tinky: {
+          title: "Mobile app development",
+          bullets: [
+            "<li>Develop a customer-facing mobile app for iOS/Android using React Native</li>",
+            "<li>Develop the backend using AWS Lambda, API Gateway, and DynamoDB</li>",
+          ],
+        },
+      },
     }
   },
   jp: {

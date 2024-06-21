@@ -1,18 +1,4 @@
-type SubTechType = {
-  key: string;
-  name: string;
-  link: string;
-  img: string;
-}
-export type TechType = SubTechType & {
-  projects?: {
-    key: string;
-    name: string;
-    link: string;
-    img: string;
-  }[];
-  sub?: SubTechType[];
-}
+import type { TechType } from "./types";
 
 export default {
   frontend: [

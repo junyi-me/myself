@@ -4,10 +4,29 @@ export type ArticleType = {
   content: string;
 }
 
-export type ExperienceType = {
+type SubTechType = {
+  key: string;
   name: string;
-  title: string;
-  content: string;
-  techKeys: string[];
+  link: string;
+  img: string;
+}
+export type TechType = SubTechType & {
+  projects?: {
+    key: string;
+    name: string;
+    link: string;
+    img: string;
+  }[];
+  sub?: SubTechType[];
+}
+
+export type ExperienceType = {
+  txKey: string;
+  startDate: string;
+  endDate?: string;
+  content: {
+    txKey: string;
+    techKeys: string[];
+  }[];
 }
 
