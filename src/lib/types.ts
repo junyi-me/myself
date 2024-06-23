@@ -34,6 +34,7 @@ export type ExperienceKeyType = {
 export type ProjectType = {
   title: string;
   bullets: string[];
+  techs: TechType[];
 }
 export type ExperienceType = {
   startDate: string;

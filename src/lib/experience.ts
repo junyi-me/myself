@@ -25,15 +25,15 @@ export default [
     projects: [
       {
         txKey: "logrpa",
-        techKeys: ["java", "springboot", "selenium", "gcp", "linux"],
+        techKeys: ["java", "selenium", "gcp", "linux"],
       },
       {
         txKey: "aeweb",
-        techKeys: ["java", "springboot", "selenium", "gcp", "linux"],
+        techKeys: ["java", "selenium", "gcp", "linux"],
       },
       {
         txKey: "aemonitor",
-        techKeys: ["java", "springboot", "selenium", "docker", "aws", "linux"],
+        techKeys: ["java", "selenium", "docker", "aws", "linux"],
       },
     ],
   },

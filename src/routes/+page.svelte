@@ -27,8 +27,9 @@
 <div class="content">
   <div class="articles">
     <div class="intro-block">
-      <Article article={articles[0]} doubleCol />
-      <img src="images/hhkb_black.jpg" alt="hhkb_black" />
+      <Article article={articles[0]} side>
+        <img src="images/hhkb_black.jpg" alt="hhkb_black" />
+      </Article>
     </div>
     <Article article={articles[1]} />
     <Article article={articles[2]} >
@@ -91,10 +92,7 @@
   }
 
   .intro-block img {
-    max-width: 600px;
-    float: right;
-    padding: var(--content-padding);
-    margin: var(--content-margin);
+    max-width: 100%;
   }
 
   .articles {

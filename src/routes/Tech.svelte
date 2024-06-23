@@ -6,7 +6,7 @@
 </script>
 
 <div>
-  <button class="oval" on:click={onClick} class:focus={focus}>
+  <button class="oval" on:click={onClick} class:focus={focus} id={`tech-${name}`}>
     <img src={img} alt={name} />
     <p>{name}</p>
   </button>

@@ -12,7 +12,7 @@ export default {
       intro: {
         title: "Hi,",
         content: `
-          <p>Thanks for stopping by. My name is Junyi Wang and I'm working as a full-time software developer in the beautiful city of Devner, CO.</p>
+          <p>Thanks for stopping by. My name is Junyi Wang and I'm working as a full-time software developer in Devner, CO.</p>
           <p>My native language is Japanese, and I'm fluent in English and Chinese as well (feel free to switch to any of these languages from the language dropdown).</p>
           <p>I use <code>vim (Neovim)</code> and <code>Arch (WSL2)</code> btw. And yes, I do have two of them. I love <a href="https://happyhackingkb.com/jp/">HHKB</a> (both Hybrid Type-S). Ever since I got my first one and started vimming, there was no turning back.</p>
           `,
@@ -129,6 +129,7 @@ export default {
     },
     exp: {
       positions: {
+        at: "at",
         apolloeye: {
           name: "ApolloEye",
           company: "ApolloEye",
