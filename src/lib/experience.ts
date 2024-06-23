@@ -1,10 +1,28 @@
-import type { ExperienceType } from "./types";
+import type { ExperienceKeyType } from "./types";
 
 export default [
   {
+    txKey: "nagrastar",
+    startDate: "2023-02",
+    projects: [
+      {
+        txKey: "ns_manager",
+        techKeys: ["python", "html_css_js", "docker", "linux"],
+      },
+      {
+        txKey: "ns_events",
+        techKeys: ["python", "html_css_js", "docker", "kubernetes", "linux"],
+      },
+      {
+        txKey: "ns_publish",
+        techKeys: ["python", "csharp", "cpp", "html_css_js", "docker", "kubernetes", "linux"],
+      },
+    ],
+  },
+  {
     txKey: "apolloeye",
     startDate: "2021-02",
-    content: [
+    projects: [
       {
         txKey: "logrpa",
         techKeys: ["java", "springboot", "selenium", "gcp", "linux"],
@@ -23,7 +41,7 @@ export default [
     txKey: "prussian",
     startDate: "2022-07",
     endDate: "2023-04",
-    content: [
+    projects: [
       {
         txKey: "prussian",
         techKeys: ["react", "aws", "dynamodb"],
@@ -33,6 +51,6 @@ export default [
         techKeys: ["react", "aws", "dynamodb"],
       },
     ],
-  }
-] as ExperienceType[];
+  },
+] as ExperienceKeyType[];
 

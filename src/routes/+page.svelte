@@ -4,6 +4,7 @@
   import { t } from '$lib/i18n';
   import type { ArticleType } from '$lib/types';
   import TechSection from './TechSection.svelte';
+  import ExperienceSection from './ExperienceSection.svelte';
 
   const articleKeys = ['intro', 'why', 'tech', 'exp'];
   const articles: ArticleType[] = articleKeys.map(key => {
@@ -33,7 +34,9 @@
     <Article article={articles[2]} >
       <TechSection />
     </Article>
-    <Article article={articles[3]} />
+    <Article article={articles[3]}>
+      <ExperienceSection />
+    </Article>
   </div>
 </div>
 

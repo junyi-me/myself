@@ -20,13 +20,27 @@ export type TechType = SubTechType & {
   sub?: SubTechType[];
 }
 
-export type ExperienceType = {
+export type ProjectKeyType = {
+  txKey: string;
+  techKeys: string[];
+}
+export type ExperienceKeyType = {
   txKey: string;
   startDate: string;
   endDate?: string;
-  content: {
-    txKey: string;
-    techKeys: string[];
-  }[];
+  projects: ProjectKeyType[];
+}
+
+export type ProjectType = {
+  title: string;
+  bullets: string[];
+}
+export type ExperienceType = {
+  startDate: string;
+  endDate?: string;
+  title: string;
+  company: string;
+  description: string;
+  projects: ProjectType[];
 }
 
