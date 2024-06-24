@@ -3,38 +3,50 @@
 
   export let article: ArticleType;
   export let side = false;
+  export let dark = false;
 
   const SLOTS = $$props.$$slots
 </script>
 
-<div class="container" id={article.name} class:side={side}>
-  <div class:side={side}>
-    <h1>{article.title}</h1>
-    {@html article.content}
-  </div>
-  {#if SLOTS}
-    <div class:side={side}>
-      <slot />
+<div class:dark={dark}>
+  <div id={article.name} class="container highlighter">
+    <div class="main" class:side={side}>
+      <div class:side={side}>
+        <h1>{article.title}</h1>
+        {@html article.content}
+      </div>
+      {#if SLOTS}
+        <div class:side={side}>
+          <slot />
+        </div>
+      {/if}
     </div>
-  {/if}
+  </div>
 </div>
 
 <style>
   .container {
+    width: 100%;
+  }
+
+  .dark {
+    background-color: var(--bg-4);
+  }
+
+  .main {
     max-width: 1200px;
-    padding: var(--content-padding);
-    margin: var(--content-margin);
-    transition: background-color 0.3s linear;
+    padding: var(--article-padding);
+    margin: 0 auto;
     display: flex;
     flex-direction: column;
     gap: var(--content-margin);
   }
 
-  .container.side {
+  .main.side {
     flex-direction: row;
   }
 
-  .container .side {
+  .main .side {
     max-width: 50%;
   }
 

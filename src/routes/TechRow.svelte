@@ -1,5 +1,5 @@
 <script lang="ts">
-  import type { TechType } from "$lib/techs";
+  import type { TechType } from "$lib/types";
   import { slide } from "svelte/transition";
   import Tech from "./Tech.svelte";
   import TechDrawer from "./TechDrawer.svelte";
@@ -23,8 +23,8 @@
     <h3>{title}</h3>
   </td>
   <td class="techs">
-    {#each techList as { name, img }, i}
-      <Tech name={name} img={img} onClick={() => {
+    {#each techList as { key, name, img }, i}
+      <Tech name={name} {key} {img} onClick={() => {
         if (focusIndex === i) {
           focusIndex = null;
         } else {

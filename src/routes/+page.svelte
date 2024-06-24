@@ -5,8 +5,9 @@
   import type { ArticleType } from '$lib/types';
   import TechSection from './TechSection.svelte';
   import ExperienceSection from './ExperienceSection.svelte';
+  import CertsSection from './CertsSection.svelte';
 
-  const articleKeys = ['intro', 'why', 'tech', 'exp'];
+  const articleKeys = ['intro', 'why', 'tech', 'certs', 'exp'];
   const articles: ArticleType[] = articleKeys.map(key => {
     return { name: key, title: $t(`home.${key}.title`), content: $t(`home.${key}.content`) };
   });
@@ -25,20 +26,21 @@
 
 <!-- Articles -->
 <div class="content">
-  <div class="articles">
     <div class="intro-block">
       <Article article={articles[0]} side>
         <img src="images/hhkb_black.jpg" alt="hhkb_black" />
       </Article>
     </div>
-    <Article article={articles[1]} />
-    <Article article={articles[2]} >
+    <Article article={articles[1]} dark />
+    <Article article={articles[2]}>
       <TechSection />
     </Article>
-    <Article article={articles[3]}>
+    <Article article={articles[3]} dark>
+      <CertsSection />
+    </Article>
+    <Article article={articles[4]}>
       <ExperienceSection />
     </Article>
-  </div>
 </div>
 
 <!-- Footer -->
@@ -86,19 +88,13 @@
 
   .content {
     background-color: var(--bg-1);
-    padding: 4em 1em;
+    padding: 3em 0;
     border-top: 2px solid var(--fg-3);
     border-bottom: 2px solid var(--fg-3);
   }
 
   .intro-block img {
     max-width: 100%;
-  }
-
-  .articles {
-    display: flex;
-    justify-content: center;
-    flex-wrap: wrap;
   }
 
   .footer {

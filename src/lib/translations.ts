@@ -33,6 +33,12 @@ export default {
           <p>Items can be expanded by clicking on them.</p>
           `
       },
+      certs: {
+        title: "Certifications",
+        content: `
+          <p>Here are the certifications I have obtained so far.</p>
+          `
+      },
       exp: {
         title: "Experience",
         content: `

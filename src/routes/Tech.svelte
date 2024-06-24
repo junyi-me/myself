@@ -1,4 +1,5 @@
 <script lang="ts">
+  export let key: string;
   export let name: string;
   export let img: string;
   export let onClick: () => void;
@@ -6,7 +7,7 @@
 </script>
 
 <div>
-  <button class="oval" on:click={onClick} class:focus={focus} id={`tech-${name}`}>
+  <button class="oval" on:click={onClick} class:focus={focus} id={`tech-${key}`}>
     <img src={img} alt={name} />
     <p>{name}</p>
   </button>
@@ -23,7 +24,6 @@
     margin-right: 1em;
     margin-bottom: 1em;
     max-height: 60px;
-    background-color: var(--bg-1);
     color: var(--fg-1);
   }
 

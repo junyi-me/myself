@@ -1,29 +1,11 @@
 <script lang="ts">
   import { slide } from "svelte/transition";
+  import { handleAnchorClick } from "$lib/interact";
 
   export let articles;
 
   let expanded = false;
 
-  function handleAnchorClick (event: MouseEvent) {
-		event.preventDefault();
-
-		const link = event.currentTarget as HTMLAnchorElement;
-		const anchorId = new URL(link.href).hash.replace('#', '')
-		const anchor = document.getElementById(anchorId);
-
-    const top = anchor ? anchor.offsetTop - window.innerHeight/10 : 0;
-		window.scrollTo({
-			top: top,
-			behavior: 'smooth'
-		});
-    if (!anchor) return;
-
-    anchor.classList.add('highlight');
-    setTimeout(() => {
-      anchor.classList.remove('highlight');
-    }, 1000);
-	}
 </script>
 
 <div class="container"

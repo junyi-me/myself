@@ -2,6 +2,7 @@
   import type { ExperienceKeyType, ExperienceType } from '$lib/types';
   import { techs } from '$lib/techs';
   import { t } from '$lib/i18n';
+    import { handleAnchorClick } from '$lib/interact';
 
   export let expKey: ExperienceKeyType;
 
@@ -27,30 +28,23 @@
     <p>{exp.startDate} ~ {exp.endDate ?? "current"}</p>
   </td>
   <td class="content">
-    <table>
-      <tbody>
-        {#each exp.projects as proj}
-          <tr>
-            <td>
-              <h3>{proj.title}</h3>
-              <ul>
-                {#each proj.bullets as bullet}
-                  {@html bullet}
-                {/each}
-              </ul>
-              <div class="tech">
-              {#each proj.techs as tech}
-                <a href={`#tech-${tech.name}`}>
-                  <img src={tech.img} alt={tech.name} />
-                  <span>{tech.name}</span>
-                </a>
-              {/each}
-              </div>
-            </td>
-          </tr>
+    <p>{@html exp.description}</p>
+    {#each exp.projects as proj}
+      <h3>{proj.title}</h3>
+      <ul>
+        {#each proj.bullets as bullet}
+          {@html bullet}
         {/each}
-      </tbody>
-    </table>
+      </ul>
+      <div class="tech">
+      {#each proj.techs as tech}
+        <a href={`#tech-${tech.key}`} on:click={e => handleAnchorClick(e, 'tech', e => {if (!e.classList.contains("focus")) e.click()})}>
+          <img src={tech.img} alt={tech.name} />
+          <span>{tech.name}</span>
+        </a>
+      {/each}
+      </div>
+    {/each}
   </td>
 </tr>
 
@@ -59,28 +53,19 @@
     border-bottom: 1px solid var(--bg-3);
   }
 
-  td:first-child {
-    padding-top: 1em;
+  td {
     vertical-align: top;
-    padding-bottom: 1em;
     border-bottom: none;
+    min-width: 8em;
+    padding: var(--content-padding);
   }
 
   td:not(:first-child) {
     border-left: 1px solid var(--bg-3);
   }
 
-  .content table {
-    border-collapse: collapse;
-  }
-
-  .content tr {
-    border: none;
-  }
-
-  .content td {
-    padding: 1em;
-    border: none;
+  .content p {
+    margin-bottom: 0;
   }
 
   .tech {

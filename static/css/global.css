@@ -2,6 +2,7 @@ body {
     --bg-1: hsl(0, 0%, 100%);
     --bg-2: hsl(206, 20%, 90%);
     --bg-3: hsl(206, 20%, 80%);
+    --bg-4: #edf1f5;
     --fg-1: hsl(0, 0%, 13%);
     --fg-2: hsl(0, 0%, 20%);
     --fg-3: hsl(0, 0%, 30%);
@@ -22,6 +23,7 @@ body {
     margin: 0;
     --content-margin: 1rem;
     --content-padding: 1rem;
+    --article-padding: 2rem;
 }
 
 h1,
@@ -71,11 +73,11 @@ select {
 }
 
 button {
-    background: var(--link);
     color: var(--bg-1);
     padding: 0.5rem 1rem;
     border: none;
     border-radius: var(--border-radius);
+    background-color: var(--bg-1);
 }
 
 .error {
@@ -103,7 +105,10 @@ body.dark {
     --link-active: hsl(206, 96%, 64%);
 }
 
-div.highlight {
-  background-color: var(--highlight);
+.highlight {
+    background-color: var(--highlight);
 }
 
+.highlighter {
+    transition: background-color 0.3s linear;
+}
