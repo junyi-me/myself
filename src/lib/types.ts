@@ -22,7 +22,10 @@ export type TechType = SubTechType & {
 
 export type ProjectKeyType = {
   txKey: string;
-  techKeys: string[];
+  techKeys: {
+    key: string,
+    sub?: string[]
+  }[];
 }
 export type ExperienceKeyType = {
   txKey: string;

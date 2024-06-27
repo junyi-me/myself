@@ -7,15 +7,67 @@ export default [
     projects: [
       {
         txKey: "ns_manager",
-        techKeys: ["python", "html_css_js", "docker", "linux"],
+        techKeys: [
+          {
+            key: "python",
+            sub: ["flask", "sqlalchemy"],
+          },
+          {
+            key: "html_css_js",
+          },
+          {
+            key: "docker",
+          },
+          {
+            key: "linux"
+          },
+        ],
       },
       {
         txKey: "ns_events",
-        techKeys: ["python", "html_css_js", "docker", "kubernetes", "linux"],
+        techKeys: [
+          {
+            key: "python",
+          },
+          {
+            key: "html_css_js",
+          },
+          {
+            key: "docker",
+          },
+          {
+            key: "kubernetes",
+          },
+          {
+            key: "linux"
+          },
+        ],
       },
       {
         txKey: "ns_publish",
-        techKeys: ["python", "csharp", "cpp", "html_css_js", "docker", "kubernetes", "linux"],
+        techKeys: [
+          {
+            key: "python",
+          },
+          {
+            key: "csharp",
+          },
+          {
+            key: "cpp",
+          },
+          {
+            key: "html_css_js",
+          },
+          {
+            key: "docker",
+          },
+          {
+            key: "kubernetes",
+          },
+          {
+            key: "linux"
+          },
+        ],
       },
     ],
   },
@@ -25,15 +77,57 @@ export default [
     projects: [
       {
         txKey: "logrpa",
-        techKeys: ["java", "selenium", "gcp", "linux"],
+        techKeys: [
+          {
+            key: "java",
+          },
+          {
+            key: "selenium",
+          },
+          {
+            key: "gcp",
+          },
+          {
+            key: "linux"
+          },
+        ],
       },
       {
         txKey: "aeweb",
-        techKeys: ["java", "selenium", "gcp", "linux"],
+        techKeys: [
+          {
+            key: "java",
+          },
+          {
+            key: "selenium",
+          },
+          {
+            key: "gcp",
+          },
+          {
+            key: "linux"
+          },
+        ],
       },
       {
         txKey: "aemonitor",
-        techKeys: ["java", "selenium", "docker", "aws", "linux"],
+        techKeys: [
+          {
+            key: "java",
+          },
+          {
+            key: "selenium",
+          },
+          {
+            key: "docker",
+          },
+          {
+            key: "aws",
+          },
+          {
+            key: "linux"
+          },
+        ],
       },
     ],
   },
@@ -44,11 +138,33 @@ export default [
     projects: [
       {
         txKey: "prussian",
-        techKeys: ["react", "aws", "dynamodb"],
+        techKeys: [
+          {
+            key: "react",
+            sub: ["reactnative", "redux"],
+          },
+          {
+            key: "aws",
+          },
+          {
+            key: "dynamodb"
+          },
+        ],
       },
       {
         txKey: "tinky",
-        techKeys: ["react", "aws", "dynamodb"],
+        techKeys: [
+          {
+            key: "react",
+          },
+          {
+            key: "aws",
+            sub: ["lambda", "api_gw", "dynamodb", "s3", "cognito", "cloudfront", "route53", "cloudwatch"],
+          },
+          {
+            key: "dynamodb"
+          },
+        ],
       },
     ],
   },

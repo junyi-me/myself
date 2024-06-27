@@ -151,7 +151,7 @@ export const techs = {
     key: "python",
     name: "Python",
     link: "https://www.python.org/",
-      img: "/images/python256.png",
+    img: "/images/python256.png",
     sub: [
       {
         key: "flask",

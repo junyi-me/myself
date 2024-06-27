@@ -2,7 +2,7 @@
   import type { ExperienceKeyType, ExperienceType } from '$lib/types';
   import { techs } from '$lib/techs';
   import { t } from '$lib/i18n';
-    import { handleAnchorClick } from '$lib/interact';
+  import { handleAnchorClick } from '$lib/interact';
 
   export let expKey: ExperienceKeyType;
 
@@ -16,7 +16,19 @@
     projects: expKey.projects.map(projKey => ({
       title: $t(`exp.projects.${projKey.txKey}.title`),
       bullets: $t(`exp.projects.${projKey.txKey}.bullets`),
-      techs: projKey.techKeys.map(techKey => techs[techKey]),
+      techs: projKey.techKeys.map(techKey => {
+          const tech = techs[techKey.key]
+          if (!techKey.sub || !tech.sub) {
+            return {
+              ...tech,
+              sub: [],
+            };
+          }
+          return {
+            ...tech,
+            sub: tech.sub.filter(sub => techKey.sub!.includes(sub.key)),
+          };
+        }),
     })),
   } as ExperienceType;
 </script>
@@ -37,12 +49,17 @@
         {/each}
       </ul>
       <div class="tech">
-      {#each proj.techs as tech}
-        <a href={`#tech-${tech.key}`} on:click={e => handleAnchorClick(e, 'tech', e => {if (!e.classList.contains("focus")) e.click()})}>
-          <img src={tech.img} alt={tech.name} />
-          <span>{tech.name}</span>
-        </a>
-      {/each}
+        {#each proj.techs as tech}
+          <a href={`#tech-${tech.key}`} on:click={e => handleAnchorClick(e, 'tech', e => {if (!e.classList.contains("focus")) e.click()})}>
+            <img src={tech.img} alt={tech.name} />
+            <span>{tech.name}</span>
+            {#if tech.sub && tech.sub.length > 0}
+              <span >&nbsp;(</span>
+              <span style="margin-right: .5em">{tech.sub.map(s => s.name).join(", ")}</span>
+              <span style="margin-left: -.5em">)</span>
+            {/if}
+          </a>
+        {/each}
       </div>
     {/each}
   </td>
@@ -70,6 +87,7 @@
 
   .tech {
     display: flex;
+    flex-wrap: wrap;
     padding-left: 1em;
   }
 

@@ -1,6 +1,6 @@
 <script lang="ts">
   import { t } from '$lib/i18n';
-  import type { TechType } from '$lib/techs';
+  import type { TechType } from '$lib/types';
   import { fade } from 'svelte/transition';
 
   export let tech: TechType;
