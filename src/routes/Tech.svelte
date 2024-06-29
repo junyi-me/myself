@@ -25,11 +25,11 @@
     margin-bottom: 1em;
     max-height: 60px;
     color: var(--fg-1);
+    transition: background-color 0.3s linear;
   }
 
   .oval:hover {
     background-color: var(--bg-2);
-    transition: background-color 0.2s linear;
   }
 
   .oval.focus {

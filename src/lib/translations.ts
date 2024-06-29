@@ -14,15 +14,15 @@ export default {
         content: `
           <p>Thanks for stopping by. My name is Junyi Wang and I'm working as a full-time software developer in Devner, CO.</p>
           <p>My native language is Japanese, and I'm fluent in English and Chinese as well (feel free to switch to any of these languages from the language dropdown).</p>
-          <p>I use <code>vim (Neovim)</code> and <code>Arch (WSL2)</code> btw. And yes, I do have two of them. I love <a href="https://happyhackingkb.com/jp/">HHKB</a> (both Hybrid Type-S). Ever since I got my first one and started vimming, there was no turning back.</p>
+          <p>I use <code>vim (Neovim)</code> and <code>Arch (WSL2)</code> btw. And yes, I do have two of them. I love <a href="https://happyhackingkb.com/jp/">HHKB</a> (both Hybrid Type-S). Ever since I got my first one and started using vim, there was no turning back.</p>
           `,
       },
       why: {
         title: "Why did I make this website?",
         content: `
-          <p>Well, long story short, I wanted to have some form of media that I can show to people (mainly the technical folks). I wanted to have a place where I can showcase my projects, my thoughts, and my experiences. I wanted to have a place where I can share my knowledge and learnings with others. Doubled as a personal blog, this website is a place where I can write about anything that I find interesting.</p>
-          <p>It's also to flex what I've learned from the <a href="https://learn.svelte.dev/tutorial/welcome-to-svelte">Svelte tutorial</a>. 🔥</p>
-          <p>As a junior developer, I'm still learning and growing. Since there's not much I can share at this point, I will just establish a foundation for this website and see where it goes from there.</p>
+          <p>Long story short, I wanted to have a place where I can show people who I am and what I've been working on. I wanted to have a place where I can showcase my projects, my thoughts, and my experiences. I wanted to have a place where I can share my knowledge and learnings with others.</p>
+          <p>It's also to apply what I've learned from the <a href="https://learn.svelte.dev/tutorial/welcome-to-svelte">Svelte tutorial</a>. 🔥</p>
+          <p>As a junior developer, I'm still learning and growing. Since there's not that much I can share at this point, I'm just establishing a foundation for this website and see where it goes from here.</p>
         `
       },
       tech: {

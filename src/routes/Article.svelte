@@ -9,7 +9,7 @@
 </script>
 
 <div class:dark={dark}>
-  <div id={article.name} class="container highlighter">
+  <div id={article.name} class="container">
     <div class="main" class:side={side}>
       <div class:side={side}>
         <h1>{article.title}</h1>
@@ -27,6 +27,7 @@
 <style>
   .container {
     width: 100%;
+    transition: background-color 0.3s linear;
   }
 
   .dark {

@@ -11,7 +11,12 @@ const config = {
 		// adapter-auto only supports some environments, see https://kit.svelte.dev/docs/adapter-auto for a list.
 		// If your environment is not supported, or you settled on a specific environment, switch out the adapter.
 		// See https://kit.svelte.dev/docs/adapters for more information about adapters.
-		adapter: adapter()
+		adapter: adapter(),
+    // If your repo name is not equivalent to your-username.github.io, make sure to update config.kit.paths.base to match your repo name.
+    // This is because the site will be served from https://your-username.github.io/your-repo-name rather than from the root.
+    paths: {
+      base: process.argv.includes('dev') ? '' : process.env.BASE_PATH
+    }
 	}
 };
 

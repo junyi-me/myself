@@ -109,6 +109,3 @@ body.dark {
     background-color: var(--highlight);
 }
 
-.highlighter {
-    transition: background-color 0.3s linear;
-}

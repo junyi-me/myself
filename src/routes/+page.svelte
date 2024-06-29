@@ -45,9 +45,21 @@
 
 <!-- Footer -->
 <div class="footer">
-  <p>✉️ junyi.wang.007@gmail.com</p>
-  <p>📍 Denver, CO</p>
-  <p>© 2024 Junyi Wang</p>
+  <div>
+    <p>✉️ junyi.wang.007@gmail.com</p>
+    <p>📍 Denver, CO</p>
+    <p>© 2024 Junyi Wang</p>
+  </div>
+  <div>
+    <p>
+      <img src="images/github256.png" alt="github" />
+      <a href="https://github.com/jywang99">jywang99</a>
+    </p>
+    <p>
+      <img src="images/linkedin.webp" alt="linkedin" />
+      <a href="https://www.linkedin.com/in/junyi-wang-976a94199/">Junyi Wang</a>
+    </p>
+  </div>
 </div>
 
 <style>
@@ -61,7 +73,7 @@
     top: 0;
     left: 0;
     z-index: -1;
-    background: url('images/hhkb.jpg') no-repeat center;
+    background: url('/images/hhkb.jpg') no-repeat center;
     background-size:cover;
     width: 100%;
     display: table;
@@ -75,7 +87,7 @@
   .head h1 {
     display: inline-block;
     font-size: 5em;
-    font-family: 'Brush Script MT', cursive;
+    font-family: Copperplate, fantasy;
     color: var(--accent);
     text-align: left;
     display: table;
@@ -101,7 +113,22 @@
     background-color: var(--bg-2);
     color: var(--fg-1);
     padding: 2rem;
-    text-align: center;
+    display: flex;
+    justify-content: center;
   }
+
+  .footer div {
+    padding-left: 2rem;
+    padding-right: 2rem;
+  }
+
+  .footer div:not(:last-child) {
+    border-right: 2px solid var(--bg-3);
+  }
+
+  .footer img {
+    height: 1em;
+  }
+
 </style>
 
