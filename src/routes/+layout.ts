@@ -10,3 +10,4 @@ export const csr = true;
 // no effect when running in dev mode
 export const prerender = true;
 
+export const trailingSlash = "always";
