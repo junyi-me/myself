@@ -31,6 +31,11 @@
 
   .wrap {
     border: 1px solid var(--bg-3);
+    transition: box-shadow 0.2s linear;
+  }
+
+  .wrap:hover {
+    box-shadow: 0 0 10px 0 var(--fg-3);
   }
 </style>
 

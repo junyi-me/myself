@@ -17,11 +17,12 @@
 <div class="head-wrap">
   <Outline {articles} />
   <div class="head">
+  </div>
+  <div class="forehead">
     <div>
       <h1>Junyi Wang, <br />&nbsp&nbsp a software engineer</h1>
     </div>
   </div>
-  <div class="forehead" />
 </div>
 
 <!-- Articles -->
@@ -31,14 +32,14 @@
         <img src="images/hhkb_black.jpg" alt="hhkb_black" />
       </Article>
     </div>
-    <Article article={articles[1]} dark />
+    <Article article={articles[1]} />
     <Article article={articles[2]}>
       <TechSection />
     </Article>
-    <Article article={articles[3]} dark>
+    <Article article={articles[3]}>
       <CertsSection />
     </Article>
-    <Article article={articles[4]}>
+    <Article article={articles[4]} last>
       <ExperienceSection />
     </Article>
 </div>
@@ -76,15 +77,20 @@
     background: url('/images/hhkb.jpg') no-repeat center;
     background-size:cover;
     width: 100%;
-    display: table;
   }
 
-  .head div {
+  .forehead {
+    height: calc(var(--header-height) - var(--nav-height));
+    display: table;
+    width: 100%;
+  }
+
+  .forehead div {
     vertical-align: middle;
     display: table-cell;
   }
 
-  .head h1 {
+  .forehead h1 {
     display: inline-block;
     font-size: 5em;
     font-family: Copperplate, fantasy;
@@ -92,10 +98,6 @@
     text-align: left;
     display: table;
     margin: 0 auto;
-  }
-
-  .forehead {
-    height: var(--header-height);
   }
 
   .content {

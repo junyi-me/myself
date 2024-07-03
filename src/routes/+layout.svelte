@@ -9,16 +9,12 @@
 
 <style>
   nav {
-    position: absolute;
-    top: 0;
-    left: 0;
     width: 100%;
     background-color: var(--bg-2);
     border-bottom: 2px solid var(--fg-3);
-    padding-top: 1.5em;
-    padding-bottom: 1.5em;
     display: flex;
     justify-content: center;
+    height: var(--nav-height);
   }
 
   ul {
@@ -32,6 +28,8 @@
     list-style-type: none;
     padding-right: 1em;
     padding-left: 1em;
+    display: flex;
+    align-items: center;
   }
 
   a {

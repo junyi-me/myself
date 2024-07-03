@@ -66,6 +66,14 @@
 </tr>
 
 <style>
+  tr {
+    transition: box-shadow 0.2s linear;
+  }
+
+  tr:hover {
+    box-shadow: 0 0 10px 0 var(--fg-3);
+  }
+
   tr:not(:last-child) {
     border-bottom: 1px solid var(--bg-3);
   }
