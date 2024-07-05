@@ -8,7 +8,7 @@ type TranslationType = {
 export default {
   en: {
     home: {
-      name: "Junyi Wang",
+      headline: "Junyi Wang, <br />&nbsp&nbsp a software engineer",
       intro: {
         title: "Hi,",
         content: `

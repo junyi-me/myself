@@ -1,11 +1,11 @@
 <script lang="ts">
   import Article from './Article.svelte';
-  import Outline from './Outline.svelte';
   import { t } from '$lib/i18n';
   import type { ArticleType } from '$lib/types';
   import TechSection from './TechSection.svelte';
   import ExperienceSection from './ExperienceSection.svelte';
   import CertsSection from './CertsSection.svelte';
+  import Header from './Header.svelte';
 
   const articleKeys = ['intro', 'why', 'tech', 'certs', 'exp'];
   const articles: ArticleType[] = articleKeys.map(key => {
@@ -13,17 +13,7 @@
   });
 </script>
 
-<!-- Header -->
-<div class="head-wrap">
-  <Outline {articles} />
-  <div class="head">
-  </div>
-  <div class="forehead">
-    <div>
-      <h1>Junyi Wang, <br />&nbsp&nbsp a software engineer</h1>
-    </div>
-  </div>
-</div>
+<Header {articles} />
 
 <!-- Articles -->
 <div class="content">
@@ -64,42 +54,6 @@
 </div>
 
 <style>
-  .head-wrap {
-    --header-height: 500px;
-  }
-
-  .head {
-    height: var(--header-height);
-    position: fixed;
-    top: 0;
-    left: 0;
-    z-index: -1;
-    background: url('/images/hhkb.jpg') no-repeat center;
-    background-size:cover;
-    width: 100%;
-  }
-
-  .forehead {
-    height: calc(var(--header-height) - var(--nav-height));
-    display: table;
-    width: 100%;
-  }
-
-  .forehead div {
-    vertical-align: middle;
-    display: table-cell;
-  }
-
-  .forehead h1 {
-    display: inline-block;
-    font-size: 5em;
-    font-family: Copperplate, fantasy;
-    color: var(--accent);
-    text-align: left;
-    display: table;
-    margin: 0 auto;
-  }
-
   .content {
     background-color: var(--bg-1);
     padding: 3em 0;
