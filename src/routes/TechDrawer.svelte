@@ -42,7 +42,7 @@
                         </div>
                       </a>
                       &nbsp-&nbsp
-                      <span>{$t(`tech.projects.${proj.key}.description`)}</span>
+                      <span>{$t(`tech.projects.${proj.key}.headline`)}</span>
                     </div>
                   {/each}
                 </div>

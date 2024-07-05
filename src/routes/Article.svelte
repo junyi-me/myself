@@ -9,7 +9,7 @@
 </script>
 
 <div class="container" class:last={last}>
-  <div id={article.name} class="main" class:side={side}>
+  <div id={article.name} class="main hovee" class:side={side}>
     <div class:side={side}>
       <h1>{article.title}</h1>
       {@html article.content}
@@ -39,10 +39,6 @@
     flex-direction: column;
     gap: var(--content-margin);
     transition: box-shadow 0.2s linear, background-color 0.3s linear;
-  }
-
-  .main:hover {
-    box-shadow: 0 0 10px 0 var(--fg-3);
   }
 
   .main.side {

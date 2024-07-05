@@ -108,5 +108,10 @@ body.dark {
 
 .highlight {
     background-color: var(--highlight);
+    box-shadow: 0 0 10px 0 var(--fg-3);
+}
+
+.hovee:hover {
+    box-shadow: 0 0 10px 0 var(--fg-3);
 }
 

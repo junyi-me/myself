@@ -39,12 +39,18 @@ export default {
           <p>Here are the certifications I have obtained so far.</p>
           `
       },
+      projects: {
+        title: "Personal projects",
+        content: `
+          <p>From time to time, I work on some personal projects. Here are some of them.</p>
+          `
+      },
       exp: {
-        title: "Experience",
+        title: "Work experience",
         content: `
           <p>I graduated from <a href="https://www.bc.edu/">Boston College</a> in summer 2022, majoring in computer science and minoring in mathematics. Since then, I have been working as a full-time software engineer. My first work experience started when I was still in college, as a part time job at ApolloEye, an early stage startup in renewable energy industry. I learned a lot about how to develop from scratch, maintain, and implementing new features. I'm still doing part-time here (remotely).</p>
           <p>After graduation, my first full-time job was at Prussian Inc, another startup company in the financial psychology area. Here I worked on a serverless full-stack application, and completed some AWS certifications in the meanwhile. Good times working with a small but capable team.</p>
-          <p>Just a few months later, with a little help from my friend, I got into Nagrastar LLC, where I'm currently working at. It was a completely different experience from the previous two positions I had, maintaining source code in corporate standards, and building new features that customers request. Having experience in both startup companies and established corporates became one of my strengths, if I do say so myself.</p>
+          <p>Just a few months later, with some help from my friend, I got into Nagrastar LLC, where I'm currently working at. It was a completely different experience from the previous two positions I had, maintaining source code in corporate standards, and building new features that customers request. Having experience in both startup companies and established corporates became one of my strengths, if I do say so myself.</p>
           `
       },
     },
@@ -114,19 +120,30 @@ export default {
       projects: {
         title: "Projects",
         this_website: {
-          description: "The website you are currently viewing.",
+          headline: "The website you are currently viewing.",
         },
         cs_go: {
-          description: "Computer science algorithms and data structures implemented in Go.",
+          headline: "Computer science algorithms and data structures implemented in Go.",
         },
         leetcode: {
-          description: "Leetcode problems solved in Go.",
+          headline: "Leetcode problems solved in Go.",
         },
         neovim: {
-          description: "My Neovim config.",
+          headline: "My Neovim config.",
         },
         business_card: {
-          description: "A simple website I coded to get familiar with AWS and React.",
+          headline: "A simple website I coded to get familiar with AWS and React.",
+        },
+        thumbgen: {
+          headline: "A commandline tool to generate thumbnails for videos.",
+          description: `
+            <p>Features</p>
+            <ul>
+              <li>Generate thumbnails for individual videos</li>
+              <li>Generate thumbnails for directories containing videos and/or images</li>
+              <li>Organize the generated thumbnails in the same directory structure as the original input source folder</li>
+            </ul>
+          `
         },
       },
       sub: {

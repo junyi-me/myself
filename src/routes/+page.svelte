@@ -7,7 +7,7 @@
   import CertsSection from './CertsSection.svelte';
   import Header from './Header.svelte';
 
-  const articleKeys = ['intro', 'why', 'tech', 'certs', 'exp'];
+  const articleKeys = ['intro', 'why', 'tech', 'projects', 'certs', 'exp'];
   const articles: ArticleType[] = articleKeys.map(key => {
     return { name: key, title: $t(`home.${key}.title`), content: $t(`home.${key}.content`) };
   });
@@ -23,13 +23,15 @@
       </Article>
     </div>
     <Article article={articles[1]} />
-    <Article article={articles[2]}>
+    <Article article={articles[2]} >
       <TechSection />
     </Article>
     <Article article={articles[3]}>
+    </Article>
+    <Article article={articles[4]}>
       <CertsSection />
     </Article>
-    <Article article={articles[4]} last>
+    <Article article={articles[5]} last>
       <ExperienceSection />
     </Article>
 </div>

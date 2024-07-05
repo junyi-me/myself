@@ -33,7 +33,7 @@
   } as ExperienceType;
 </script>
 
-<tr>
+<tr class="hovee">
   <td class="title">
     <h3>{exp.title}</h3>
     <p>{$t('exp.positions.at')} {exp.company}</p>
@@ -68,10 +68,6 @@
 <style>
   tr {
     transition: box-shadow 0.2s linear;
-  }
-
-  tr:hover {
-    box-shadow: 0 0 10px 0 var(--fg-3);
   }
 
   tr:not(:last-child) {
