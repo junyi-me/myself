@@ -9,8 +9,6 @@ RUN npm prune --production
 FROM node:22
 WORKDIR /app
 COPY --from=builder /app/build build/
-COPY --from=builder /app/node_modules node_modules/
-COPY package.json .
-ENV NODE_ENV=production
-CMD [ "node", "build" ]
+RUN npm install -g serve
+CMD ["serve", "-s", "build", "-l", "3000"]
 
