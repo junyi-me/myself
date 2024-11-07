@@ -4,6 +4,10 @@
 </script>
 
 <div class="container">
+  <!-- Linux+ -->
+  <div class="wrap hovee">
+    <div data-iframe-width={width} data-iframe-height={height} data-share-badge-id="8adb6159-a664-4fb9-be3b-f1a2afd5e2fd" data-share-badge-host="https://www.credly.com"></div><script type="text/javascript" async src="//cdn.credly.com/assets/utilities/embed.js"></script>
+  </div>
   <!-- SysOps Admin Associate -->
   <div class="wrap hovee">
     <div data-iframe-width={width} data-iframe-height={height} data-share-badge-id="0b3f67f8-d1c1-4d3a-b314-fbdf5442bb0b" data-share-badge-host="https://www.credly.com"></div><script type="text/javascript" async src="//cdn.credly.com/assets/utilities/embed.js"></script>
