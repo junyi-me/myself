@@ -8,7 +8,7 @@
     <tbody>
       <td rowspan="100" class="timeline"></td>
       {#each experience as exp}
-        <Experience expKey={exp} />
+        <Experience {exp} />
       {/each}
     </tbody>
   </table>

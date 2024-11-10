@@ -152,87 +152,83 @@ export default {
       },
     },
     exp: {
-      positions: {
-        at: "at",
-        apolloeye: {
-          name: "ApolloEye",
-          company: "ApolloEye",
-          title: "Software Engineer",
-          description: "Ene-eco Shift LLC is a company providing better solutions for monitoring solar-power plant operation. Ene-eco Shift uses self-developed software to provide real-time supervision of the power plant operations and sends personalized alerts on a daily basis to plant owners if there are malfunctions detected. Following are projects I worked / am working on:",
-        },
-        prussian: {
-          name: "Prussian",
-          company: "Prussian Inc",
-          title: "SaaS Software Engineer",
-          description: "Prussian Inc. is a startup financial technology company, providing Active Hedging, Monetization & Intelligence services to corporations and investment firms, by their enterprise grade Hedging-as-a-Service (HaaS) Suite. Objective of Prussian Inc. is to redefine “hedging”, and reinvent the procedure of hedging. Following are projects I worked on:",
-        },
-        nagrastar: {
-          name: "Nagrastar",
-          company: "Nagrastar LLC",
-          title: "Junior Software Engineer",
-          description: "NagraStar LLC is a company providing security and automation solutions for the satellite TV industry, including Echostar and Bell TV. NagraStar is a joint venture of EchoStar and the Kudelski Group. Following are projects I worked on:",
-        },
+      at: "at",
+      apolloeye: {
+        name: "ApolloEye",
+        company: "ApolloEye",
+        title: "Software Engineer",
+        description: "Ene-eco Shift LLC is a company providing better solutions for monitoring solar-power plant operation. Ene-eco Shift uses self-developed software to provide real-time supervision of the power plant operations and sends personalized alerts on a daily basis to plant owners if there are malfunctions detected. Following are projects I worked / am working on:",
+          logrpa: {
+            title: "Web Scraping",
+            description: `
+            <li>Develop a web scraping program in Java using Selenium to collect electric power data from multiple managing companies and save in an internal database</li>
+            <li>Modify and maintain the program when the target website structure changes.</li>
+            <li>Write unit tests for the program using JUnit and Mockito</li>
+              `,
+          },
+          aeweb: {
+            title: "Website Development",
+            description: `
+            <li>Develop and maintain a customer-facing website (both front-end and back-end) using SpringBoot MVC and Thymeleaf to visualize the historical record of generated solar power</li>
+            <li>Implemented a feature that allows the user to download the scraped data as a CSV file</li>
+            <li>Write unit tests for the program using JUnit and Mockito</li>
+              `,
+          },
+          aemonitor: {
+            title: "Healthcheck Programs",
+            description: `
+            <li>Develop a healthcheck program in Java using SpringBoot and Selenium to monitor the status of the web scraping program</li>
+            <li>Use cron jobs to schedule the healthcheck program to run periodically</li>
+            <li>Deploy the program to AWS EC2 using Docker</li>
+            `,
+          },
       },
-      projects: {
-        logrpa: {
-          title: "Web Scraping",
-          bullets: [
-            "<li>Develop a web scraping program in Java using Selenium to collect electric power data from multiple managing companies and save in an internal database</li>",
-            "<li>Modify and maintain the program when the target website structure changes.</li>",
-            "<li>Write unit tests for the program using JUnit and Mockito</li>",
-          ],
-        },
-        aeweb: {
-          title: "Website Development",
-          bullets: [
-            "<li>Develop and maintain a customer-facing website (both front-end and back-end) using SpringBoot MVC and Thymeleaf to visualize the historical record of generated solar power</li>",
-            "<li>Implemented a feature that allows the user to download the scraped data as a CSV file</li>",
-            "<li>Write unit tests for the program using JUnit and Mockito</li>",
-          ],
-        },
-        aemonitor: {
-          title: "Healthcheck Programs",
-          bullets: [
-            "<li>Develop a healthcheck program in Java using SpringBoot and Selenium to monitor the status of the web scraping program</li>",
-            "<li>Use cron jobs to schedule the healthcheck program to run periodically</li>",
-            "<li>Deploy the program to AWS EC2 using Docker</li>",
-          ],
-        },
+      prussian: {
+        name: "Prussian",
+        company: "Prussian Inc",
+        title: "SaaS Software Engineer",
+        description: "Prussian Inc. is a startup financial technology company, providing Active Hedging, Monetization & Intelligence services to corporations and investment firms, by their enterprise grade Hedging-as-a-Service (HaaS) Suite. Objective of Prussian Inc. is to redefine “hedging”, and reinvent the procedure of hedging. Following are projects I worked on:",
         prussian: {
           title: "Serverless full-stack Development",
-          bullets: [
-            "<li>Develop a serverless full-stack application using AWS Lambda, API Gateway, DynamoDB, and S3</li>",
-            "<li>Implement authentication using AWS Cognito</li>",
-            "<li>Develop a client-facing webpage using React</li>",
-          ],
+          description: `
+            <li>Develop a serverless full-stack application using AWS Lambda, API Gateway, DynamoDB, and S3</li>
+            <li>Implement authentication using AWS Cognito</li>
+            <li>Develop a client-facing webpage using React</li>
+          `,
         },
         tinky: {
           title: "Mobile app development",
-          bullets: [
-            "<li>Develop a customer-facing mobile app for iOS/Android using React Native</li>",
-            "<li>Develop the backend using AWS Lambda, API Gateway, and DynamoDB</li>",
-          ],
+          description: `
+            <li>Develop a customer-facing mobile app for iOS/Android using React Native</li>
+            <li>Develop the backend using AWS Lambda, API Gateway, and DynamoDB</li>
+          `,
         },
+      },
+      nagrastar: {
+        name: "Nagrastar",
+        company: "Nagrastar LLC",
+        title: "Junior Software Engineer",
+        description: "NagraStar LLC is a company providing security and automation solutions for the satellite TV industry, including Echostar and Bell TV. NagraStar is a joint venture of EchoStar and the Kudelski Group. Following are projects I worked on:",
         ns_manager: {
           title: "Managing docker containers on GUI",
-          bullets: [
-            "<li>Develop a webpage where users can manage deployed docker containers easily on GUI</li>",
-            "<li>Support start/stop docker containers and changing configuration parameters on the fly</li>",
-          ],
+          description: `
+            <li>Develop a webpage where users can manage deployed docker containers easily on GUI</li>
+            <li>Support start/stop docker containers and changing configuration parameters on the fly</li>
+          `,
         },
         ns_events: {
           title: "Validate and import data",
-          bullets: [
-            "<li>Deploy decoupled applications with load balancing using Kubernetes</li>",
-            "<li>Develop web application for users to see validation erros and import progress</li>",
-            "<li>Develop backend program that validates and inserts data into a database</li>",
-          ],
+          description: `
+            <li>Deploy decoupled applications with load balancing using Kubernetes</li>
+            <li>Develop web application for users to see validation erros and import progress</li>
+            <li>Develop backend program that validates and inserts data into a database</li>
+          `,
         },
         ns_publish: {
           title: "Scramble and send data to customers",
-          bullets: [
-            "<li>Develop a web application to track the progress of scrambling and publishing</li>",
-          ],
+          description: `
+            <li>Develop a web application to track the progress of scrambling and publishing</li>
+          `,
         },
       },
     }

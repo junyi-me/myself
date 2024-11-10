@@ -1,8 +1,9 @@
-import type { TechType } from "./types";
+import type { TechType } from "../types";
 
-export const techs = {
+export const techs: { [key: string]: TechType } = {
   svelte: {
     key: "svelte",
+    txDescription: "tech.svelte.description",
     name: "Svelte",
     link: "https://svelte.dev/",
     img: "images/svelte256.png",
@@ -17,6 +18,7 @@ export const techs = {
   },
   react: {
     key: "react",
+    txDescription: "tech.react.description",
     name: "React",
     link: "https://react.dev/",
     img: "images/react128.png",
@@ -45,6 +47,7 @@ export const techs = {
   },
   html_css_js: {
     key: "html_css_js",
+    txDescription: "tech.html_css_js.description",
     name: "HTML/CSS/JS",
     link: "https://developer.mozilla.org/en-US/docs/Web/HTML",
     img: "images/html_css_js256.png",
@@ -77,6 +80,7 @@ export const techs = {
   },
   golang: {
     key: "golang",
+    txDescription: "tech.golang.description",
     name: "Go",
     link: "https://go.dev/",
     img: "images/go256.png",
@@ -117,6 +121,7 @@ export const techs = {
   },
   java: {
     key: "java",
+    txDescription: "tech.java.description",
     name: "Java",
     link: "https://www.java.com/",
     img: "images/java256.png",
@@ -155,6 +160,7 @@ export const techs = {
   },
   python: {
     key: "python",
+    txDescription: "tech.python.description",
     name: "Python",
     link: "https://www.python.org/",
   img: "images/python256.png",
@@ -181,6 +187,7 @@ export const techs = {
   },
   csharp: {
     key: "csharp",
+    txDescription: "tech.csharp.description",
     name: "C#",
     link: "https://dotnet.microsoft.com/languages/csharp",
     img: "images/csharp256.png",
@@ -195,6 +202,7 @@ export const techs = {
   },
   cpp: {
     key: "cpp",
+    txDescription: "tech.cpp.description",
     name: "C++",
     link: "https://cplusplus.com/",
     img: "images/cpp256.png",
@@ -209,18 +217,21 @@ export const techs = {
   },
   mysql: {
     key: "mysql",
+    txDescription: "tech.mysql.description",
     name: "MySQL",
     link: "https://www.mysql.com/",
     img: "images/mysql256.png",
   },
   dynamodb: {
     key: "dynamodb",
+    txDescription: "tech.dynamodb.description",
     name: "DynamoDB",
     link: "https://aws.amazon.com/dynamodb/",
     img: "images/dynamodb256.png",
   },
   docker: {
     key: "docker",
+    txDescription: "tech.docker.description",
     name: "Docker",
     link: "https://www.docker.com/",
     img: "images/docker256.png",
@@ -235,12 +246,14 @@ export const techs = {
   },
   kubernetes: {
     key: "kubernetes",
+    txDescription: "tech.kubernetes.description",
     name: "Kubernetes",
     link: "https://kubernetes.io/",
     img: "images/kubernetes256.png",
   },
   aws: {
     key: "aws",
+    txDescription: "tech.aws.description",
     name: "Amazon Web Services",
     link: "https://aws.amazon.com/",
     img: "images/aws256.png",
@@ -323,6 +336,7 @@ export const techs = {
   },
   gcp: {
     key: "gcp",
+    txDescription: "tech.gcp.description",
     name: "Google Cloud Platform",
     link: "https://cloud.google.com/",
     img: "images/gcp256.png",
@@ -343,6 +357,7 @@ export const techs = {
   },
   linux: {
     key: "linux",
+    txDescription: "tech.linux.description",
     name: "Linux",
     link: "https://archlinux.org/",
     img: "images/linux256.png",
@@ -363,6 +378,7 @@ export const techs = {
   },
   bash: {
     key: "bash",
+    txDescription: "tech.bash.description",
     name: "Bash",
     link: "https://www.gnu.org/software/bash/",
     img: "images/bash.svg",
@@ -395,6 +411,7 @@ export const techs = {
   },
   lua: {
     key: "lua",
+    txDescription: "tech.lua.description",
     name: "Lua",
     link: "https://lua.org/",
     img: "images/lua256.png",
@@ -409,6 +426,7 @@ export const techs = {
   },
   neovim: {
     key: "neovim",
+    txDescription: "tech.neovim.description",
     name: "Neovim",
     link: "https://neovim.io/",
     img: "images/neovim256.png",
@@ -423,6 +441,7 @@ export const techs = {
   },
   selenium: {
     key: "selenium",
+    txDescription: "tech.selenium.description",
     name: "Selenium",
     link: "https://www.selenium.dev/",
     img: "images/selenium256.png",
@@ -441,7 +460,8 @@ export const techs = {
       },
     ],
   },
-} as { [key: string]: TechType };
+};
+export type TechKeyType = keyof typeof techs;
 
 export default {
   frontend: [

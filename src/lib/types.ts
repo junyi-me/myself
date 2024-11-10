@@ -1,15 +1,19 @@
+import type { TechKeyType } from "./data/techs";
+
 export type ArticleType = {
   txTitle: string;
   txContent: string;
 }
 
 type SubTechType = {
-  key: string;
+  key: string
   name: string;
   link: string;
   img: string;
 }
+
 export type TechType = SubTechType & {
+  txDescription: string;
   projects?: {
     key: string;
     name: string;
@@ -19,31 +23,22 @@ export type TechType = SubTechType & {
   sub?: SubTechType[];
 }
 
-export type ProjectKeyType = {
-  txKey: string;
-  techKeys: {
-    key: string,
-    sub?: string[]
+export type ProjectType = {
+  txTitle: string;
+  txDescription: string;
+  techs: {
+    key: TechKeyType,
+    sub?: SubTechType[]
   }[];
 }
-export type ExperienceKeyType = {
-  txKey: string;
-  startDate: string;
-  endDate?: string;
-  projects: ProjectKeyType[];
-}
 
-export type ProjectType = {
-  title: string;
-  bullets: string[];
-  techs: TechType[];
-}
 export type ExperienceType = {
+  txHead: string;
+  txCompany: string;
+  txTitle: string;
+  txDescription: string;
   startDate: string;
   endDate?: string;
-  title: string;
-  company: string;
-  description: string;
   projects: ProjectType[];
 }
 

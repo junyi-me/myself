@@ -8,7 +8,7 @@
 
 {#key tech.name}
   <div class="container" in:fade>
-    {@html $t(`tech.${tech.key}.description`)}
+    {@html $t(tech.txDescription)}
       <table cellspacing="0" cellpadding="0">
         <tbody>
           {#if tech.sub}
