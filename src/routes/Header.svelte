@@ -1,13 +1,8 @@
 <script lang="ts">
-  import Outline from "./Outline.svelte";
-  import type { ArticleType } from '$lib/types';
   import { t } from '$lib/i18n';
-
-  export let articles: ArticleType[];
 </script>
 
 <div class="head-wrap">
-  <Outline {articles} />
   <div class="head">
     <div>
       <h1>{@html $t("home.headline")}</h1>

@@ -1,4 +1,4 @@
-import type { ExperienceKeyType } from "./types";
+import type { ExperienceKeyType } from '../types';
 
 export default [
   {

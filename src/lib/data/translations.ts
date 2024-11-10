@@ -43,7 +43,8 @@ export default {
         title: "Personal projects",
         content: `
           <p>From time to time, I work on some personal projects. Here are some of them.</p>
-          `
+          `,
+        k3s: "Building a Kubernetes cluster at home (hosting this website)",
       },
       exp: {
         title: "Work experience",

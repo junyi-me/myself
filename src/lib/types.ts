@@ -1,7 +1,6 @@
 export type ArticleType = {
-  name: string;
-  title: string;
-  content: string;
+  txTitle: string;
+  txContent: string;
 }
 
 type SubTechType = {

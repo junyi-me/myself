@@ -1,18 +1,22 @@
 <script lang="ts">
-  import type { ArticleType } from "$lib/types";
+  import { t } from '$lib/i18n';
+  import type { ArticleKeyType } from "$lib/data/articles";
+  import { articles } from '$lib/data/articles';
 
-  export let article: ArticleType;
+  export let key: ArticleKeyType;
   export let side = false;
   export let last = false;
+
+  const article = articles[key];
 
   const SLOTS = $$props.$$slots
 </script>
 
 <div class="container" class:last={last}>
-  <div id={article.name} class="main hovee" class:side={side}>
+  <div id={key} class="article main hovee" class:side={side}>
     <div class:side={side}>
-      <h1>{article.title}</h1>
-      {@html article.content}
+      <h1>{$t(article.txTitle)}</h1>
+      {@html $t(article.txContent)}
     </div>
     {#if SLOTS}
       <div class:side={side}>
@@ -50,7 +54,7 @@
   }
 
   h1 {
-    color: var(--fg-2);
+    color: var(--accent);
   }
 </style>
 

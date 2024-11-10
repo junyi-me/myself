@@ -7,7 +7,7 @@ body {
     --fg-2: hsl(0, 0%, 20%);
     --fg-3: hsl(0, 0%, 30%);
     --highlight: #ffffcc;
-    --accent: #f73c00;
+    --accent: #E2211C;
     --link: hsl(208, 77%, 47%);
     --link-hover: hsl(208, 77%, 55%);
     --link-active: hsl(208, 77%, 40%);
@@ -24,7 +24,7 @@ body {
     --content-margin: 1rem;
     --content-padding: 1rem;
     --article-padding: 2rem;
-    --nav-height: 4.5rem;
+    --nav-height: 3rem;
 }
 
 h1,

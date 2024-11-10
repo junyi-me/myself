@@ -1,37 +1,32 @@
 <script lang="ts">
   import Article from './Article.svelte';
-  import { t } from '$lib/i18n';
-  import type { ArticleType } from '$lib/types';
   import TechSection from './TechSection.svelte';
   import ExperienceSection from './ExperienceSection.svelte';
   import CertsSection from './CertsSection.svelte';
   import Header from './Header.svelte';
-
-  const articleKeys = ['intro', 'why', 'tech', 'projects', 'certs', 'exp'];
-  const articles: ArticleType[] = articleKeys.map(key => {
-    return { name: key, title: $t(`home.${key}.title`), content: $t(`home.${key}.content`) };
-  });
+  import Projects from './Projects.svelte';
 </script>
 
-<Header {articles} />
+<Header />
 
 <!-- Articles -->
 <div class="content">
     <div class="intro-block">
-      <Article article={articles[0]} side>
+      <Article key='intro' side>
         <img src="images/hhkb_black.jpg" alt="hhkb_black" />
       </Article>
     </div>
-    <Article article={articles[1]} />
-    <Article article={articles[2]} >
+    <Article key='why' />
+    <Article key='tech' >
       <TechSection />
     </Article>
-    <Article article={articles[3]}>
+    <Article key='projects'>
+      <Projects />
     </Article>
-    <Article article={articles[4]}>
+    <Article key='certs'>
       <CertsSection />
     </Article>
-    <Article article={articles[5]} last>
+    <Article key='exp' last>
       <ExperienceSection />
     </Article>
 </div>

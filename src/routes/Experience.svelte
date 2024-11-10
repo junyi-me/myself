@@ -1,6 +1,6 @@
 <script lang="ts">
-  import type { ExperienceKeyType, ExperienceType } from '$lib/types';
-  import { techs } from '$lib/techs';
+  import type { ExperienceKeyType, ExperienceType, TechType } from '$lib/types';
+  import { techs } from '$lib/data/techs';
   import { t } from '$lib/i18n';
   import { handleAnchorClick } from '$lib/interact';
 
@@ -26,7 +26,7 @@
           }
           return {
             ...tech,
-            sub: tech.sub.filter(sub => techKey.sub!.includes(sub.key)),
+            sub: tech.sub.filter((sub: TechType) => techKey.sub!.includes(sub.key)),
           };
         }),
     })),

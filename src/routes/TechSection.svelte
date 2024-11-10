@@ -1,6 +1,6 @@
 <script>
   import TechRow from "./TechRow.svelte";
-  import techs from "$lib/techs";
+  import techs from "$lib/data/techs";
 
   const techCats = [
     { key: 'frontend', name: 'Frontend' },

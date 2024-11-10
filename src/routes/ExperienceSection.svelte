@@ -1,5 +1,5 @@
 <script>
-  import experience from "$lib/experience";
+  import experience from "$lib/data/experience";
   import Experience from "./Experience.svelte";
 </script>
 
