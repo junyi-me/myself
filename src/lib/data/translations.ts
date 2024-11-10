@@ -87,8 +87,14 @@ export default {
       mysql: {
         description: `<p>I've been using <code>MySQL</code> throughout my time at ApolloEye. At my current job, I've gotten also some experience with <code>Oracle DB</code> and <code>PostgreSQL</code>.</p>`,
       },
+      postgres: {
+        description: `<p>Recently I have been using <code>PostgreSQL</code> a lot in my personal projects.</p>`,
+      },
       dynamodb: {
         description: `<p>I first learned about this in Prussian. Although learning to think in the NoSQL way was hard, I ended up designing and implementing some schemas to be used in serverless stacks, and it wasn't as bad as I thought!</p>`,
+      },
+      github: {
+        description: `<p>Using <code>GitHub</code> since around 2017, but only recently got into learning <code>GitHub Actions</code>.</p>`,
       },
       docker: {
         description: `<p>After using it for quite some time at work, some time last year, I decided to sit down and learn thoroughly about <code>Docker</code>. I didn't regret a single bit doing that.</p>`,
@@ -158,30 +164,30 @@ export default {
         company: "ApolloEye",
         title: "Software Engineer",
         description: "Ene-eco Shift LLC is a company providing better solutions for monitoring solar-power plant operation. Ene-eco Shift uses self-developed software to provide real-time supervision of the power plant operations and sends personalized alerts on a daily basis to plant owners if there are malfunctions detected. Following are projects I worked / am working on:",
-          logrpa: {
-            title: "Web Scraping",
-            description: `
-            <li>Develop a web scraping program in Java using Selenium to collect electric power data from multiple managing companies and save in an internal database</li>
-            <li>Modify and maintain the program when the target website structure changes.</li>
-            <li>Write unit tests for the program using JUnit and Mockito</li>
-              `,
-          },
-          aeweb: {
-            title: "Website Development",
-            description: `
-            <li>Develop and maintain a customer-facing website (both front-end and back-end) using SpringBoot MVC and Thymeleaf to visualize the historical record of generated solar power</li>
-            <li>Implemented a feature that allows the user to download the scraped data as a CSV file</li>
-            <li>Write unit tests for the program using JUnit and Mockito</li>
-              `,
-          },
-          aemonitor: {
-            title: "Healthcheck Programs",
-            description: `
-            <li>Develop a healthcheck program in Java using SpringBoot and Selenium to monitor the status of the web scraping program</li>
-            <li>Use cron jobs to schedule the healthcheck program to run periodically</li>
-            <li>Deploy the program to AWS EC2 using Docker</li>
+        logrpa: {
+          title: "Web Scraping",
+          description: `
+          <li>Develop a web scraping program in Java using Selenium to collect electric power data from multiple managing companies and save in an internal database</li>
+          <li>Modify and maintain the program when the target website structure changes.</li>
+          <li>Write unit tests for the program using JUnit and Mockito</li>
             `,
-          },
+        },
+        aeweb: {
+          title: "Website Development",
+          description: `
+          <li>Develop and maintain a customer-facing website (both front-end and back-end) using SpringBoot MVC and Thymeleaf to visualize the historical record of generated solar power</li>
+          <li>Implemented a feature that allows the user to download the scraped data as a CSV file</li>
+          <li>Write unit tests for the program using JUnit and Mockito</li>
+            `,
+        },
+        aemonitor: {
+          title: "Healthcheck Programs",
+          description: `
+          <li>Develop a healthcheck program in Java using SpringBoot and Selenium to monitor the status of the web scraping program</li>
+          <li>Use cron jobs to schedule the healthcheck program to run periodically</li>
+          <li>Deploy the program to AWS EC2 using Docker</li>
+          `,
+        },
       },
       prussian: {
         name: "Prussian",

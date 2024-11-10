@@ -28,7 +28,7 @@ export type ProjectType = {
   txDescription: string;
   techs: {
     key: TechKeyType,
-    sub?: SubTechType[]
+    sub?: string[]
   }[];
 }
 

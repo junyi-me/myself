@@ -222,12 +222,34 @@ export const techs: { [key: string]: TechType } = {
     link: "https://www.mysql.com/",
     img: "images/mysql256.png",
   },
+  postgres: {
+    key: "mysql",
+    txDescription: "tech.postgres.description",
+    name: "PostgreSQL",
+    link: "https://www.postgresql.org/",
+    img: "images/postgres.png",
+  },
   dynamodb: {
     key: "dynamodb",
     txDescription: "tech.dynamodb.description",
     name: "DynamoDB",
     link: "https://aws.amazon.com/dynamodb/",
     img: "images/dynamodb256.png",
+  },
+  github: {
+    key: "github",
+    txDescription: "tech.github.description",
+    name: "GitHub",
+    link: "github.com",
+    img: "images/github256.png",
+    sub: [
+      {
+        key: "actions",
+        name: "GitHub Actions",
+        link: "https://github.com/features/actions",
+        img: "images/github256.png",
+      }
+    ],
   },
   docker: {
     key: "docker",
@@ -250,6 +272,20 @@ export const techs: { [key: string]: TechType } = {
     name: "Kubernetes",
     link: "https://kubernetes.io/",
     img: "images/kubernetes256.png",
+    sub: [
+      {
+        key: "k3s",
+        name: "k3s",
+        link: "https://k3s.io/",
+        img: "images/k3s.svg",
+      },
+      {
+        key: "helm",
+        name: "Helm",
+        link: "https://helm.sh/",
+        img: "images/helm.svg",
+      },
+    ]
   },
   aws: {
     key: "aws",
@@ -369,6 +405,12 @@ export const techs: { [key: string]: TechType } = {
         img: "images/arch256.png",
       },
       {
+        key: "debian",
+        name: "Debian",
+        link: "https://www.debian.org/",
+        img: "images/debian.svg",
+      },
+      {
         key: "ubuntu",
         name: "Ubuntu",
         link: "https://ubuntu.com/",
@@ -477,10 +519,12 @@ export default {
     techs.cpp,
   ],
   database: [
+    techs.postgres,
     techs.mysql,
     techs.dynamodb,
   ],
   ci_cd: [
+    techs.github,
     techs.docker,
     techs.kubernetes,
   ],

@@ -2,9 +2,21 @@
   import type { ExperienceType } from '$lib/types';
   import { t } from '$lib/i18n';
   import { handleAnchorClick } from '$lib/interact';
-  import { techs } from '$lib/data/techs';
+  import { techs, type TechKeyType } from '$lib/data/techs';
 
   export let exp: ExperienceType;
+
+  const findSubtech = (techKey: TechKeyType, subtechKey: string) => {
+    const tech = techs[techKey];
+    if (!tech.sub) {
+      throw new Error(`Subtech ${subtechKey} not found in tech ${techKey}`);
+    }
+    const sub = tech.sub.find(sub => sub.key === subtechKey);
+    if (!sub) {
+      throw new Error(`Subtech ${subtechKey} not found in tech ${techKey}`);
+    }
+    return sub;
+  }
 </script>
 
 <tr class="hovee">
@@ -18,7 +30,7 @@
     {#each exp.projects as proj}
       <h3>{$t(proj.txTitle)}</h3>
       <ul>
-        {@html proj.txDescription}
+        {@html $t(proj.txDescription)}
       </ul>
       <div class="tech">
         {#each proj.techs as tech}
@@ -27,7 +39,7 @@
             <span>{techs[tech.key].name}</span>
             {#if tech.sub && tech.sub.length > 0}
               <span >&nbsp;(</span>
-              <span style="margin-right: .5em">{tech.sub.map(s => s.name).join(", ")}</span>
+              <span style="margin-right: .5em">{tech.sub.map(s => findSubtech(tech.key, s).name).join(", ")}</span>
               <span style="margin-left: -.5em">)</span>
             {/if}
           </a>
