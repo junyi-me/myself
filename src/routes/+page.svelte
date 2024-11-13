@@ -9,26 +9,29 @@
 
 <Header />
 
+<svelte:head>
+  <title>Junyi Wang</title> 
+</svelte:head>
+
 <!-- Articles -->
 <div class="content">
-    <div class="intro-block">
-      <Article key='intro' side>
-        <img src="images/hhkb_black.jpg" alt="hhkb_black" />
-      </Article>
-    </div>
-    <Article key='why' />
-    <Article key='tech' >
-      <TechSection />
+  <div class="intro-block">
+    <Article key='intro' side>
+      <img src="images/hhkb_black.jpg" alt="hhkb_black" />
     </Article>
-    <Article key='projects'>
-      <Projects />
-    </Article>
-    <Article key='certs'>
-      <CertsSection />
-    </Article>
-    <Article key='exp' last>
-      <ExperienceSection />
-    </Article>
+  </div>
+  <Article key='tech' >
+    <TechSection />
+  </Article>
+  <Article key='certs'>
+    <CertsSection />
+  </Article>
+  <Article key='projects'>
+    <Projects />
+  </Article>
+  <Article key='exp' last>
+    <ExperienceSection />
+  </Article>
 </div>
 
 <!-- Footer -->

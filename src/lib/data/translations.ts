@@ -12,39 +12,24 @@ export default {
       intro: {
         title: "Hi,",
         content: `
-          <p>Thanks for stopping by. My name is Junyi Wang and I'm working as a full-time software developer in Devner, CO.</p>
-          <p>My native language is Japanese, and I'm fluent in English and Chinese as well (feel free to switch to any of these languages from the language dropdown).</p>
-          <p>I use <code>vim (Neovim)</code> and <code>Arch (WSL2)</code> btw. And yes, I do have two of them. I love <a href="https://happyhackingkb.com/jp/">HHKB</a> (both Hybrid Type-S). Ever since I got my first one and started using vim, there was no turning back.</p>
+          <p>Welcome to my personal website. My name is Junyi Wang and I'm working as a full-time software developer in Devner, CO.</p>
+          <p>My primary areas of interest are web development and self-hosting. The website you are seeing right now is hosted on a <a href="https://blog.junyi.me/post/hosting-website-k3s-cluster/">bare-metal kubernetes cluster</a> (and the blog itself), and I'm planning to host more web services as well in the future.</p>
+          <p>By the way, I use <code>vim (Neovim)</code> and <code>Arch</code>. If you are interested, my dot files are all on my <a href="https://github.com/jywang99/linux_config">GitHub</a>.</p>
+          <p>The keyboards: <a href="https://happyhackingkb.com/jp/">HHKB</a> (both Hybrid Type-S), recommended.</p>
           `,
-      },
-      why: {
-        title: "Why did I make this website?",
-        content: `
-          <p>Long story short, I wanted to have a place where I can show people who I am and what I've been working on. I wanted to have a place where I can showcase my projects, my thoughts, and my experiences. I wanted to have a place where I can share my knowledge and learnings with others.</p>
-          <p>It's also to apply what I've learned from the <a href="https://learn.svelte.dev/tutorial/welcome-to-svelte">Svelte tutorial</a>. 🔥</p>
-          <p>As a junior developer, I'm still learning and growing. Since there's not that much I can share at this point, I'm just establishing a foundation for this website and see where it goes from here.</p>
-        `
       },
       tech: {
         title: "Skills",
-        content: `
-          <p>I mostly work as a backend developer, but I occasionally do frontend work too. Here is a summary of my skillset.</p>
-          <p>My career of software engineering staretd with developing web scraping program in <code>Java</code>, using <code>SpringBoot</code> and <code>Selenium</code>. From there my interest mainly grew towards full-stack web development. My current favorite are <code>Go</code> and <code>Svelte</code> (which I'm using to build this website).</p>
-          <p>Items can be expanded by clicking on them.</p>
-          `
+        content: ``,
       },
       certs: {
         title: "Certifications",
-        content: `
-          <p>Here are the certifications I have obtained so far.</p>
-          `
+        content: ``
       },
       projects: {
-        title: "Personal projects",
-        content: `
-          <p>From time to time, I work on some personal projects. Here are some of them.</p>
-          `,
-        k3s: "Building a Kubernetes cluster at home (hosting this website)",
+        title: "Projects",
+        content: `<p>From time to time, I work on some personal projects. Here are some of them.</p>`,
+        k3s: "Hosting an HTTPS website on a HA k3s cluster",
       },
       exp: {
         title: "Work experience",

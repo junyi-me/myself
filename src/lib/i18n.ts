@@ -22,7 +22,7 @@ function translate(locale: LanguageType, key: string, vars: ReplaceVars) {
     text = text[keys[i]];
   }
 
-  if (!text) throw new Error(`no translation found for ${locale}.${key}`);
+  if (text == null) throw new Error(`no translation found for ${locale}.${key}`);
 
   // Replace any passed in variables in the translation string.
   Object.keys(vars).map((k) => {
