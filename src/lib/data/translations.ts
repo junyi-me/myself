@@ -9,10 +9,14 @@ export default {
   en: {
     home: {
       headline: "Junyi Wang, <br />&nbsp&nbsp a software engineer",
+      nav: {
+        here: "Home",
+        blog: "Blog",
+      },
       intro: {
         title: "Hi,",
         content: `
-          <p>Welcome to my personal website. My name is Junyi Wang and I'm working as a full-time software developer in Devner, CO.</p>
+          <p>Welcome to my personal website. I'm Junyi Wang, a full-time software engineer based in Devner, CO.</p>
           <p>My primary areas of interest are web development and self-hosting. The website you are seeing right now is hosted on a <a href="https://blog.junyi.me/post/hosting-website-k3s-cluster/">bare-metal kubernetes cluster</a> (and the blog itself), and I'm planning to host more web services as well in the future.</p>
           <p>By the way, I use <code>vim (Neovim)</code> and <code>Arch</code>. If you are interested, my dot files are all on my <a href="https://github.com/jywang99/linux_config">GitHub</a>.</p>
           <p>The keyboards: <a href="https://happyhackingkb.com/jp/">HHKB</a> (both Hybrid Type-S), recommended.</p>
@@ -33,11 +37,7 @@ export default {
       },
       exp: {
         title: "Work experience",
-        content: `
-          <p>I graduated from <a href="https://www.bc.edu/">Boston College</a> in summer 2022, majoring in computer science and minoring in mathematics. Since then, I have been working as a full-time software engineer. My first work experience started when I was still in college, as a part time job at ApolloEye, an early stage startup in renewable energy industry. I learned a lot about how to develop from scratch, maintain, and implementing new features. I'm still doing part-time here (remotely).</p>
-          <p>After graduation, my first full-time job was at Prussian Inc, another startup company in the financial psychology area. Here I worked on a serverless full-stack application, and completed some AWS certifications in the meanwhile. Good times working with a small but capable team.</p>
-          <p>Just a few months later, with some help from my friend, I got into Nagrastar LLC, where I'm currently working at. It was a completely different experience from the previous two positions I had, maintaining source code in corporate standards, and building new features that customers request. Having experience in both startup companies and established corporates became one of my strengths, if I do say so myself.</p>
-          `
+        content: ``
       },
     },
     tech: {
@@ -79,23 +79,23 @@ export default {
         description: `<p>I first learned about this in Prussian. Although learning to think in the NoSQL way was hard, I ended up designing and implementing some schemas to be used in serverless stacks, and it wasn't as bad as I thought!</p>`,
       },
       github: {
-        description: `<p>Using <code>GitHub</code> since around 2017, but only recently got into learning <code>GitHub Actions</code>.</p>`,
+        description: `<p>Using it since around 2017.</p>`,
       },
       docker: {
-        description: `<p>After using it for quite some time at work, some time last year, I decided to sit down and learn thoroughly about <code>Docker</code>. I didn't regret a single bit doing that.</p>`,
+        description: `<p>After using it for quite some time at work, I decided to sit down and learn thoroughly about it. Now everything that I host is deployed with docker, and I didn't regret a single bit doing that.</p>`,
       },
       kubernetes: {
-        description: `<p>I learned quite a bit of <code>Kubernetes</code> along with <code>Docker</code>. Deploying my own web app onto a Kubernetes cluster is still on my bucket list, but deploying stuff to the testing environment at work is already giving me some acquintance with it.</p>`,
+        description: `<p>I learned quite a bit of <code>Kubernetes</code> along with <code>Docker</code> at work. I had always been dreaming about having my own cluster, and I've finally done it.</p>`,
       },
       aws: {
         description: `<p>At Prussian, I got a lot of experience working with the serverless stack on <code>AWS</code>. Have been using it a bit at ApolloEye as well.</p>
-        <p>During my time at Prussian, I decided to get some certificates, which are listed below.</p>`,
+        <p>During my time at Prussian, I also decided to get some certificates, which are listed below.</p>`,
       },
       gcp: {
         description: `<p>Mostly been using their <code>Cloud Storage</code> and <code>Compute Engine</code> at ApolloEye.</p>`,
       },
       linux: {
-        description: `<p>I do almost all of my daily development inside <code>archlinux</code> running on WSL2</p>`,
+        description: `<p>I use Linux at work, I use Linux at home, and Linux is still running my deployed apps even when I'm asleep. Debian for servers, Arch for workstations.</p>`,
       },
       bash: {
         description: `<p>I tried zsh, but still prefer bash for its simplicity, and the fact that I can use it on almost any host.</p>`,
@@ -199,7 +199,7 @@ export default {
         name: "Nagrastar",
         company: "Nagrastar LLC",
         title: "Junior Software Engineer",
-        description: "NagraStar LLC is a company providing security and automation solutions for the satellite TV industry, including Echostar and Bell TV. NagraStar is a joint venture of EchoStar and the Kudelski Group. Following are projects I worked on:",
+        description: "NagraStar LLC is a company providing security and automation solutions for customers in the satellite TV industry, including Echostar and Bell TV. NagraStar is a joint venture of EchoStar and the Kudelski Group. Following are projects I worked on:",
         ns_manager: {
           title: "Managing docker containers on GUI",
           description: `
