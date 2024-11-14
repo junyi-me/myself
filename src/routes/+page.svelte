@@ -1,90 +1,77 @@
 <script lang="ts">
   import Article from './Article.svelte';
-  import TechSection from './TechSection.svelte';
   import ExperienceSection from './ExperienceSection.svelte';
   import CertsSection from './CertsSection.svelte';
-  import Header from './Header.svelte';
   import Projects from './Projects.svelte';
+  import TechSection from '$lib/tech/TechSection.svelte';
+  import Navigate from './Navigate.svelte';
+  import Profile from './Profile.svelte';
 </script>
-
-<Header />
 
 <svelte:head>
   <title>Junyi Wang</title> 
 </svelte:head>
 
-<!-- Articles -->
-<div class="content">
-  <div class="intro-block">
-    <Article key='intro' side>
-      <img src="images/hhkb_black.jpg" alt="hhkb_black" />
+<div id="boss" class="container">
+  <div class="profile sticky">
+    <Profile />
+  </div>
+  <div class="content">
+    <Article key='intro' />
+    <Article key='tech' >
+      <TechSection />
     </Article>
+    <Article key='certs'>
+      <CertsSection />
+    </Article>
+    <Article key='projects'>
+      <Projects />
+    </Article>
+    <Article key='exp'>
+      <ExperienceSection />
+    </Article>
+    <p class="cp">© 2024 Junyi Wang</p>
   </div>
-  <Article key='tech' >
-    <TechSection />
-  </Article>
-  <Article key='certs'>
-    <CertsSection />
-  </Article>
-  <Article key='projects'>
-    <Projects />
-  </Article>
-  <Article key='exp' last>
-    <ExperienceSection />
-  </Article>
-</div>
-
-<!-- Footer -->
-<div class="footer">
-  <div>
-    <p>✉️ junyi.wang.007@gmail.com</p>
-    <p>📍 Denver, CO</p>
-    <p>© 2024 Junyi Wang</p>
-  </div>
-  <div>
-    <p>
-      <img src="images/github256.png" alt="github" />
-      <a href="https://github.com/jywang99">jywang99</a>
-    </p>
-    <p>
-      <img src="images/linkedin.webp" alt="linkedin" />
-      <a href="https://www.linkedin.com/in/junyi-wang-976a94199/">Junyi Wang</a>
-    </p>
+  <div class="navigate sticky">
+    <Navigate />
   </div>
 </div>
 
 <style>
-  .content {
-    background-color: var(--bg-1);
-    padding: 3em 0;
-    border-top: 2px solid var(--fg-3);
-    border-bottom: 2px solid var(--fg-3);
-  }
-
-  .intro-block img {
-    max-width: 100%;
-  }
-
-  .footer {
-    background-color: var(--bg-2);
-    color: var(--fg-1);
-    padding: 2rem;
+  .container {
     display: flex;
-    justify-content: center;
+    padding: var(--gap-medium);
+    box-sizing: border-box;
+    gap: var(--gap-medium);
+    overflow: auto;
+    height: 100vh;
   }
 
-  .footer div {
-    padding-left: 2rem;
-    padding-right: 2rem;
+  .sticky {
+    position: sticky;
+    top: 0;
   }
 
-  .footer div:not(:last-child) {
-    border-right: 2px solid var(--bg-3);
+  .profile {
+    flex: 1;
   }
 
-  .footer img {
-    height: 1em;
+  .content {
+    flex: 3;
+    display: flex;
+    flex-direction: column;
+    gap: var(--gap-medium);
   }
 
+  .navigate {
+    flex: 1;
+  }
+
+  .cp {
+    margin: auto;
+    padding-bottom: var(--gap-medium);
+    opacity: 0.5;
+    font-size: 0.8em;
+  }
 </style>
 

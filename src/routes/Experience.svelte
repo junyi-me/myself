@@ -20,33 +20,33 @@
 </script>
 
 <tr class="hovee">
-  <td class="title">
+  <div class="role">
     <h3>{$t(exp.txTitle)}</h3>
-    <p>{$t('exp.at')} {exp.txCompany}</p>
+    <p>{$t('exp.at')} {$t(exp.txCompany)}</p>
     <p>{exp.startDate} ~ {exp.endDate ?? "current"}</p>
-  </td>
-  <td class="content">
-    <p>{@html $t(exp.txDescription)}</p>
-    {#each exp.projects as proj}
-      <h3>{$t(proj.txTitle)}</h3>
-      <ul>
-        {@html $t(proj.txDescription)}
-      </ul>
-      <div class="tech">
-        {#each proj.techs as tech}
-          <a href={`#tech-${tech.key}`} on:click={e => handleAnchorClick(e, 'tech', e => {if (!e.classList.contains("focus")) e.click()})}>
-            <img src={techs[tech.key].img} alt={techs[tech.key].name} />
-            <span>{techs[tech.key].name}</span>
-            {#if tech.sub && tech.sub.length > 0}
-              <span >&nbsp;(</span>
-              <span style="margin-right: .5em">{tech.sub.map(s => findSubtech(tech.key, s).name).join(", ")}</span>
-              <span style="margin-left: -.5em">)</span>
-            {/if}
-          </a>
-        {/each}
-      </div>
-    {/each}
-  </td>
+  </div>
+
+  <p>{@html $t(exp.txDescription)}</p>
+
+  {#each exp.projects as proj}
+    <h3>{$t(proj.txTitle)}</h3>
+    <ul>
+      {@html $t(proj.txDescription)}
+    </ul>
+    <div class="tech">
+      {#each proj.techs as tech}
+        <a href={`#tech-${tech.key}`} on:click={e => handleAnchorClick(e, e => {if (!e.classList.contains("focus")) e.click()})}>
+          <img src={techs[tech.key].img} alt={techs[tech.key].name} />
+          <span>{techs[tech.key].name}</span>
+          {#if tech.sub && tech.sub.length > 0}
+            <span >&nbsp;(</span>
+            <span style="margin-right: .5em">{tech.sub.map(s => findSubtech(tech.key, s).name).join(", ")}</span>
+            <span style="margin-left: -.5em">)</span>
+          {/if}
+        </a>
+      {/each}
+    </div>
+  {/each}
 </tr>
 
 <style>
@@ -56,21 +56,6 @@
 
   tr:not(:last-child) {
     border-bottom: 1px solid var(--bg-3);
-  }
-
-  td {
-    vertical-align: top;
-    border-bottom: none;
-    min-width: 8em;
-    padding: var(--content-padding);
-  }
-
-  td:not(:first-child) {
-    border-left: 1px solid var(--bg-3);
-  }
-
-  .content p {
-    margin-bottom: 0;
   }
 
   .tech {

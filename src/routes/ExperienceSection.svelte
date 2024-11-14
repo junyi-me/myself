@@ -4,19 +4,12 @@
 </script>
 
 <div class="experience">
-  <table>
-    <tbody>
-      <td rowspan="100" class="timeline"></td>
-      {#each experience as exp}
-        <Experience {exp} />
-      {/each}
-    </tbody>
-  </table>
+  <td rowspan="100" class="timeline"></td>
+  {#each experience as exp}
+    <Experience {exp} />
+  {/each}
 </div>
 
 <style>
-  table {
-    border-collapse: collapse;
-  }
 </style>
 

@@ -18,11 +18,9 @@
   $: tech = techList[focusIndex ?? 0]
 </script>
 
-<tr>
-  <td class="title">
-    <h3>{title}</h3>
-  </td>
-  <td class="techs">
+<div class="container">
+  <h3>{title}</h3>
+  <div class="techs">
     {#each techList as { key, name, img }, i}
       <Tech name={name} {key} {img} onClick={() => {
         if (focusIndex === i) {
@@ -33,51 +31,34 @@
         focusRow = row;
       }} focus={focusIndex === i} />
     {/each}
-  </td>
-</tr>
+  </div>
 
-<tr class="drawer">
-  <td colspan="2" class:collapsed={focusIndex == null}>
-    {#if focusIndex !== null}
-      <div class="tech-detail" transition:slide>
-        <TechDrawer tech={tech} />
-      </div>
-    {/if}
-  </td>
-</tr>
+  <div class="drawer">
+    <div class:collapsed={focusIndex == null}>
+      {#if focusIndex !== null}
+        <div class="tech-detail" transition:slide>
+          <TechDrawer tech={tech} />
+        </div>
+      {/if}
+    </div>
+  </div>
+</div>
 
 <style>
-  .title {
-    text-align: right;
-    width: 8em;
-  }
-
-  .drawer td {
-    padding: 0;
-  }
-
-  td.techs {
-    display: flex;
-    flex-wrap: wrap;
-    padding-left: 1em;
-    justify-content: left;
-  }
-
-  td {
-    padding-top: 1em;
-    align-items: center;
-  }
-
-  tr.drawer:not(:last-child) {
+  .container:not(:last-child) {
     border-bottom: 1px solid var(--bg-3);
-  }
-
-  tr.drawer {
-    align-items: center;
+    padding-bottom: var(--gap-small);
   }
 
   h3 {
-    margin: auto 1em auto 0;
+    margin-top: var(--gap-medium);
+    text-align: center;
+  }
+
+  .techs {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
   }
 
   .tech-detail {

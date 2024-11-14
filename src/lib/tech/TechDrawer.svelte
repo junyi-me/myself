@@ -57,11 +57,6 @@
 {/key}
 
 <style>
-  .container {
-    max-width: 900px;
-    margin: 0 auto;
-  }
-
   .row-title {
     text-align: right;
     text-wrap: nowrap;

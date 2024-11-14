@@ -290,7 +290,7 @@ export const techs: { [key: string]: TechType } = {
   aws: {
     key: "aws",
     txDescription: "tech.aws.description",
-    name: "Amazon Web Services",
+    name: "AWS",
     link: "https://aws.amazon.com/",
     img: "images/aws256.png",
     sub: [
@@ -373,7 +373,7 @@ export const techs: { [key: string]: TechType } = {
   gcp: {
     key: "gcp",
     txDescription: "tech.gcp.description",
-    name: "Google Cloud Platform",
+    name: "Google Cloud",
     link: "https://cloud.google.com/",
     img: "images/gcp256.png",
     sub: [

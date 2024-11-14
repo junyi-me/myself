@@ -8,7 +8,8 @@ type TranslationType = {
 export default {
   en: {
     home: {
-      headline: "Junyi Wang, <br />&nbsp&nbsp a software engineer",
+      name: "Junyi Wang",
+      headline: "Software engineer based in Denver, CO",
       nav: {
         here: "Home",
         blog: "Blog",
@@ -16,19 +17,22 @@ export default {
       intro: {
         title: "Hi,",
         content: `
-          <p>Welcome to my personal website. I'm Junyi Wang, a full-time software engineer based in Devner, CO.</p>
+          <p>Welcome to my personal website. I'm Junyi Wang, a professional and hobbyist software engineer.</p>
           <p>My primary areas of interest are web development and self-hosting. The website you are seeing right now is hosted on a <a href="https://blog.junyi.me/post/hosting-website-k3s-cluster/">bare-metal kubernetes cluster</a> (and the blog itself), and I'm planning to host more web services as well in the future.</p>
           <p>By the way, I use <code>vim (Neovim)</code> and <code>Arch</code>. If you are interested, my dot files are all on my <a href="https://github.com/jywang99/linux_config">GitHub</a>.</p>
-          <p>The keyboards: <a href="https://happyhackingkb.com/jp/">HHKB</a> (both Hybrid Type-S), recommended.</p>
           `,
       },
       tech: {
         title: "Skills",
-        content: ``,
+        content: `
+          <p>My skillset is mostly full-stack web development and some CI/CD stuff.</p>
+        `,
       },
       certs: {
         title: "Certifications",
-        content: ``
+        content: `
+          <p>I find getting certificates to be a great way of learning new things.</p>
+        `
       },
       projects: {
         title: "Projects",
@@ -37,7 +41,9 @@ export default {
       },
       exp: {
         title: "Work experience",
-        content: ``
+        content: `
+          <p>I gradauted from <a href="https://www.bc.edu/">Boston College</a> in summer 2022, and since then, I have been a software engineer all the way.</p>
+        `
       },
     },
     tech: {

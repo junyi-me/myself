@@ -1,16 +1,23 @@
 <script>
   import { slide } from "svelte/transition";
 
-  export let href;
+  /** @type string | null **/
+  export let href = null;
   export let text;
 
   let open = false;
 </script>
 
 <div class="outer" on:mouseleave={() => open = false} role="tooltip">
-  <a {href} class:active={open} on:mouseenter={() => open = true}>
-    {text}
-  </a>
+  {#if href}
+    <a {href} class="navlink" class:active={open} on:mouseenter={() => open = true}>
+      {text}
+    </a>
+  {:else}
+    <span class="navlink" class:active={open} on:mouseenter={() => open = true} role="tooltip">
+      {text}
+    </span>
+  {/if}
 
   <div class="tooltip" role="tooltip">
     {#if open}
@@ -31,7 +38,7 @@
     min-width: 10em;
   }
 
-  a {
+  .navlink {
     padding-right: 1em;
     padding-left: 1em;
     height: 100%;
@@ -43,13 +50,14 @@
     align-items: center;
     box-sizing: border-box;
     transition: color 0.3s;
+    cursor: pointer;
   }
 
-  a.active {
+  .navlink.active {
     color: var(--accent);
   }
 
-  a:hover {
+  .navlink:hover {
     border-bottom: 2px solid var(--fg-1);
   }
 </style>

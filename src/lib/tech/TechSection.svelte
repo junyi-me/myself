@@ -15,19 +15,8 @@
 </script>
 
 <div>
-  <table>
-    <tbody>
-      {#each techCats as { key, name }, i}
-        <TechRow title={name} techList={techs[key]} row={i} bind:focusRow={focusRow} />
-      {/each}
-    </tbody>
-  </table>
+  {#each techCats as { key, name }, i}
+    <TechRow title={name} techList={techs[key]} row={i} bind:focusRow={focusRow} />
+  {/each}
 </div>
-
-<style>
-  table {
-    width: 100%;
-    border-collapse: collapse;
-  }
-</style>
 
