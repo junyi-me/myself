@@ -40,7 +40,6 @@ import { t } from "$lib/i18n";
   .avatar {
     display: flex;
     flex-direction: column;
-    align-items: center;
   }
 
   .avatar img {

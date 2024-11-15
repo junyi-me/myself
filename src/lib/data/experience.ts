@@ -1,12 +1,12 @@
 import type { ExperienceType } from '../types';
 
-export default [
+const experience: ExperienceType[] = [
   {
-    txHead: "exp.nagrastar.name",
-    txCompany: "exp.nagrastar.company",
+    txOrg: "exp.nagrastar.company",
     txTitle: "exp.nagrastar.title",
     txDescription: "exp.nagrastar.description",
-    startDate: "2023-02",
+    startDate: new Date("2023-02-16"),
+    color: '#ff9900',
     projects: [
       {
         txTitle: "exp.nagrastar.ns_manager.title",
@@ -73,16 +73,19 @@ export default [
           {
             key: "linux"
           },
+          {
+            key: "selenium",
+          },
         ],
       },
     ],
   },
   {
-    txHead: "exp.apolloeye.name",
-    txCompany: "exp.apolloeye.company",
+    txOrg: "exp.apolloeye.company",
     txTitle: "exp.apolloeye.title",
     txDescription: "exp.apolloeye.description",
-    startDate: "2021-02",
+    startDate: new Date("2021-02-01"),
+    color: '#33cc33',
     projects: [
       {
         txTitle: "exp.apolloeye.logrpa.title",
@@ -144,12 +147,12 @@ export default [
     ],
   },
   {
-    txHead: "exp.prussian.name",
-    txCompany: "exp.prussian.company",
+    txOrg: "exp.prussian.company",
     txTitle: "exp.prussian.title",
     txDescription: "exp.prussian.description",
-    startDate: "2022-07",
-    endDate: "2023-04",
+    startDate: new Date("2022-06-22"),
+    endDate: new Date("2023-02-15"),
+    color: '#3399ff',
     projects: [
       {
         txTitle: "exp.prussian.prussian.title",
@@ -185,5 +188,7 @@ export default [
       },
     ],
   },
-] as ExperienceType[];
+];
+
+export default experience;
 

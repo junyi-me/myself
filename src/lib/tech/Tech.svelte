@@ -27,6 +27,7 @@
     margin-bottom: var(--gap-small);
     color: var(--fg-1);
     transition: background-color 0.3s linear;
+    box-shadow: var(--card-shadow);
   }
 
   .tech:hover {

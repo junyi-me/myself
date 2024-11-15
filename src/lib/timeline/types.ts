@@ -1,9 +1,20 @@
 export type TimeEventType = {
-  title: string;
-  description: string;
-  start: Date;
-  end: Date;
+  txOrg: string;
+  txTitle: string;
+  startDate: Date;
+  endDate?: Date;
   color: string;
   onClick: () => void;
 };
+
+export type IslandType = {
+  id: number;
+  label: string;
+  onClick: () => void;
+  color: string;
+  offset: number;
+  width: number;
+  startDate: Date;
+  endDate?: Date;
+}
 

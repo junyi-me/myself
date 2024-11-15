@@ -33,12 +33,12 @@ export type ProjectType = {
 }
 
 export type ExperienceType = {
-  txHead: string;
-  txCompany: string;
+  txOrg: string;
   txTitle: string;
   txDescription: string;
-  startDate: string;
-  endDate?: string;
+  startDate: Date;
+  endDate?: Date;
   projects: ProjectType[];
+  color: string;
 }
 

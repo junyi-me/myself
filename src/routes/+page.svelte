@@ -61,6 +61,7 @@
     display: flex;
     flex-direction: column;
     gap: var(--gap-medium);
+    min-width: 0;
   }
 
   .navigate {

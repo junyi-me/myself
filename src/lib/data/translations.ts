@@ -9,7 +9,7 @@ export default {
   en: {
     home: {
       name: "Junyi Wang",
-      headline: "Software engineer based in Denver, CO",
+      headline: "Software engineer",
       nav: {
         here: "Home",
         blog: "Blog",
@@ -222,9 +222,10 @@ export default {
           `,
         },
         ns_publish: {
-          title: "Scramble and send data to customers",
+          title: "Encode video and publish",
           description: `
-            <li>Develop a web application to track the progress of scrambling and publishing</li>
+            <li>Develop and maintain a distributed system that encodes video files and spools them to satellites</li>
+            <li>Develop a end-to-end testing program including UI testing using Selenium</li>
           `,
         },
       },

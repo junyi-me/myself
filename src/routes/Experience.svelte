@@ -17,19 +17,26 @@
     }
     return sub;
   }
+
+  const formatDate = (date: Date) => {
+    const formattedDate = date.toLocaleDateString("en-US", {
+      year: "numeric",
+      month: "short"
+    });
+    return formattedDate;
+  }
 </script>
 
-<tr class="hovee">
+<div class="container" style="border-left: 2px solid {exp.color}">
   <div class="role">
-    <h3>{$t(exp.txTitle)}</h3>
-    <p>{$t('exp.at')} {$t(exp.txCompany)}</p>
-    <p>{exp.startDate} ~ {exp.endDate ?? "current"}</p>
+    <h2>{$t(exp.txTitle)} {$t('exp.at')} {$t(exp.txOrg)} </h2>
+    <p>{formatDate(exp.startDate)} ~ {exp.endDate ?? "current"}</p>
   </div>
 
   <p>{@html $t(exp.txDescription)}</p>
 
   {#each exp.projects as proj}
-    <h3>{$t(proj.txTitle)}</h3>
+    <h3 style="text-decoration: underline {exp.color}">{$t(proj.txTitle)}</h3>
     <ul>
       {@html $t(proj.txDescription)}
     </ul>
@@ -47,15 +54,11 @@
       {/each}
     </div>
   {/each}
-</tr>
+</div>
 
 <style>
-  tr {
-    transition: box-shadow 0.2s linear;
-  }
-
-  tr:not(:last-child) {
-    border-bottom: 1px solid var(--bg-3);
+  .container {
+    padding: var(--gap-medium);
   }
 
   .tech {
