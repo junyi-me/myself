@@ -9,17 +9,21 @@ export default {
   en: {
     home: {
       name: "Junyi Wang",
-      headline: "Software engineer",
+      headline: "Professional and hobbyist software engineer",
       nav: {
+        title: "Table of contents",
         here: "Home",
         blog: "Blog",
+      },
+      links: {
+        title: "Links",
       },
       intro: {
         title: "Hi,",
         content: `
           <p>Welcome to my personal website. I'm Junyi Wang, a professional and hobbyist software engineer.</p>
-          <p>My primary areas of interest are web development and self-hosting. The website you are seeing right now is hosted on a <a href="https://blog.junyi.me/post/hosting-website-k3s-cluster/">bare-metal kubernetes cluster</a> (and the blog itself), and I'm planning to host more web services as well in the future.</p>
-          <p>By the way, I use <code>vim (Neovim)</code> and <code>Arch</code>. If you are interested, my dot files are all on my <a href="https://github.com/jywang99/linux_config">GitHub</a>.</p>
+          <p>My primary areas of interest are web development and self-hosting. The website you are seeing right now is hosted on a <a href="https://blog.junyi.me/p/hosting-an-https-website-on-a-ha-k3s-cluster/" target="_blank">bare-metal kubernetes cluster</a> (and the blog itself), and I'm planning to host more web services as well in the future.</p>
+          <p>By the way, I use <code>vim (Neovim)</code> and <code>Arch</code>. If you are interested, my dot files are all on my <a href="https://github.com/jywang99/linux_config" target="_blank">GitHub</a>.</p>
           `,
       },
       tech: {
@@ -40,7 +44,7 @@ export default {
         k3s: "Hosting an HTTPS website on a HA k3s cluster",
       },
       exp: {
-        title: "Work experience",
+        title: "Experience",
         content: `
           <p>I gradauted from <a href="https://www.bc.edu/">Boston College</a> in summer 2022, and since then, I have been a software engineer all the way.</p>
         `
@@ -56,7 +60,7 @@ export default {
           `,
       },
       html_css_js: {
-        description: `<p>Of course, this is where I started my journey of frontend development. My favorite framework change from time to time, but they have always been there.</p>`,
+        description: `<p>This is where I started my journey of frontend development. Whatever framework I use, the knowledge of HTML/CSS/JS is still relevant.</p>`,
       },
       golang: {
         description: `<p>I started learning Go this year, and have been using it for every chance I get since then. I'm really liking the simplicity and speed of this language. Coming from <code>Java</code> as my primary language, <code>Go</code> really gave me the agility in developing these smaller projects.</p>`,
@@ -67,7 +71,7 @@ export default {
         `,
       },
       python: {
-        description: `<p><code>Python</code> is a very versatile language. I've written web servers, CLI tools, and a little bit of GUI applications all with <code>Python</code>. Also tried learning towards the AI track with numpy/pandas and tensorflow, but didn't get too far. I might pick it up some day.</p>`,
+        description: `<p><code>Python</code> is a very versatile language. I've written web servers, CLI tools, and a little bit of GUI applications all with it. Also tried learning towards the AI track with numpy/pandas and tensorflow, but didn't get too far. I might pick it up some day.</p>`,
       },
       csharp: {
         description: `<p>The first time I used <code>C#</code> was purely out of necessity at work, but coming from <code>Java</code>, I could see why some people say "C# is Java done right".</p>`,
@@ -150,11 +154,21 @@ export default {
     },
     exp: {
       at: "at",
+      bostoncollege: {
+        name: "Boston College",
+        company: "Boston College",
+        title: "Student",
+        description: `
+          <p>I majored in computer science and minored in mathematics at Boston College. I was also a teaching assistant for a CS course for a semester.</p>
+        `,
+      },
       apolloeye: {
         name: "ApolloEye",
         company: "ApolloEye",
         title: "Software Engineer",
-        description: "Ene-eco Shift LLC is a company providing better solutions for monitoring solar-power plant operation. Ene-eco Shift uses self-developed software to provide real-time supervision of the power plant operations and sends personalized alerts on a daily basis to plant owners if there are malfunctions detected. Following are projects I worked / am working on:",
+        description: `
+          <p>Ene-eco Shift LLC is a company providing better solutions for monitoring solar-power plant operation. Ene-eco Shift uses self-developed software to provide real-time supervision of the power plant operations and sends personalized alerts on a daily basis to plant owners if there are malfunctions detected. Following are projects I worked / am working on:</p>
+        `,
         logrpa: {
           title: "Web Scraping",
           description: `
@@ -184,7 +198,9 @@ export default {
         name: "Prussian",
         company: "Prussian Inc",
         title: "SaaS Software Engineer",
-        description: "Prussian Inc. is a startup financial technology company, providing Active Hedging, Monetization & Intelligence services to corporations and investment firms, by their enterprise grade Hedging-as-a-Service (HaaS) Suite. Objective of Prussian Inc. is to redefine “hedging”, and reinvent the procedure of hedging. Following are projects I worked on:",
+        description: `
+          <p>Prussian Inc. is a startup financial technology company, providing Active Hedging, Monetization & Intelligence services to corporations and investment firms, by their enterprise grade Hedging-as-a-Service (HaaS) Suite. Objective of Prussian Inc. is to redefine “hedging”, and reinvent the procedure of hedging. Following are projects I worked on:</p>
+        `,
         prussian: {
           title: "Serverless full-stack Development",
           description: `
@@ -205,7 +221,9 @@ export default {
         name: "Nagrastar",
         company: "Nagrastar LLC",
         title: "Junior Software Engineer",
-        description: "NagraStar LLC is a company providing security and automation solutions for customers in the satellite TV industry, including Echostar and Bell TV. NagraStar is a joint venture of EchoStar and the Kudelski Group. Following are projects I worked on:",
+        description: `
+          <p>NagraStar LLC is a company providing security and automation solutions for customers in the satellite TV industry, including Echostar and Bell TV. NagraStar is a joint venture of EchoStar and the Kudelski Group. Following are projects I worked on:</p>
+          `,
         ns_manager: {
           title: "Managing docker containers on GUI",
           description: `

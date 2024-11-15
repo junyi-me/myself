@@ -5,6 +5,8 @@
   import Card from "$lib/Card.svelte";
   import { handleAnchorClick } from "$lib/interact";
 
+  export let onNavigate: () => void = () => {};
+
   const getY = (id: string) => {
     const el = document.getElementById(id);
     if (el) {
@@ -22,17 +24,24 @@
         ...articles[key],
       };
     }).sort((a, b) => getY(a.key) - getY(b.key));
+
+
+  const handleNavigate = (e: MouseEvent) => {
+    e.preventDefault();
+    handleAnchorClick(e);
+    onNavigate();
+  }
 </script>
 
 <Card transparent>
-  <h2># Table of contents</h2>
-  <ul>
+  <h2><span>#</span> {$t('home.nav.title')}</h2>
+  <ol>
     {#each articleList as article}
       <li>
-        <a href={`#${article.key}`} on:click={handleAnchorClick}>{$t(article.txTitle)}</a>
+        <a href={`#${article.key}`} on:click={handleNavigate}>{$t(article.txTitle)}</a>
       </li>
     {/each}
-  </ul>
+  </ol>
 </Card>
 
 <style>
@@ -41,14 +50,12 @@
     color: var(--fg-3);
   }
 
-  ul {
-    margin: 0;
-    padding: 0;
+  h2 span {
+    color: var(--accent);
   }
 
-  li {
-    list-style-type: none;
-    display: flex;
+  ol li::marker {
+    color: var(--fg-3);
   }
 
   li:not(:last-child) {
@@ -64,6 +71,7 @@
     width: 100%;
     padding: 0.5em 1em;
     border-bottom: 1px solid transparent;
+    transition: color var(--transition-linear), border-bottom var(--transition-linear);
   }
 
   a:hover {

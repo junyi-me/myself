@@ -21,7 +21,7 @@
       const endOffset = (event.endDate ? event.endDate.getTime() : Date.now()) - minDate;
 
       // Calculate offset and width based on timeline duration
-      const offset = (startOffset / timelineDuration) * TIMELINE_WIDTH;
+      let offset = (startOffset / timelineDuration) * TIMELINE_WIDTH;
       const width = ((endOffset - startOffset) / timelineDuration) * TIMELINE_WIDTH;
 
       // Determine level based on overlaps with previous events
@@ -30,7 +30,7 @@
         const last = lvlLands[level][lvlLands[level].length - 1];
         if (last.offset + last.width <= offset) {
           break;
-          }
+        }
         level++;
       }
 
@@ -39,17 +39,18 @@
         lvlLands[level] = [];
       } else {
         last = lvlLands[level][lvlLands[level].length - 1];
+        const prevOffsetSum = lvlLands[level].map(e => e.offset + e.width).reduce((a, b) => a + b, 0);
+        offset = offset - prevOffsetSum;
       }
       const iid = id;
       lvlLands[level].push({
         id: iid,
         label: $t(event.txTitle) + " @ " + $t(event.txOrg),
-        offset: (!last) ? offset : offset - last.offset - last.width,
+        offset,
         width,
         color: event.color,
         onClick: () => {
           focusId = iid;
-          event.onClick();
         },
         startDate: event.startDate,
         endDate: event.endDate,
@@ -61,6 +62,7 @@
   }
 
   let focusId = events.length - 1;
+  $: events[focusId].onClick();
   let lvlLands = convertEventsToIslands(events);
   let outer: HTMLDivElement;
   $: if (outer) outer.scrollLeft = TIMELINE_WIDTH;

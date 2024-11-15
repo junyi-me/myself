@@ -6,11 +6,17 @@
   import TechSection from '$lib/tech/TechSection.svelte';
   import Navigate from './Navigate.svelte';
   import Profile from './Profile.svelte';
+  import NavTofu from './NavTofu.svelte';
+
+  let innerWidth = 0;
+  let innerHeight = 0;
 </script>
 
 <svelte:head>
   <title>Junyi Wang</title> 
 </svelte:head>
+
+<svelte:window bind:innerWidth bind:innerHeight />
 
 <div id="boss" class="container">
   <div class="profile sticky">
@@ -32,27 +38,28 @@
     </Article>
     <p class="cp">© 2024 Junyi Wang</p>
   </div>
-  <div class="navigate sticky">
-    <Navigate />
-  </div>
+  {#if innerWidth > 1200}
+    <div class="navigate sticky">
+      <Navigate />
+    </div>
+  {:else}
+    <NavTofu />
+  {/if}
 </div>
 
 <style>
   .container {
-    display: flex;
     padding: var(--gap-medium);
     box-sizing: border-box;
-    gap: var(--gap-medium);
     overflow: auto;
     height: 100vh;
+    display: flex;
+    gap: var(--gap-medium);
   }
 
   .sticky {
     position: sticky;
     top: 0;
-  }
-
-  .profile {
     flex: 1;
   }
 
@@ -62,10 +69,7 @@
     flex-direction: column;
     gap: var(--gap-medium);
     min-width: 0;
-  }
-
-  .navigate {
-    flex: 1;
+    padding-top: var(--gap-medium);
   }
 
   .cp {
@@ -73,6 +77,29 @@
     padding-bottom: var(--gap-medium);
     opacity: 0.5;
     font-size: 0.8em;
+  }
+
+  @media screen and (max-width: 800px) {
+    .container {
+      flex-direction: column;
+      padding: var(--gap-small);
+      gap: var(--gap-small);
+    }
+
+    .content {
+      gap: var(--gap-small);
+      }
+
+    .sticky {
+      position: relative;
+      top: auto;
+    }
+  }
+
+  @media screen and (max-width: 1200px) {
+    .navigate {
+      display: none;
+    }
   }
 </style>
 

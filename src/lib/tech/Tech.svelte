@@ -26,7 +26,7 @@
     margin-right: var(--gap-small);
     margin-bottom: var(--gap-small);
     color: var(--fg-1);
-    transition: background-color 0.3s linear;
+    transition: background-color var(--transition-linear);
     box-shadow: var(--card-shadow);
   }
 
@@ -55,6 +55,17 @@
   .tech p {
     margin: 0;
     font-size: 0.8em;
+  }
+
+  @media screen and (max-width: 800px) {
+    .tech {
+      margin-right: var(--gap-tiny);
+      margin-bottom: var(--gap-tiny);
+    }
+
+    .tech p {
+      font-size: 0.6em;
+    }
   }
 </style>
 

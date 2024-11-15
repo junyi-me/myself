@@ -5,6 +5,7 @@
   import Experience from "./Experience.svelte";
 
   let focus = experience[0];
+  let anchor: HTMLDivElement;
   const events: TimeEventType[] = experience.map(exp => {
     return {
       txTitle: exp.txTitle,
@@ -19,7 +20,7 @@
   });
 </script>
 
-<div>
+<div bind:this={anchor}>
   <div>
     <Timeline {events} />
   </div>

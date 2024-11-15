@@ -2,6 +2,15 @@ import type { ExperienceType } from '../types';
 
 const experience: ExperienceType[] = [
   {
+    txOrg: "exp.bostoncollege.company",
+    txTitle: "exp.bostoncollege.title",
+    txDescription: "exp.bostoncollege.description",
+    startDate: new Date("2018-08-26"),
+    endDate: new Date("2022-05-22"),
+    color: '#eb5c52',
+    projects: [],
+  },
+  {
     txOrg: "exp.nagrastar.company",
     txTitle: "exp.nagrastar.title",
     txDescription: "exp.nagrastar.description",

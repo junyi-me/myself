@@ -14,6 +14,12 @@
     box-shadow: var(--card-shadow);
   }
 
+  @media screen and (max-width: 800px) {
+    .container {
+      padding: var(--gap-medium);
+    }
+  }
+
   .container.transparent {
     background-color: transparent;
     box-shadow: none;

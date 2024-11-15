@@ -1,6 +1,7 @@
 <script lang="ts">
   import Card from "$lib/Card.svelte";
-import { t } from "$lib/i18n";
+  import { t } from "$lib/i18n";
+  import '@fortawesome/fontawesome-free/css/all.min.css'
 </script>
 
 <div class="container">
@@ -14,16 +15,23 @@ import { t } from "$lib/i18n";
 
   <div>
     <Card transparent>
-      <h2>@</h2>
+      <h2><span>@</span> {$t('home.links.title')}</h2>
       <p>
-        <img src="images/github256.png" alt="github" />
+        <i class="fa-solid fa-feather-pointed"></i>
+        <a href="https://blog.junyi.me/" target="_blank">My blog</a>
+      </p>
+      <p>
+        <i class="fa-brands fa-github"></i>
         <a href="https://github.com/jywang99" target="_blank">jywang99</a>
       </p>
       <p>
-        <img src="images/linkedin.webp" alt="linkedin" />
+        <i class="fa-brands fa-linkedin"></i>
         <a href="https://www.linkedin.com/in/junyi-wang-976a94199/" target="_blank">Junyi Wang</a>
       </p>
-      <p>✉️ junyi.wang.007@gmail.com </p>
+      <p>
+        <i class="fa-regular fa-envelope"></i>
+        <a href="mailto:junyi.wang.007@gmail.com">junyi.wang.007@gmail.com </a>
+      </p>
     </Card>
   </div>
 </div>
@@ -32,9 +40,16 @@ import { t } from "$lib/i18n";
   .container {
     display: flex;
     flex-direction: column;
-    gap: var(--gap-medium);
     justify-content: space-between;
     height: 100%;
+  }
+
+  h2 {
+    color: var(--fg-3);
+  }
+
+  h2 span {
+    color: var(--accent);
   }
 
   .avatar {
@@ -54,12 +69,6 @@ import { t } from "$lib/i18n";
 
   p {
     margin: 0.5em 0;
-  }
-
-  p img {
-    width: 1em;
-    height: 1em;
-    vertical-align: middle;
   }
 </style>
 

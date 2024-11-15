@@ -28,12 +28,13 @@
 </script>
 
 <div class="container" style="border-left: 2px solid {exp.color}">
-  <div class="role">
-    <h2>{$t(exp.txTitle)} {$t('exp.at')} {$t(exp.txOrg)} </h2>
-    <p>{formatDate(exp.startDate)} ~ {exp.endDate ?? "current"}</p>
+  <div>
+    <h2>{$t(exp.txTitle)} {$t('exp.at')} {$t(exp.txOrg)}</h2>
+    <p class="period" style="background-color: {exp.color}">
+      <span>{formatDate(exp.startDate)} ~ {exp.endDate ? formatDate(exp.endDate) : "current"}</span>
+    </p>
+    {@html $t(exp.txDescription)}
   </div>
-
-  <p>{@html $t(exp.txDescription)}</p>
 
   {#each exp.projects as proj}
     <h3 style="text-decoration: underline {exp.color}">{$t(proj.txTitle)}</h3>
@@ -61,6 +62,13 @@
     padding: var(--gap-medium);
   }
 
+  .period {
+    display: inline-block;
+    margin: 0;
+    margin-left: -1em;
+    padding: 0.25em 1em;
+  }
+
   .tech {
     display: flex;
     flex-wrap: wrap;
@@ -75,5 +83,19 @@
   .tech img {
     height: 1em;
     margin-right: 0.5em;
+  }
+
+  @media screen and (max-width: 800px) {
+    .container {
+      padding: var(--gap-small);
+    }
+
+    .period {
+      padding: 0.25em 0.5em;
+    }
+
+    .tech a {
+      margin-right: 0.5em;
+    }
   }
 </style>
