@@ -11,7 +11,7 @@ export const techs: { [key: string]: TechType } = {
       {
         key: "this_website",
         name: "This Website",
-        link: "/",
+        link: "https://github.com/jywang99/myself",
         img: "images/github256.png",
       }
     ],

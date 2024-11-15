@@ -247,7 +247,10 @@ export default {
           `,
         },
       },
-    }
+    },
+    pref: {
+      darkMode: "Dark mode",
+    },
   },
   jp: {
     name: "TODO",

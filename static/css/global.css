@@ -6,8 +6,10 @@ body {
     --fg-1: hsl(0, 0%, 13%);
     --fg-2: hsl(0, 0%, 20%);
     --fg-3: hsl(0, 0%, 30%);
+
     --highlight: #ffffcc;
     --accent: #E2211C;
+
     --link: hsl(208, 77%, 47%);
     --link-hover: hsl(208, 77%, 55%);
     --link-active: hsl(208, 77%, 40%);
@@ -105,12 +107,15 @@ code {
 
 body.dark {
     --bg-1: hsl(0, 0%, 18%);
-    --bg-2: hsl(0, 0%, 30%);
+    --bg-2: #3f3f3f;
     --bg-3: hsl(0, 0%, 40%);
     --fg-1: hsl(0, 0%, 90%);
     --fg-2: hsl(0, 0%, 70%);
     --fg-3: hsl(0, 0%, 60%);
+
     --highlight: #4c4c3c;
+    --accent: #ff4500;
+
     --link: hsl(206, 96%, 72%);
     --link-hover: hsl(206, 96%, 78%);
     --link-active: hsl(206, 96%, 64%);
@@ -118,5 +123,9 @@ body.dark {
 
 .highlight {
     background-color: var(--highlight);
+}
+
+* {
+  transition: color var(--transition-linear), background-color var(--transition-linear);
 }
 

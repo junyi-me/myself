@@ -4,6 +4,7 @@
   import { type ArticleType } from "$lib/types";
   import Card from "$lib/Card.svelte";
   import { handleAnchorClick } from "$lib/interact";
+  import Preference from "./Preference.svelte";
 
   export let onNavigate: () => void = () => {};
 
@@ -33,18 +34,29 @@
   }
 </script>
 
-<Card transparent>
-  <h2><span>#</span> {$t('home.nav.title')}</h2>
-  <ol>
-    {#each articleList as article}
-      <li>
-        <a href={`#${article.key}`} on:click={handleNavigate}>{$t(article.txTitle)}</a>
-      </li>
-    {/each}
-  </ol>
-</Card>
+<div class="container">
+  <Card transparent>
+    <h2><span>#</span> {$t('home.nav.title')}</h2>
+    <ol>
+      {#each articleList as article}
+        <li>
+          <a href={`#${article.key}`} on:click={handleNavigate}>{$t(article.txTitle)}</a>
+        </li>
+      {/each}
+    </ol>
+  </Card>
+
+  <Preference />
+</div>
 
 <style>
+  .container {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    height: 100%;
+  }
+
   h2 {
     margin-top: var(--gap-medium);
     color: var(--fg-3);
