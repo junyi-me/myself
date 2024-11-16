@@ -1,0 +1,66 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: myself-deployment
+  namespace: myself
+  labels:
+    app: myself
+spec:
+  replicas: 2
+  selector:
+    matchLabels:
+      app: myself
+  template:
+    metadata:
+      labels:
+        app: myself
+    spec:
+      containers:
+      - name: myself-front
+        image: jyking99/myself:release
+        imagePullPolicy: Always
+        ports:
+          - containerPort: 3000
+
+---
+
+apiVersion: v1
+kind: Service
+metadata:
+  name: myself-service
+  namespace: myself
+spec:
+  selector:
+    app: myself
+  ports:
+  ports:
+  - protocol: TCP
+    port: 3000
+    targetPort: 3000
+
+---
+
+apiVersion: networking.k8s.io/v1
+kind: Ingress
+metadata:
+  name: verse-ingress
+  namespace: myself
+  annotations:
+    spec.ingressClassName: traefik
+spec:
+  rules:
+    - host: profile.junyi.me
+      http:
+        paths:
+        - path: /
+          pathType: Prefix
+          backend:
+            service:
+              name: myself-service
+              port:
+                number: 3000
+  tls:
+    - hosts:
+        - "*.junyi.me"
+      secretName: junyi-me-production
+
