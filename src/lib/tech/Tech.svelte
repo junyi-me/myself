@@ -35,8 +35,7 @@
   }
 
   .tech.focus {
-    box-shadow: 2px 2px 1px 1px var(--fg-2);
-    transition: box-shadow 0.2s linear;
+    background-color: var(--bg-2);
   }
 
   .tech div {

@@ -8,7 +8,7 @@
 <div class="container" class:blur>
   <button class="event" style="margin-left: {island.offset}px; width: {island.width}px; background-color: {island.color}" 
     on:click={e => {
-      e.currentTarget.scrollIntoView({ behavior: 'smooth', block: 'center' });
+      e.currentTarget.scrollIntoView({ behavior: "smooth", block: "nearest", inline: "nearest" });
       island.onClick();
     }}>
     {island.label}

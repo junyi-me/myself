@@ -25,14 +25,27 @@
     });
     return formattedDate;
   }
+
+  const getFormattedDuration = (startDate: Date, endDate?: Date) => {
+    if (!endDate) {
+      endDate = new Date();
+    }
+    const diffDays = Math.floor((endDate.getTime() - startDate.getTime()) / (1000 * 60 * 60 * 24));
+    const years = Math.floor(diffDays / 365);
+    const months = Math.floor((diffDays % 365) / 30);
+    return `${years}${$t('home.exp.years')} ${months}${$t('home.exp.months')}`;
+  }
 </script>
 
 <div class="container" style="border-left: 2px solid {exp.color}">
   <div>
     <h2>{$t(exp.txTitle)} {$t('exp.at')} {$t(exp.txOrg)}</h2>
-    <p class="period" style="background-color: {exp.color}">
-      <span>{formatDate(exp.startDate)} ~ {exp.endDate ? formatDate(exp.endDate) : "current"}</span>
-    </p>
+    <div class="time">
+      <p class="period" style="background-color: {exp.color}">
+        {formatDate(exp.startDate)} ~ {exp.endDate ? formatDate(exp.endDate) : $t('home.exp.present')}
+      </p>
+      <p class="duration">{getFormattedDuration(exp.startDate, exp.endDate)}</p>
+    </div>
     {@html $t(exp.txDescription)}
   </div>
 
@@ -97,5 +110,20 @@
     .tech a {
       margin-right: 0.5em;
     }
+  }
+
+  .time {
+    display: flex;
+    align-items: center;
+    margin-bottom: var(--gap-small);
+  }
+
+  .time p {
+    margin-top: 0;
+  }
+
+  .duration {
+    margin-left: 1em;
+    color: var(--fg-1);
   }
 </style>

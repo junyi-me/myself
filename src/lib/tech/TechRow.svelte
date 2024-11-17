@@ -52,13 +52,11 @@
 
   h3 {
     margin-top: var(--gap-medium);
-    text-align: center;
   }
 
   .techs {
     display: flex;
     flex-wrap: wrap;
-    justify-content: center;
   }
 
   .tech-detail {

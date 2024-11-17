@@ -47,7 +47,10 @@ export default {
         title: "Experience",
         content: `
           <p>I gradauted from <a href="https://www.bc.edu/">Boston College</a> in summer 2022, and since then, I have been a software engineer all the way.</p>
-        `
+        `,
+        years: "yr",
+        months: "mo",
+        present: "present",
       },
     },
     tech: {

@@ -1,6 +1,44 @@
 <script>
+  import { projects } from "$lib/data/projects";
   import { t } from "$lib/i18n";
 </script>
 
-<a href="https://blog.junyi.me/p/hosting-an-https-website-on-a-ha-k3s-cluster/" target="_blank">{$t('home.projects.k3s')}→</a>
+<div class="container">
+  {#each projects as proj}
+    <a class="proj" href={proj.url} target="_blank">
+      <img src={proj.img} alt={proj.txTitle} />
+      <h4>{$t(proj.txTitle)}</h4>
+    </a>
+  {/each}
+</div>
+
+<style>
+  .container {
+    display: flex;
+    flex-wrap: wrap;
+    gap: var(--gap-medium);
+  }
+
+  .proj {
+    display: flex;
+    flex-direction: column;
+    border-radius: var(--card-border-radius);
+    border: 1px solid var(--bg-3);
+    width: 200px;
+    text-decoration: none;
+  }
+
+  .proj h4 {
+    margin: 0;
+    padding: var(--gap-small);
+    color: var(--fg-1);
+    border-radius: 0 0 var(--card-border-radius) var(--card-border-radius);
+  }
+
+  img {
+    max-width: 100%;
+    max-height: 100%;
+    border-radius: var(--card-border-radius) var(--card-border-radius) 0 0;
+  }
+</style>
 
