@@ -1,15 +1,27 @@
 <script lang="ts">
+  import { onDestroy } from "svelte";
+  import store from "../../routes/stores";
+
   export let key: string;
   export let name: string;
   export let img: string;
+  export let darkImg: string|undefined;
   export let onClick: () => void;
   export let focus = false;
+
+  let dark = false;
+  const unsubscribe = store.subscribe(store => {
+    dark = store.pref.dark;
+    console.log(dark);
+  });
+  $: console.log(dark, darkImg);
+  onDestroy(unsubscribe);
 </script>
 
 <div>
   <button class="tech" on:click={onClick} class:focus={focus} id={`tech-${key}`}>
     <div>
-      <img src={img} alt={name} />
+      <img src={(dark && darkImg != undefined) ? darkImg : img} alt={name} />
     </div>
     <p>{name}</p>
   </button>

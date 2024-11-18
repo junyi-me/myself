@@ -21,8 +21,8 @@
 <div class="container">
   <h3>{title}</h3>
   <div class="techs">
-    {#each techList as { key, name, img }, i}
-      <Tech name={name} {key} {img} onClick={() => {
+    {#each techList as { key, name, img, darkImg }, i}
+      <Tech name={name} {key} {img} {darkImg} onClick={() => {
         if (focusIndex === i) {
           focusIndex = null;
         } else {

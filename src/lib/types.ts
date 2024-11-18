@@ -10,6 +10,7 @@ type SubTechType = {
   name: string;
   link: string;
   img: string;
+  darkImg?: string;
 }
 
 export type TechType = SubTechType & {

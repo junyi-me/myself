@@ -242,6 +242,7 @@ export const techs: { [key: string]: TechType } = {
     name: "GitHub",
     link: "github.com",
     img: "images/github256.png",
+    darkImg: "images/github-dark256.png",
     sub: [
       {
         key: "actions",
@@ -292,7 +293,7 @@ export const techs: { [key: string]: TechType } = {
     txDescription: "tech.aws.description",
     name: "AWS",
     link: "https://aws.amazon.com/",
-    img: "images/aws256.png",
+    img: "images/aws.png",
     sub: [
       {
         key: "lambda",
