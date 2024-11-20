@@ -60,7 +60,6 @@
   }
 
   .tech-detail {
-    padding: 1em;
     margin-bottom: 1em;
     color: var(--fg-1);
   }

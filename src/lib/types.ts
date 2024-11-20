@@ -5,7 +5,7 @@ export type ArticleType = {
   txContent: string;
 }
 
-type SubTechType = {
+export type SubTechType = {
   key: string
   name: string;
   link: string;
@@ -13,14 +13,16 @@ type SubTechType = {
   darkImg?: string;
 }
 
+export type PProjectType = {
+  txTitle: string;
+  txDescription?: string;
+  link: string;
+  img: string;
+}
+
 export type TechType = SubTechType & {
   txDescription: string;
-  projects?: {
-    key: string;
-    name: string;
-    link: string;
-    img: string;
-  }[];
+  projects?: PProjectType[];
   sub?: SubTechType[];
 }
 

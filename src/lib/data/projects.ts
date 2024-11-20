@@ -1,14 +1,10 @@
-export type PProjectType = {
-  txTitle: string;
-  img: string;
-  url: string;
-}
+import type { PProjectType } from "$lib/types";
 
 export const projects: PProjectType[] = [
   {
-    txTitle: "home.projects.k3s",
+    txTitle: "projects.k3s.title",
     img: "https://blog.junyi.me/p/hosting-an-https-website-on-a-ha-k3s-cluster/Https_Protocolo_hu7943313946152348111.jpg",
-    url: "https://blog.junyi.me/p/hosting-an-https-website-on-a-ha-k3s-cluster/"
+    link: "https://blog.junyi.me/p/hosting-an-https-website-on-a-ha-k3s-cluster/",
   }
 ]
 

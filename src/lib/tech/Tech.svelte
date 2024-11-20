@@ -12,9 +12,7 @@
   let dark = false;
   const unsubscribe = store.subscribe(store => {
     dark = store.pref.dark;
-    console.log(dark);
   });
-  $: console.log(dark, darkImg);
   onDestroy(unsubscribe);
 </script>
 

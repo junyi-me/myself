@@ -22,6 +22,7 @@
 <style>
   h1 {
     color: var(--accent);
+    margin-top: 0;
   }
 
   .template {

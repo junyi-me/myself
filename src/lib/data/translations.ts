@@ -1,9 +1,9 @@
-export type LanguageType = "en" | "jp" | "zh";
 type TranslationType = {
   en: Object;
   jp: Object;
   zh: Object;
 }
+export type LanguageType = keyof TranslationType;
 
 export default {
   en: {
@@ -41,12 +41,11 @@ export default {
       projects: {
         title: "Projects",
         content: `<p>From time to time, I work on some personal projects. Here are some of them.</p>`,
-        k3s: "Hosting an HTTPS website on a HA k3s cluster",
       },
       exp: {
         title: "Experience",
         content: `
-          <p>I gradauted from <a href="https://www.bc.edu/">Boston College</a> in summer 2022, and since then, I have been a software engineer all the way.</p>
+          <p>I graduated from <a href="https://www.bc.edu/">Boston College</a> in summer 2022, and since then, I have been working as a software engineer in a few different companies.</p>
         `,
         years: "yr",
         months: "mo",
@@ -122,37 +121,38 @@ export default {
       selenium: {
         description: `<p>Using this one extensively at ApolloEye. Gets its job done.</p>`,
       },
-      projects: {
-        title: "Projects",
-        this_website: {
-          headline: "The website you are currently viewing.",
-        },
-        cs_go: {
-          headline: "Computer science algorithms and data structures implemented in Go.",
-        },
-        leetcode: {
-          headline: "Leetcode problems solved in Go.",
-        },
-        neovim: {
-          headline: "My Neovim config.",
-        },
-        business_card: {
-          headline: "A simple website I coded to get familiar with AWS and React.",
-        },
-        thumbgen: {
-          headline: "A commandline tool to generate thumbnails for videos.",
-          description: `
-            <p>Features</p>
-            <ul>
-              <li>Generate thumbnails for individual videos</li>
-              <li>Generate thumbnails for directories containing videos and/or images</li>
-              <li>Organize the generated thumbnails in the same directory structure as the original input source folder</li>
-            </ul>
-          `
-        },
-      },
       sub: {
         title: "Familiar with",
+      },
+    },
+    projects: {
+      title: "Projects",
+      this_website: {
+        name: "This website",
+        description: "The website you are currently viewing.",
+      },
+      cs_go: {
+        name: "CS Go",
+        description: "Computer science algorithms and data structures implemented in Go.",
+      },
+      leetcode: {
+        name: "Leetcode",
+        description: "Leetcode problems solved in Go.",
+      },
+      neovim: {
+        name: "My Neovim config",
+        description: "My Neovim config.",
+      },
+      business_card: {
+        name: "Business Card",
+        description: "A simple website I coded to get familiar with AWS and React.",
+      },
+      thumbgen: {
+        name: "ThumbGen",
+        description: "A commandline tool to generate thumbnails for videos.",
+      },
+      k3s: {
+        title: "Hosting an HTTPS website on a HA k3s cluster" ,
       },
     },
     exp: {

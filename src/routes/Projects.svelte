@@ -25,7 +25,10 @@
     border-radius: var(--card-border-radius);
     border: 1px solid var(--bg-3);
     width: 200px;
+    height: 180px;
+    box-sizing: border-box;
     text-decoration: none;
+    box-shadow: var(--card-shadow);
   }
 
   .proj h4 {
@@ -37,7 +40,8 @@
 
   img {
     max-width: 100%;
-    max-height: 100%;
+    max-height: 80px;
+    object-fit: cover;
     border-radius: var(--card-border-radius) var(--card-border-radius) 0 0;
   }
 </style>

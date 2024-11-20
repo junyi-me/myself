@@ -9,8 +9,8 @@ export const techs: { [key: string]: TechType } = {
     img: "images/svelte256.png",
     projects: [
       {
-        key: "this_website",
-        name: "This Website",
+        txTitle: "projects.this_website.name",
+        txDescription: "projects.this_website.description",
         link: "https://github.com/jywang99/myself",
         img: "images/github256.png",
       }
@@ -24,8 +24,8 @@ export const techs: { [key: string]: TechType } = {
     img: "images/react128.png",
     projects: [
       {
-        key: "business_card",
-        name: "Business Card",
+        txTitle: "projects.business_card.name",
+        txDescription: "projects.business_card.description",
         link: "http://businesscardjy.com.s3-website-us-east-1.amazonaws.com/",
         img: "images/github256.png",
       },
@@ -86,20 +86,20 @@ export const techs: { [key: string]: TechType } = {
     img: "images/go256.png",
     projects: [
       {
-        key: "thumbgen",
-        name: "ThumbGen",
+        txTitle: "projects.thumbgen.name",
+        txDescription: "projects.thumbgen.description",
         link: "https://github.com/jywang99/thumbgen",
         img: "images/github256.png",
       },
       {
-        key: "cs_go",
-        name: "CS Go",
+        txTitle: "projects.cs_go.name",
+        txDescription: "projects.cs_go.description",
         link: "https://github.com/jywang99/cs_go",
         img: "images/github256.png",
       },
       {
-        key: "leetcode",
-        name: "Leetcode",
+        txTitle: "projects.leetcode.name",
+        txDescription: "projects.leetcode.description",
         link: "https://github.com/jywang99/leetcode",
         img: "images/github256.png",
       },
@@ -364,8 +364,8 @@ export const techs: { [key: string]: TechType } = {
     ],
     projects: [
       {
-        key: "business_card",
-        name: "Business Card",
+        txTitle: "projects.business_card.name",
+        txDescription: "projects.business_card.description",
         link: "http://businesscardjy.com.s3-website-us-east-1.amazonaws.com/",
         img: "images/github256.png",
       },
@@ -460,8 +460,8 @@ export const techs: { [key: string]: TechType } = {
     img: "images/lua256.png",
     projects: [
       {
-        key: "neovim",
-        name: "~/.config/nvim/",
+        txTitle: "projects.neovim.name",
+        txDescription: "projects.neovim.description",
         link: "https://github.com/jywang99/neovim",
         img: "images/github256.png",
       }
@@ -475,8 +475,8 @@ export const techs: { [key: string]: TechType } = {
     img: "images/neovim256.png",
     projects: [
       {
-        key: "neovim",
-        name: "~/.config/nvim/",
+        txTitle: "projects.neovim.name",
+        txDescription: "projects.neovim.description",
         link: "/",
         img: "images/github256.png",
       },
