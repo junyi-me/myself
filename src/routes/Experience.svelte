@@ -85,12 +85,17 @@
   .tech {
     display: flex;
     flex-wrap: wrap;
-    padding-left: 1em;
+    gap: var(--gap-small);
   }
 
   .tech a {
     display: flex;
-    margin-right: 1em;
+    align-items: center;
+    text-decoration: none;
+    color: var(--fg-1);
+    border: var(--card-border);
+    border-radius: var(--card-border-radius);
+    padding: var(--gap-tiny) var(--gap-small);
   }
 
   .tech img {
@@ -107,8 +112,8 @@
       padding: 0.25em 0.5em;
     }
 
-    .tech a {
-      margin-right: 0.5em;
+    .tech {
+      gap: var(--gap-tiny);
     }
   }
 

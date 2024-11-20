@@ -14,7 +14,7 @@
     box-shadow: var(--card-shadow);
   }
 
-  @media screen and (max-width: 800px) {
+  @media screen and (max-width: 1200px) {
     .container {
       padding: var(--gap-medium);
     }

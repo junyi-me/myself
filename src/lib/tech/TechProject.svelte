@@ -18,9 +18,14 @@
 <style>
   .container {
     text-decoration: none;
-    padding: var(--gap-tiny) var(--gap-small);
     display: flex;
     align-items: center;
+  }
+
+  @media screen and (max-width: 800px) {
+    .container {
+      display: block;
+    }
   }
 
   a {

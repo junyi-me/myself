@@ -69,6 +69,7 @@
 
   p {
     margin: 0.5em 0;
+    word-break: break-all;
   }
 </style>
 
