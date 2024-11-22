@@ -1,7 +1,205 @@
+type TranscriptType = {
+  home: {
+    name: string,
+    headline: string,
+    nav: {
+      title: string,
+      here: string,
+      blog: string,
+    },
+    links: {
+      title: string,
+    },
+    intro: {
+      title: string,
+      content: string,
+    },
+    tech: {
+      title: string,
+      content: string,
+    },
+    certs: {
+      title: string,
+      content: string,
+    },
+    projects: {
+      title: string,
+      content: string,
+    },
+    exp: {
+      title: string,
+      content: string,
+      years: string,
+      months: string,
+      present: string,
+    },
+  },
+  tech: {
+    svelte: {
+      description: string,
+    },
+    react: {
+      description: string,
+    },
+    html_css_js: {
+      description: string,
+    },
+    golang: {
+      description: string,
+    },
+    java: {
+      description: string,
+    },
+    python: {
+      description: string,
+    },
+    csharp: {
+      description: string,
+    },
+    cpp: {
+      description: string,
+    },
+    mysql: {
+      description: string,
+    },
+    postgres: {
+      description: string,
+    },
+    dynamodb: {
+      description: string,
+    },
+    github: {
+      description: string,
+    },
+    docker: {
+      description: string,
+    },
+    kubernetes: {
+      description: string,
+    },
+    aws: {
+      description: string,
+    },
+    gcp: {
+      description: string,
+    },
+    linux: {
+      description: string,
+    },
+    bash: {
+      description: string,
+    },
+    lua: {
+      description: string,
+    },
+    neovim: {
+      description: string,
+    },
+    selenium: {
+      description: string,
+    },
+    sub: {
+      title: string,
+    },
+  },
+  projects: {
+    title: string,
+    this_website: {
+      name: string,
+      description: string,
+    },
+    cs_go: {
+      name: string,
+      description: string,
+    },
+    leetcode: {
+      name: string,
+      description: string,
+    },
+    neovim: {
+      name: string,
+      description: string,
+    },
+    business_card: {
+      name: string,
+      description: string,
+    },
+    thumbgen: {
+      name: string,
+      description: string,
+    },
+    k3s: {
+      title: string,
+    },
+  },
+  exp: {
+    at: string,
+    bostoncollege: {
+      name: string,
+      company: string,
+      title: string,
+      description: string,
+    },
+    apolloeye: {
+      name: string,
+      company: string,
+      title: string,
+      description: string,
+      logrpa: {
+        title: string,
+        description: string,
+      },
+      aeweb: {
+        title: string,
+        description: string,
+      },
+      aemonitor: {
+        title: string,
+        description: string,
+      },
+    },
+    prussian: {
+      name: string,
+      company: string,
+      title: string,
+      description: string,
+      prussian: {
+        title: string,
+        description: string,
+      },
+      tinky: {
+        title: string,
+        description: string,
+      },
+    },
+    nagrastar: {
+      name: string,
+      company: string,
+      title: string,
+      description: string,
+      ns_manager: {
+        title: string,
+        description: string,
+      },
+      ns_events: {
+        title: string,
+        description: string,
+      },
+      ns_publish: {
+        title: string,
+        description: string,
+      },
+    },
+  },
+  pref: {
+    darkMode: string,
+  },
+}
+
 type TranslationType = {
-  en: Object;
-  jp: Object;
-  zh: Object;
+  en: TranscriptType;
+  jp: TranscriptType;
+  zh: TranscriptType;
 }
 export type LanguageType = keyof TranslationType;
 
@@ -68,7 +266,7 @@ export default {
         description: `<p>I started learning Go this year, and have been using it for every chance I get since then. I'm really liking the simplicity and speed of this language. Coming from <code>Java</code> as my primary language, <code>Go</code> really gave me the agility in developing these smaller projects.</p>`,
       },
       java: {
-        description: `<p>This is the first programming language I learned (in a structured way), back in college. My dad is also a <code>Java</code> person, so he taught me a lot of fundamentals. I'm still writing a lot fo Java at ApolloEye.</p>
+        description: `<p>This is the first programming language I learned (in a structured way), back in college. My dad is also a <code>Java</code> person, so he taught me a lot of fundamentals. I'm still writing a lot fo Java at Apollo Eye.</p>
         <p>My experience with <code>Java</code> is mainly in developing web apps using <code>SpringBoot</code>, along with some CLI programs that run on servers.</p>
         `,
       },
@@ -170,20 +368,20 @@ export default {
         company: "ApolloEye",
         title: "Software Engineer",
         description: `
-          <p>Ene-eco Shift LLC is a company providing better solutions for monitoring solar-power plant operation. Ene-eco Shift uses self-developed software to provide real-time supervision of the power plant operations and sends personalized alerts on a daily basis to plant owners if there are malfunctions detected. Following are projects I worked / am working on:</p>
+          <p>Apollo Eye is a company providing better solutions for monitoring solar power plants. Apollo Eye uses self-developed software to collect operational information of power plants, and sends personalized alerts to owners upon detected malfunctions. Following are the projects I have worked on:</p>
         `,
         logrpa: {
-          title: "Web Scraping",
+          title: "Data collection",
           description: `
-          <li>Develop a web scraping program in Java using Selenium to collect electric power data from multiple managing companies and save in an internal database</li>
-          <li>Modify and maintain the program when the target website structure changes.</li>
+          <li>Develop a web scraping application using Java and Selenium to collect electric power data from multiple managing companies' websites, and save in an internal database</li>
+          <li>Modify and maintain the application when there are changes to the target websites</li>
           <li>Write unit tests for the program using JUnit and Mockito</li>
             `,
         },
         aeweb: {
-          title: "Website Development",
+          title: "Customer-facing website Development",
           description: `
-          <li>Develop and maintain a customer-facing website (both front-end and back-end) using SpringBoot MVC and Thymeleaf to visualize the historical record of generated solar power</li>
+          <li>Develop and maintain a customer-facing website (full-stack) using SpringBoot MVC and Thymeleaf to visualize the performance of power plants</li>
           <li>Implemented a feature that allows the user to download the scraped data as a CSV file</li>
           <li>Write unit tests for the program using JUnit and Mockito</li>
             `,
@@ -191,9 +389,9 @@ export default {
         aemonitor: {
           title: "Healthcheck Programs",
           description: `
-          <li>Develop a healthcheck program in Java using SpringBoot and Selenium to monitor the status of the web scraping program</li>
+          <li>Develop a healthcheck program using SpringBoot and Selenium to check healthiness of the customer-facing website</li>
           <li>Use cron jobs to schedule the healthcheck program to run periodically</li>
-          <li>Deploy the program to AWS EC2 using Docker</li>
+          <li>Deploy the program to AWS EC2 using Docker Compose</li>
           `,
         },
       },
@@ -207,16 +405,16 @@ export default {
         prussian: {
           title: "Serverless full-stack Development",
           description: `
-            <li>Develop a serverless full-stack application using AWS Lambda, API Gateway, DynamoDB, and S3</li>
+            <li>Develop a serverless application on AWS using Lambda, API Gateway, DynamoDB, and S3</li>
             <li>Implement authentication using AWS Cognito</li>
-            <li>Develop a client-facing webpage using React</li>
+            <li>Develop a client-facing static website using React, using static website hosting on S3</li>
           `,
         },
         tinky: {
           title: "Mobile app development",
           description: `
-            <li>Develop a customer-facing mobile app for iOS/Android using React Native</li>
-            <li>Develop the backend using AWS Lambda, API Gateway, and DynamoDB</li>
+            <li>Develop a customer-facing mobile application for iOS/Android using React Native</li>
+            <li>Develop a serverless web service using AWS Lambda, API Gateway, and DynamoDB</li>
           `,
         },
       },
@@ -225,27 +423,28 @@ export default {
         company: "Nagrastar LLC",
         title: "Junior Software Engineer",
         description: `
-          <p>NagraStar LLC is a company providing security and automation solutions for customers in the satellite TV industry, including Echostar and Bell TV. NagraStar is a joint venture of EchoStar and the Kudelski Group. Following are projects I worked on:</p>
+          <p>NagraStar is a joint venture of EchoStar and the Kudelski Group, providing security and automation solutions for customers in the satellite TV industry, including Echostar and Bell TV (B2B). Following are projects I worked on:</p>
           `,
         ns_manager: {
-          title: "Managing docker containers on GUI",
+          title: "Docker container management platform",
           description: `
-            <li>Develop a webpage where users can manage deployed docker containers easily on GUI</li>
-            <li>Support start/stop docker containers and changing configuration parameters on the fly</li>
+            <li>Develop a web-based UI for displaying the status and managing multiple instances of an application, which is also developed by Nagrastar</li>
+            <li>Support start/stop docker containers from the UI, and changing configuration parameters on the fly</li>
           `,
         },
         ns_events: {
-          title: "Validate and import data",
+          title: "Validate and import TV events",
           description: `
-            <li>Deploy decoupled applications with load balancing using Kubernetes</li>
-            <li>Develop web application for users to see validation erros and import progress</li>
-            <li>Develop backend program that validates and inserts data into a database</li>
+            <li>Develop a customer-facing web-based UI to initiate and track validation and import process</li>
+            <li>Develop a backend application that validates data and load them into database</li>
+            <li>Fine-tune performance by distributing workloads between multiple instances of the backend service</li>
           `,
         },
         ns_publish: {
-          title: "Encode video and publish",
+          title: "Encrypting and spooling video assets",
           description: `
-            <li>Develop and maintain a distributed system that encodes video files and spools them to satellites</li>
+            <li>Develop and maintain a distributed system that encrypts video files and spools them to the satellites</li>
+            <li>Develop and maintain a customer-facing web-based GUI that shows status and acts as a control panel for the other components</li>
             <li>Develop a end-to-end testing program including UI testing using Selenium</li>
           `,
         },
@@ -256,33 +455,397 @@ export default {
     },
   },
   jp: {
-    name: "TODO",
-    intro: {
-      title: "TODO",
-      content: `
-        <p>TODO</p>
-      `,
+    home: {
+      name: "",
+      headline: "",
+      nav: {
+        title: "",
+        here: "",
+        blog: "",
+      },
+      links: {
+        title: "",
+      },
+      intro: {
+        title: "",
+        content: "",
+      },
+      tech: {
+        title: "",
+        content: "",
+      },
+      certs: {
+        title: "",
+        content: "",
+      },
+      projects: {
+        title: "",
+        content: "",
+      },
+      exp: {
+        title: "",
+        content: "",
+        years: "",
+        months: "",
+        present: "",
+      },
     },
-    why: {
-      title: "TODO",
-      content: `
-        <p>TODO</p>
-      `
+    tech: {
+      svelte: {
+        description: "",
+      },
+      react: {
+        description: "",
+      },
+      html_css_js: {
+        description: "",
+      },
+      golang: {
+        description: "",
+      },
+      java: {
+        description: "",
+      },
+      python: {
+        description: "",
+      },
+      csharp: {
+        description: "",
+      },
+      cpp: {
+        description: "",
+      },
+      mysql: {
+        description: "",
+      },
+      postgres: {
+        description: "",
+      },
+      dynamodb: {
+        description: "",
+      },
+      github: {
+        description: "",
+      },
+      docker: {
+        description: "",
+      },
+      kubernetes: {
+        description: "",
+      },
+      aws: {
+        description: "",
+      },
+      gcp: {
+        description: "",
+      },
+      linux: {
+        description: "",
+      },
+      bash: {
+        description: "",
+      },
+      lua: {
+        description: "",
+      },
+      neovim: {
+        description: "",
+      },
+      selenium: {
+        description: "",
+      },
+      sub: {
+        title: "",
+      },
+    },
+    projects: {
+      title: "",
+      this_website: {
+        name: "",
+        description: "",
+      },
+      cs_go: {
+        name: "",
+        description: "",
+      },
+      leetcode: {
+        name: "",
+        description: "",
+      },
+      neovim: {
+        name: "",
+        description: "",
+      },
+      business_card: {
+        name: "",
+        description: "",
+      },
+      thumbgen: {
+        name: "",
+        description: "",
+      },
+      k3s: {
+        title: "",
+      },
+    },
+    exp: {
+      at: "",
+      bostoncollege: {
+        name: "",
+        company: "",
+        title: "",
+        description: "",
+      },
+      apolloeye: {
+        name: "",
+        company: "",
+        title: "",
+        description: "",
+        logrpa: {
+          title: "",
+          description: "",
+        },
+        aeweb: {
+          title: "",
+          description: "",
+        },
+        aemonitor: {
+          title: "",
+          description: "",
+        },
+      },
+      prussian: {
+        name: "",
+        company: "",
+        title: "",
+        description: "",
+        prussian: {
+          title: "",
+          description: "",
+        },
+        tinky: {
+          title: "",
+          description: "",
+        },
+      },
+      nagrastar: {
+        name: "",
+        company: "",
+        title: "",
+        description: "",
+        ns_manager: {
+          title: "",
+          description: "",
+        },
+        ns_events: {
+          title: "",
+          description: "",
+        },
+        ns_publish: {
+          title: "",
+          description: "",
+        },
+      },
+    },
+    pref: {
+      darkMode: "",
     },
   },
   zh: {
-    name: "TODO",
-    intro: {
-      title: "TODO",
-      content: `
-        <p>TODO</p>
-      `,
+    home: {
+      name: "",
+      headline: "",
+      nav: {
+        title: "",
+        here: "",
+        blog: "",
+      },
+      links: {
+        title: "",
+      },
+      intro: {
+        title: "",
+        content: "",
+      },
+      tech: {
+        title: "",
+        content: "",
+      },
+      certs: {
+        title: "",
+        content: "",
+      },
+      projects: {
+        title: "",
+        content: "",
+      },
+      exp: {
+        title: "",
+        content: "",
+        years: "",
+        months: "",
+        present: "",
+      },
     },
-    why: {
-      title: "TODO",
-      content: `
-        <p>TODO</p>
-      `
+    tech: {
+      svelte: {
+        description: "",
+      },
+      react: {
+        description: "",
+      },
+      html_css_js: {
+        description: "",
+      },
+      golang: {
+        description: "",
+      },
+      java: {
+        description: "",
+      },
+      python: {
+        description: "",
+      },
+      csharp: {
+        description: "",
+      },
+      cpp: {
+        description: "",
+      },
+      mysql: {
+        description: "",
+      },
+      postgres: {
+        description: "",
+      },
+      dynamodb: {
+        description: "",
+      },
+      github: {
+        description: "",
+      },
+      docker: {
+        description: "",
+      },
+      kubernetes: {
+        description: "",
+      },
+      aws: {
+        description: "",
+      },
+      gcp: {
+        description: "",
+      },
+      linux: {
+        description: "",
+      },
+      bash: {
+        description: "",
+      },
+      lua: {
+        description: "",
+      },
+      neovim: {
+        description: "",
+      },
+      selenium: {
+        description: "",
+      },
+      sub: {
+        title: "",
+      },
+    },
+    projects: {
+      title: "",
+      this_website: {
+        name: "",
+        description: "",
+      },
+      cs_go: {
+        name: "",
+        description: "",
+      },
+      leetcode: {
+        name: "",
+        description: "",
+      },
+      neovim: {
+        name: "",
+        description: "",
+      },
+      business_card: {
+        name: "",
+        description: "",
+      },
+      thumbgen: {
+        name: "",
+        description: "",
+      },
+      k3s: {
+        title: "",
+      },
+    },
+    exp: {
+      at: "",
+      bostoncollege: {
+        name: "",
+        company: "",
+        title: "",
+        description: "",
+      },
+      apolloeye: {
+        name: "",
+        company: "",
+        title: "",
+        description: "",
+        logrpa: {
+          title: "",
+          description: "",
+        },
+        aeweb: {
+          title: "",
+          description: "",
+        },
+        aemonitor: {
+          title: "",
+          description: "",
+        },
+      },
+      prussian: {
+        name: "",
+        company: "",
+        title: "",
+        description: "",
+        prussian: {
+          title: "",
+          description: "",
+        },
+        tinky: {
+          title: "",
+          description: "",
+        },
+      },
+      nagrastar: {
+        name: "",
+        company: "",
+        title: "",
+        description: "",
+        ns_manager: {
+          title: "",
+          description: "",
+        },
+        ns_events: {
+          title: "",
+          description: "",
+        },
+        ns_publish: {
+          title: "",
+          description: "",
+        },
+      },
+    },
+    pref: {
+      darkMode: "",
     },
   },
 } as TranslationType;

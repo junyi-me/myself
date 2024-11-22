@@ -15,11 +15,12 @@
 <style>
   .container {
     display: flex;
+    align-items: center;
+    gap: var(--gap-small);
   }
 
   p {
     margin: 0;
-    margin-left: 1em;
   }
 
    /* The switch - the box around the slider */
@@ -28,6 +29,7 @@
     display: inline-block;
     width: 50px;
     height: 28px;
+    margin: 0;
   }
 
   /* Hide default HTML checkbox */

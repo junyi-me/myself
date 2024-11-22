@@ -5,7 +5,7 @@
 
   export let events: TimeEventType[] = [];
 
-  const TIMELINE_WIDTH = 1500;
+  const TIMELINE_WIDTH = 1000;
   const minDate = Math.min(...events.map(event => event.startDate.getTime()));
   const maxDate = Math.max(
     ...events.map(event => (event.endDate ? event.endDate.getTime() : Date.now()))
