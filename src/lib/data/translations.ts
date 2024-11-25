@@ -220,7 +220,7 @@ export default {
         title: "Hi,",
         content: `
           <p>Welcome to my personal website. I'm Junyi Wang, a professional and hobbyist software engineer.</p>
-          <p>My primary areas of interest are web development and self-hosting. The website you are seeing right now is hosted on a <a href="https://blog.junyi.me/p/hosting-an-https-website-on-a-ha-k3s-cluster/" target="_blank">bare-metal kubernetes cluster</a> (and the blog itself), and I'm planning to host more web services as well in the future.</p>
+          <p>My primary areas of interest are web development and self-hosting. The website you are seeing right now is hosted on a <a href="https://blog.junyi.me/p/hosting-an-https-website-on-a-ha-k3s-cluster/" target="_blank">bare-metal kubernetes cluster</a> (also the blog itself), and I'm planning to self-host more web services in the future.</p>
           <p>By the way, I use <code>vim (Neovim)</code> and <code>Arch</code>. If you are interested, my dot files are all on my <a href="https://github.com/jywang99/linux_config" target="_blank">GitHub</a>.</p>
           `,
       },
@@ -318,6 +318,12 @@ export default {
       },
       selenium: {
         description: `<p>Using this one extensively at ApolloEye. Gets its job done.</p>`,
+      },
+      phaser: {
+        description: `<p>Recently I started learning 2D game development using <code>Phaser3</code>.</p>`,
+      },
+      tiled: {
+        description: `<p>Having a great time tinkering with 2D top-down RPG maps.</p>`,
       },
       sub: {
         title: "Familiar with",

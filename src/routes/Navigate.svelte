@@ -1,5 +1,5 @@
 <script lang="ts">
-  import { articles, type ArticleKeyType } from "$lib/data/articles";
+  import articles, { type ArticleKeyType } from "$lib/data/articles";
   import { t } from "$lib/i18n";
   import { type ArticleType } from "$lib/types";
   import Card from "$lib/Card.svelte";

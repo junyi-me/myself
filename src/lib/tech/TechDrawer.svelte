@@ -3,7 +3,7 @@
   import type { TechType } from '$lib/types';
   import { fade } from 'svelte/transition';
   import SubTech from './SubTech.svelte';
-    import TechProject from './TechProject.svelte';
+  import TechProject from './TechProject.svelte';
 
   export let tech: TechType;
 </script>
@@ -37,9 +37,10 @@
 <style>
   h4 {
     display: inline-block;
+    font-weight: bold;
   }
 
-  .proj div:not(:last-child) {
+  .proj {
     margin-bottom: var(--spacing);
   }
 

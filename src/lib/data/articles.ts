@@ -1,8 +1,6 @@
 import type { ArticleType } from '../types';
 
-export type ArticleKeyType = 'intro' | 'tech' | 'projects' | 'certs' | 'exp';
-
-export const articles: { [key in ArticleKeyType]: ArticleType } = {
+const articlesRaw = {
   'intro': {
     txTitle: 'home.intro.title',
     txContent: 'home.intro.content',
@@ -24,4 +22,7 @@ export const articles: { [key in ArticleKeyType]: ArticleType } = {
     txContent: 'home.exp.content',
   }
 };
+export type ArticleKeyType = keyof typeof articlesRaw;
+const articles: Record<ArticleKeyType, ArticleType> = articlesRaw;
+export default articles;
 

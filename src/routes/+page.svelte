@@ -82,13 +82,9 @@
   @media screen and (max-width: 800px) {
     .container {
       flex-direction: column;
-      padding: var(--gap-small);
+      padding: 0;
       gap: var(--gap-small);
     }
-
-    .content {
-      gap: var(--gap-small);
-      }
 
     .sticky {
       position: relative;

@@ -20,11 +20,14 @@
     text-decoration: none;
     display: flex;
     align-items: center;
+    margin-bottom: var(--gap-small);
   }
 
   @media screen and (max-width: 800px) {
     .container {
-      display: block;
+      flex-direction: column;
+      gap: 0;
+      align-items: flex-start;
     }
   }
 

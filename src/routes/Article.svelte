@@ -1,8 +1,8 @@
 <script lang="ts">
   import { t } from '$lib/i18n';
   import type { ArticleKeyType } from "$lib/data/articles";
-  import { articles } from '$lib/data/articles';
-    import Card from '$lib/Card.svelte';
+  import Card from '$lib/Card.svelte';
+  import articles from '$lib/data/articles';
 
   export let key: ArticleKeyType;
 

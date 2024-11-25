@@ -1,20 +1,54 @@
-import type { TechType } from "../types";
+import type { PProjectType, TechType } from "../types";
 
-export const techs: { [key: string]: TechType } = {
+const techProjectsRaw = {
+  thisWebsite: {
+    txTitle: "projects.this_website.name",
+    txDescription: "projects.this_website.description",
+    link: "https://github.com/jywang99/myself",
+    img: "images/github256.png",
+  },
+  businessCard: {
+    txTitle: "projects.business_card.name",
+    txDescription: "projects.business_card.description",
+    link: "http://businesscardjy.com.s3-website-us-east-1.amazonaws.com/",
+    img: "images/github256.png",
+  },
+  thumbgen: {
+    txTitle: "projects.thumbgen.name",
+    txDescription: "projects.thumbgen.description",
+    link: "https://github.com/jywang99/thumbgen",
+    img: "images/github256.png",
+  },
+  csgo: {
+    txTitle: "projects.cs_go.name",
+    txDescription: "projects.cs_go.description",
+    link: "https://github.com/jywang99/cs_go",
+    img: "images/github256.png",
+  },
+  leetcode: {
+    txTitle: "projects.leetcode.name",
+    txDescription: "projects.leetcode.description",
+    link: "https://github.com/jywang99/leetcode",
+    img: "images/github256.png",
+  },
+  neovim: {
+    txTitle: "projects.neovim.name",
+    txDescription: "projects.neovim.description",
+    link: "https://github.com/jywang99/neovim",
+    img: "images/github256.png",
+  },
+};
+export type TechProjectKeyType = keyof typeof techProjectsRaw;
+export const techProjects: Record<TechProjectKeyType, PProjectType> = techProjectsRaw;
+
+const techsRaw = {
   svelte: {
     key: "svelte",
     txDescription: "tech.svelte.description",
     name: "Svelte",
     link: "https://svelte.dev/",
     img: "images/svelte256.png",
-    projects: [
-      {
-        txTitle: "projects.this_website.name",
-        txDescription: "projects.this_website.description",
-        link: "https://github.com/jywang99/myself",
-        img: "images/github256.png",
-      }
-    ],
+    projects: [ techProjects.thisWebsite, ],
   },
   react: {
     key: "react",
@@ -22,14 +56,7 @@ export const techs: { [key: string]: TechType } = {
     name: "React",
     link: "https://react.dev/",
     img: "images/react128.png",
-    projects: [
-      {
-        txTitle: "projects.business_card.name",
-        txDescription: "projects.business_card.description",
-        link: "http://businesscardjy.com.s3-website-us-east-1.amazonaws.com/",
-        img: "images/github256.png",
-      },
-    ],
+    projects: [ techProjects.businessCard, ],
     sub: [
       {
         key: "reactnative",
@@ -84,26 +111,7 @@ export const techs: { [key: string]: TechType } = {
     name: "Go",
     link: "https://go.dev/",
     img: "images/go256.png",
-    projects: [
-      {
-        txTitle: "projects.thumbgen.name",
-        txDescription: "projects.thumbgen.description",
-        link: "https://github.com/jywang99/thumbgen",
-        img: "images/github256.png",
-      },
-      {
-        txTitle: "projects.cs_go.name",
-        txDescription: "projects.cs_go.description",
-        link: "https://github.com/jywang99/cs_go",
-        img: "images/github256.png",
-      },
-      {
-        txTitle: "projects.leetcode.name",
-        txDescription: "projects.leetcode.description",
-        link: "https://github.com/jywang99/leetcode",
-        img: "images/github256.png",
-      },
-    ],
+    projects: [ techProjects.thumbgen, techProjects.csgo, techProjects.leetcode, ],
     sub: [
       {
         key: "echo",
@@ -278,7 +286,7 @@ export const techs: { [key: string]: TechType } = {
         key: "k3s",
         name: "k3s",
         link: "https://k3s.io/",
-        img: "images/k3s.svg",
+        img: "images/k3s.png",
       },
       {
         key: "helm",
@@ -362,14 +370,7 @@ export const techs: { [key: string]: TechType } = {
         img: "images/step_fn256.png",
       },
     ],
-    projects: [
-      {
-        txTitle: "projects.business_card.name",
-        txDescription: "projects.business_card.description",
-        link: "http://businesscardjy.com.s3-website-us-east-1.amazonaws.com/",
-        img: "images/github256.png",
-      },
-    ],
+    projects: [ techProjects.businessCard, ],
   },
   gcp: {
     key: "gcp",
@@ -458,14 +459,7 @@ export const techs: { [key: string]: TechType } = {
     name: "Lua",
     link: "https://lua.org/",
     img: "images/lua256.png",
-    projects: [
-      {
-        txTitle: "projects.neovim.name",
-        txDescription: "projects.neovim.description",
-        link: "https://github.com/jywang99/neovim",
-        img: "images/github256.png",
-      }
-    ],
+    projects: [ techProjects.neovim, ],
   },
   neovim: {
     key: "neovim",
@@ -473,14 +467,7 @@ export const techs: { [key: string]: TechType } = {
     name: "Neovim",
     link: "https://neovim.io/",
     img: "images/neovim256.png",
-    projects: [
-      {
-        txTitle: "projects.neovim.name",
-        txDescription: "projects.neovim.description",
-        link: "/",
-        img: "images/github256.png",
-      },
-    ],
+    projects: [ techProjects.neovim, ],
   },
   selenium: {
     key: "selenium",
@@ -503,10 +490,25 @@ export const techs: { [key: string]: TechType } = {
       },
     ],
   },
+  phaser: {
+    key: "phaser",
+    txDescription: "tech.phaser.description",
+    name: "Phaser",
+    link: "https://phaser.io/",
+    img: "images/phaser.png",
+  },
+  tiled: {
+    key: "tiled",
+    txDescription: "tech.tiled.description",
+    name: "Tiled",
+    link: "https://www.mapeditor.org/",
+    img: "images/tiled.png",
+  },
 };
-export type TechKeyType = keyof typeof techs;
+export type TechKeyType = keyof typeof techsRaw;
+export const techs: Record<TechKeyType, TechType> = techsRaw;
 
-export default {
+const techCategoriesRaw = {
   frontend: [
     techs.svelte,
     techs.react,
@@ -540,5 +542,12 @@ export default {
     techs.neovim,
     techs.selenium,
   ],
-} as { [key: string]: TechType[] };
+  gamedev: [
+    techs.phaser,
+    techs.tiled,
+  ],
+};
+export type TechCategoryKeyType = keyof typeof techCategoriesRaw;
+const techCategories: Record<TechCategoryKeyType, TechType[]> = techCategoriesRaw;
+export default techCategories;
 

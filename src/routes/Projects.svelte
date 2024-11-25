@@ -5,7 +5,7 @@
 
 <div class="container">
   {#each projects as proj}
-    <a class="proj" href={proj.url} target="_blank">
+    <a class="proj" href={proj.link} target="_blank">
       <img src={proj.img} alt={proj.txTitle} />
       <h4>{$t(proj.txTitle)}</h4>
     </a>
