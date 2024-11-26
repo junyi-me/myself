@@ -30,7 +30,7 @@
       </p>
       <p>
         <i class="fa-regular fa-envelope"></i>
-        <a href="mailto:junyi.wang.007@gmail.com">junyi.wang.007@gmail.com </a>
+        <a href="mailto:junyi.wang.007@gmail.com">{$t('home.links.email')}</a>
       </p>
     </Card>
   </div>

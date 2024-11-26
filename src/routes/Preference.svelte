@@ -29,31 +29,48 @@
 </script>
 
 <Card transparent>
-  <div class="entries">
-    <div class="lang">
-      <i class="fa-solid fa-globe"></i>
-      <Dropdown bind:selected={$store.pref.lang} options={langOptions} />
-    </div>
-    <ToggleSwitch label={$t('pref.darkMode')} bind:checked={$store.pref.dark} />
-  </div>
+  <table>
+    <tbody class="entries">
+      <tr class="entry lang">
+        <td>
+          <i class="fa-solid fa-globe"></i>
+        </td>
+        <td>
+          <Dropdown bind:selected={$store.pref.lang} options={langOptions} />
+        </td>
+      </tr>
+      <tr class="entry">
+        <td>
+          <ToggleSwitch bind:checked={$store.pref.dark} />
+        </td>
+        <td>
+          <p>{$t('pref.darkMode')}</p>
+        </td>
+      </tr>
+    </tbody>
+  </table>
 </Card>
 
 <style>
-  .entries {
-    display: flex;
-    flex-direction: column;
-    gap: var(--gap-medium);
-  }
-
-  .lang {
-    display: flex;
-    align-items: center;
-    gap: var(--gap-small);
-  }
-
-  .lang i {
+  .entry i {
     font-size: 1.2em;
     color: var(--fg-3);
+  }
+
+  tr:not(:last-child) td {
+    padding-bottom: var(--gap-medium);
+  }
+
+  td:nth-child(1) {
+    text-align: right;
+  }
+
+  td:nth-child(2) {
+    padding-left: var(--gap-tiny);
+  }
+
+  .entry p {
+    margin: 0;
   }
 </style>
 

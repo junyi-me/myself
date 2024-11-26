@@ -1,7 +1,6 @@
 <script lang="ts">
   export let checked = false;
   export let onChange = () => {};
-  export let label: string;
 </script>
 
 <div class="container">
@@ -9,7 +8,6 @@
     <input type="checkbox" bind:checked on:change={onChange}>
     <span class="slider round"></span>
   </label>
-  <p>{label}</p>
 </div>
 
 <style>
@@ -17,10 +15,6 @@
     display: flex;
     align-items: center;
     gap: var(--gap-small);
-  }
-
-  p {
-    margin: 0;
   }
 
    /* The switch - the box around the slider */

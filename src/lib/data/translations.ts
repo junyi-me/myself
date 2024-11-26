@@ -8,6 +8,7 @@ type TranscriptType = {
     links: {
       title: string,
       blog: string,
+      email: string,
     },
     intro: {
       title: string,
@@ -226,6 +227,7 @@ export default {
       links: {
         title: "Links",
         blog: "My blog",
+        email: "Email me",
       },
       intro: {
         title: "Hi,",
@@ -446,7 +448,7 @@ export default {
       nagrastar: {
         name: "Nagrastar",
         company: "Nagrastar LLC",
-        title: "Junior Software Engineer",
+        title: "Software Engineer",
         description: `
           <p>NagraStar is a joint venture of EchoStar and the Kudelski Group, providing security and automation solutions for customers in the satellite TV industry, including Echostar and Bell TV (B2B). Following are projects I worked on:</p>
           `,
@@ -481,211 +483,260 @@ export default {
   },
   jp: {
     home: {
-      name: "",
-      headline: "",
+      name: "Kunki Ou",
+      headline: "王君毅、ソフトウェアエンジニア",
       nav: {
-        title: "",
+        title: "目次",
       },
       links: {
-        title: "",
-        blog: "",
+        title: "外部リンク",
+        blog: "ブログ",
+        email: "メール",
       },
       intro: {
-        title: "",
-        content: "",
+        title: "はじめに",
+        content: `
+          <p>私のポートフォリオサイトへようこそ。私はアメリカでソフトウェアエンジニアをしている者で、趣味でもコードを書いたりしています。</p>
+          <p>主に興味を持っている分野はウェブ開発とセルフホスティングです。このサイトも自作の<a href="https://blog.junyi.me/p/hosting-an-https-website-on-a-ha-k3s-cluster" target="_blank">ベアメタルKubernetesクラスタ</a>からホスティングしています。将来的にはもっと多くのウェブサービスをセルフホスティングしようと考えています。</p>
+          <p>By the way, I use <code>vim (Neovim)</code> and <code>Arch</code>. If you are interested, my dot files are all on my <a href="https://github.com/jywang99/linux_config" target="_blank">GitHub</a>.</p>
+        `,
       },
       tech: {
-        title: "",
-        content: "",
-        frontend: "",
-        backend: "",
-        database: "",
-        cicd: "",
-        cloud: "",
-        gamedev: "",
-        others: "",
+        title: "スキル",
+        content: "<p>仕事などでは主にウェブ開発をしていますが、CI/CDなどの経験もあります。</p>",
+        frontend: "フロントエンド",
+        backend: "バックエンド",
+        database: "データベース",
+        cicd: "CI/CD",
+        cloud: "クラウド",
+        gamedev: "ゲーム開発",
+        others: "その他",
       },
       certs: {
-        title: "",
-        content: "",
+        title: "資格",
+        content: "<p>今まで全く経験がない分野を勉強する際に、資格を取るという方法が自分にはかなり刺さっている感じがします。</p>",
       },
       projects: {
-        title: "",
-        content: "",
+        title: "個人プロジェクト",
+        content: "時間があるときにはよく個人的なプロジェクトに取り組んでいます。",
       },
       exp: {
-        title: "",
-        content: "",
-        years: "",
-        months: "",
-        present: "",
+        title: "職務経験",
+        content: "<p>2022年夏に<a href='https://www.bc.edu/'>ボストンカレッジ</a>を卒業して以来、いくつかの会社でソフトウェアエンジニアとして働いてきました。</p>",
+        years: "年",
+        months: "ヶ月",
+        present: "現在",
       },
     },
     tech: {
       svelte: {
-        description: "",
+        description: "<p>このサイトは<code>Svelte</code>を使用して作った初めてのサイトです。以前からずっと気にはなっていましたが、ようやく試せる機会がやってきました。</p>",
       },
       react: {
-        description: "",
+        description: `
+          <p>Prussianでの仕事やいくつかの個人プロジェクトで、このフレームワークをかなり使い込みました。また、<code>React Native</code>を使ったモバイルアプリ開発の経験も少しあります。</p>
+          <p>以前は私のフロントエンド開発での定番フレームワークでしたが、これからの個人プロジェクトでは<code>Svelte</code>に置き換わるかもしれません。</p>
+        `
       },
       html_css_js: {
-        description: "",
+        description: "<p>私のフロントエンド開発の道のりはここから始まりました。今でも、たとえどんなフレームワークを使おうと、フロントエンド開発にはこの知識が欠かせないと感じています。</p>",
       },
       golang: {
-        description: "",
+        description: `
+          <p>2024年に<code>Go</code>を学び始めて以来、機会があるたびに使っています。この言語のシンプルさと速さがとても気に入っています。主に<code>Java</code>を書いてきた開発者の私に、<code>Go</code>はこういった小規模なプロジェクトを開発する際の瞬発力を与えてくれました。</p>
+        `,
       },
       java: {
-        description: "",
+        description: `
+          <p><code>Java</code>は私が大学に入って最初に学んだプログラミング言語でした。父も<code>Java</code>をよく使う開発者で、基礎の部分をたくさん叩き込まれました。現在もApollo Eyeではよく<code>Java</code>を書いています。</p>
+          <p>主に<code>SpringBoot</code>を使ったウェブアプリの開発と、サーバー上で動くCLIプログラムの作成をしています。</p>
+        `,
       },
       python: {
-        description: "",
+        description: `
+          <p><code>Python</code>はとても汎用性の高い言語です。これまでにサーバープログラム、CLIツール、そして少しだけGUIアプリケーションも作成しました。また、numpy/pandasやtensorflowを使ったAIの分野にも足を踏み入れてみましたが、そこに関してはまだちんぷんかんぷんです。いつかまた取り組んでみたいと思っています。</p>
+        `,
       },
       csharp: {
-        description: "",
+        description: `<p>初めて<code>C#</code>を使ったのは仕事で必要に迫られてのことでしたが、最近では"C# is Java done right"と言われる理由が少しわかるようになってきました。</p>`,
       },
       cpp: {
-        description: "",
+        description: "<p><code>C++</code>も仕事で学んだ言語の一つです。主にサーバープログラムに新機能を実装するタスクを任されていました。リンカーにはいつも苦戦を強いられています。</p>",
       },
       mysql: {
-        description: "",
+        description: "<p>ApolloEyeでの仕事を通じて<code>MySQL</code>を使い続けています。Nagrastarでは、<code>Oracle DB</code>や<code>PostgreSQL</code>にも触れる機会も度々ありました。</p>",
       },
       postgres: {
-        description: "",
+        description: "<p>最近の個人プロジェクトでは<code>PostgreSQL</code>をよく使っています。</p>",
       },
       dynamodb: {
-        description: "",
+        description: "<p>初めて学んだのはPrussianでのことです。NoSQLの考え方を学ぶのは難しかったですが、最終的にはサーバーレススタックで使用するスキーマの設計・実装を任されました。蓋を開けてみれば思ったほど難しくはありませんでした。</p>",
       },
       github: {
-        description: "",
+        description: "<p>2017年頃からずっと使っています。</p>",
       },
       docker: {
-        description: "",
+        description: "<p>仕事でかなり頻繁に使用するので、しっかりと時間を作って学ぶことにしました。最近ではセルフホスティングをする際に必ずDockerを使うようになり、そのシンプルさと可搬性に助けられています。</p>",
       },
       kubernetes: {
-        description: "",
+        description: "<p>仕事では<code>Docker</code>と共に<code>Kubernetes</code>も学びました。自分のクラスターを作ることをずっと夢見ていましたが、ついに実現しました。</p>",
       },
       aws: {
-        description: "",
+        description: "<p>Prussianでは、ほとんどのアプリケーションが<code>AWS</code>のサーバーレススタックで動いていました。ApolloEyeやNagrastarでも使う機会が多々あります。</p>",
       },
       gcp: {
-        description: "",
+        description: "<p>ApolloEyeでは、<code>Cloud Storage</code>や<code>Compute Engine</code>をよく使っています。</p>",
       },
       linux: {
-        description: "",
+        description: "<p>仕事でも、自宅でも、そして私が寝ている間でも、Linuxを使い続けています。サーバーではDebian、ワークステーションではArchを使っています。</p>",
       },
       bash: {
-        description: "",
+        description: "<p>zshも試しましたが、やはり<code>bash</code>のシンプルさと可搬性が気に入っています。</p>",
       },
       lua: {
-        description: "",
+        description: "<p>私のNeovimの設定はすべて<code>Lua</code>で書かれています。</p>",
       },
       neovim: {
-        description: "",
+        description: "<p>今まで出会ってきた中で、文句なしに最高のエディタです。この文章もNeovimで書いています。</p>",
       },
       selenium: {
-        description: "",
+        description: "<p>ApolloEyeでの仕事でよく使っています。</p>",
       },
       phaser: {
-        description: ``,
+        description: "<p>最近、<code>Phaser3</code>を使った2Dゲーム開発を始めました。</p>",
       },
       tiled: {
-        description: ``,
+        description: "<p>ポケモンのような2D RPGマップを設計したりしています。</p>",
       },
       sub: {
-        title: "",
+        title: "経験のあるツール",
       },
     },
     projects: {
-      title: "",
+      title: "プロジェクト",
       this_website: {
-        name: "",
-        description: "",
+        name: "当サイト",
+        description: "現在ご覧いただいているサイトです。",
       },
       cs_go: {
-        name: "",
-        description: "",
+        name: "CS Go",
+        description: "Goで実装されたコンピュータサイエンスのアルゴリズムとデータ構造。",
       },
       leetcode: {
-        name: "",
-        description: "",
+        name: "Leetcode",
+        description: "Goで解いたLeetcodeの問題。",
       },
       neovim: {
-        name: "",
-        description: "",
+        name: "Neovim",
+        description: "私のNeovim設定ファイル",
       },
       business_card: {
-        name: "",
-        description: "",
+        name: "名刺アプリ",
+        description: "AWSとReactの練習用に作成したシンプルなウェブサイト。",
       },
       thumbgen: {
-        name: "",
-        description: "",
+        name: "ThumbGen",
+        description: "動画のサムネイルを生成するコマンドラインツール。",
       },
       k3s: {
-        title: "",
+        title: "Hosting an HTTPS website on a HA k3s cluster" ,
       },
     },
     exp: {
-      at: "",
+      at: "@",
       bostoncollege: {
-        name: "",
-        company: "",
-        title: "",
-        description: "",
+        name: "ボストンカレッジ",
+        company: "ボストンカレッジ",
+        title: "学生",
+        description: "<p>ボストンカレッジではコンピュータサイエンスを専攻し、数学を副専攻しました。また、1学期間、コンピューターサイエンスの授業にてTAを務めました。</p>",
       },
       apolloeye: {
-        name: "",
-        company: "",
-        title: "",
-        description: "",
+        name: "ApolloEye",
+        company: "Apollo Eye",
+        title: "ソフトウェアエンジニア",
+        description: "<p>Apollo Eyeは、太陽光発電所の監視により良いソリューションを提供する会社です。Apollo Eyeは独自開発したソフトウェアで発電所の運用情報を収集し、故障が検出された際には個々のオーナーにアラートを送信します。以下は、私が携わったプロジェクトです：</p>",
         logrpa: {
-          title: "",
-          description: "",
+          title: "電力データ収集",
+          description: `
+            <li>複数の管理会社のウェブサイトから電力データを収集し、内部データベースに保存するためのwebスクレイピングプログラムをJavaとSeleniumを使って開発</li>
+            <li>対象のウェブサイトに変更があった際のアプリケーションの修正・メンテナンス</li>
+            <li>JUnitとMockitoを使用しプログラムのユニットテストを作成</li>
+          `,
         },
         aeweb: {
-          title: "",
-          description: "",
+          title: "顧客向けウェブサイト開発",
+          description: `
+            <li>SpringBoot MVCとThymeleafを使用し、発電所のパフォーマンスを可視化する顧客向けウェブサイト（フルスタック）を開発・運用</li>
+            <li>発電量データをCSVファイルとしてダウンロードできる機能を実装</li>
+            <li>JUnitとMockitoを使用してプログラムのユニットテストを作成</li>
+          `,
         },
         aemonitor: {
-          title: "",
-          description: "",
+          title: "ヘルスチェックプログラム",
+          description: `
+            <li>SpringBootとSeleniumを使用し、顧客向けウェブサイトの運行状況を監視するヘルスチェックプログラムを開発</li>
+            <li>cronを使用して、ヘルスチェックプログラムを定期的に実行</li>
+            <li>Docker Composeを使用し、プログラムをAWS EC2にデプロイ</li>
+          `,
         },
       },
       prussian: {
-        name: "",
-        company: "",
-        title: "",
-        description: "",
+        name: "Prussian",
+        company: "Prussian Inc",
+        title: "SaaS ソフトウェアエンジニア",
+        description: `
+          <p>Prussian Inc.は、企業や投資ファームに対して、エンタープライズグレードのHedging-as-a-Service（HaaS）スイートを通じて、アクティブヘッジング、マネタイズ、インテリジェンスサービスを提供するフィンテックのスタートアップ企業です。Prussian Inc.の目的は「ヘッジング」の概念を再定義し、ヘッジングの手順を一新することです。以下は、私が携わったプロジェクトです：</p>
+        `,
         prussian: {
-          title: "",
-          description: "",
+          title: "サーバーレスフルスタック開発",
+          description: `
+            <li>AWS Lambda、API Gateway、DynamoDB、S3を使用したサーバーレスアプリケーションを開発</li>
+            <li>AWS Cognitoを使用して認証機能を実装</li>
+            <li>S3 static website hosting を利用して、Reactを使ったクライアント向けウェブサイトを開発</li>
+          `,
         },
         tinky: {
-          title: "",
-          description: "",
+          title: "モバイルアプリ開発",
+          description: `
+            <li>React Nativeを使用し、iOS/Android向けの顧客向けモバイルアプリケーションを開発</li>
+            <li>AWS Lambda、API Gateway、DynamoDBを使用し、バックエンドのサーバーレスウェブサービスを開発</li>
+          `,
         },
       },
       nagrastar: {
-        name: "",
-        company: "",
-        title: "",
-        description: "",
+        name: "Nagrastar",
+        company: "Nagrastar LLC",
+        title: "ソフトウェアエンジニア",
+        description: `
+          <p>NagraStarは、EchoStarとKudelski Groupの合弁会社で、EchostarやBell TVを含む衛星TV業界の顧客向け（B2B）にセキュリティおよび自動化ソリューションを提供しています。以下は、私が携わったプロジェクトです：</p>
+        `,
         ns_manager: {
-          title: "",
-          description: "",
+          title: "Dockerコンテナ管理プラットフォーム",
+          description: `
+            <li>NagraStarが開発したアプリケーションの複数インスタンスを管理するウェブUIを開発</li>
+            <li>UIからDockerコンテナの起動/停止をサポートし、設定パラメータを即時に変更できるようにする</li>
+          `,
         },
         ns_events: {
-          title: "",
-          description: "",
+          title: "テレビ番組データの検証とインポート",
+          description: `
+            <li>顧客向けのウェブUIを開発し、検証およびインポート過程の開始と追跡をサポート</li>
+            <li>データを検証し、データベースに保存するバックエンドアプリケーションを開発</li>
+            <li>バックエンドサービスの複数インスタンス間でワークロードを分散させ、パフォーマンスを向上</li>
+          `,
         },
         ns_publish: {
-          title: "",
-          description: "",
+          title: "動画コンテンツを暗号化し衛星に送信",
+          description: `
+            <li>動画ファイルを暗号化し、衛星に転送する分散型システムの開発および運用</li>
+            <li>ステータス表示と他のコンポーネントの制御パネルとして機能する、顧客向けのウェブベースのGUIを開発および運用</li>
+            <li>Seleniumを使用したUIテストを含むE2Eのテストプログラムを開発</li>
+          `,
         },
       },
     },
     pref: {
-      darkMode: "",
+      darkMode: "ダークモード",
     },
   },
   zh: {
@@ -698,6 +749,7 @@ export default {
       links: {
         title: "链接",
         blog: "博客",
+        email: "邮件",
       },
       intro: {
         title: "你好，",
