@@ -1,4 +1,4 @@
-import type { LanguageType } from '$lib/types';
+import type { LanguageType } from '$lib/data/translations';
 import { writable, type Writable } from 'svelte/store';
 
 export type PrefType = {

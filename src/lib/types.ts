@@ -45,5 +45,3 @@ export type ExperienceType = {
   color: string;
 }
 
-export type LanguageType = 'en' | 'jp' | 'cn';
-
