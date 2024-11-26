@@ -1,4 +1,5 @@
 <script lang="ts">
+  import { t } from "$lib/i18n";
   import type { IslandType } from "./types";
 
   export let island: IslandType;
@@ -11,7 +12,7 @@
       e.currentTarget.scrollIntoView({ behavior: "smooth", block: "nearest", inline: "nearest" });
       island.onClick();
     }}>
-    {island.label}
+    {$t(island.txTitle)} @ {$t(island.txOrg)}
   </button>
 </div>
 

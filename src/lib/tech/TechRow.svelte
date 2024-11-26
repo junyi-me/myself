@@ -3,8 +3,9 @@
   import { slide } from "svelte/transition";
   import Tech from "./Tech.svelte";
   import TechDrawer from "./TechDrawer.svelte";
+  import { t } from "$lib/i18n";
 
-  export let title: string;
+  export let txTitle: string;
   export let techList: TechType[];
   export let row: number;
   export let focusRow: number;
@@ -19,7 +20,7 @@
 </script>
 
 <div class="container">
-  <h3>{title}</h3>
+  <h3>{$t(txTitle)}</h3>
   <div class="techs">
     {#each techList as { key, name, img, darkImg }, i}
       <Tech name={name} {key} {img} {darkImg} onClick={() => {

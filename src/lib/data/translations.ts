@@ -7,6 +7,7 @@ type TranscriptType = {
     },
     links: {
       title: string,
+      blog: string,
     },
     intro: {
       title: string,
@@ -15,6 +16,13 @@ type TranscriptType = {
     tech: {
       title: string,
       content: string,
+      frontend: string,
+      backend: string,
+      database: string,
+      cicd: string,
+      cloud: string,
+      gamedev: string,
+      others: string,
     },
     certs: {
       title: string,
@@ -94,6 +102,12 @@ type TranscriptType = {
       description: string,
     },
     selenium: {
+      description: string,
+    },
+    phaser: {
+      description: string,
+    },
+    tiled: {
       description: string,
     },
     sub: {
@@ -211,6 +225,7 @@ export default {
       },
       links: {
         title: "Links",
+        blog: "My blog",
       },
       intro: {
         title: "Hi,",
@@ -225,6 +240,13 @@ export default {
         content: `
           <p>My skillset is mostly full-stack web development and some CI/CD stuff.</p>
         `,
+        frontend: "Frontend",
+        backend: "Backend",
+        database: "Database",
+        cicd: "CI/CD",
+        cloud: "Cloud",
+        gamedev: "Game Development",
+        others: "Others",
       },
       certs: {
         title: "Certifications",
@@ -463,11 +485,10 @@ export default {
       headline: "",
       nav: {
         title: "",
-        here: "",
-        blog: "",
       },
       links: {
         title: "",
+        blog: "",
       },
       intro: {
         title: "",
@@ -476,6 +497,13 @@ export default {
       tech: {
         title: "",
         content: "",
+        frontend: "",
+        backend: "",
+        database: "",
+        cicd: "",
+        cloud: "",
+        gamedev: "",
+        others: "",
       },
       certs: {
         title: "",
@@ -556,6 +584,12 @@ export default {
       },
       selenium: {
         description: "",
+      },
+      phaser: {
+        description: ``,
+      },
+      tiled: {
+        description: ``,
       },
       sub: {
         title: "",
@@ -663,6 +697,7 @@ export default {
       },
       links: {
         title: "链接",
+        blog: "博客",
       },
       intro: {
         title: "你好，",
@@ -675,6 +710,13 @@ export default {
       tech: {
         title: "职业技能",
         content: "<p>我的职业技能以全栈web开发为主，也有一些CI/CD的经验。</p>",
+        frontend: "前端",
+        backend: "后端",
+        database: "数据库",
+        cicd: "CI/CD",
+        cloud: "云端",
+        gamedev: "游戏开发",
+        others: "其他",
       },
       certs: {
         title: "证书",
@@ -723,12 +765,12 @@ export default {
       },
       csharp: {
         description: `
-          <p>我第一次使用 <code>C#</code> 纯粹是出于工作需要，但作为一个 <code>Java</code> 开发者，我能理解为什么有人说 "C# is Java done right"。</p>
+          <p>我第一次使用 <code>C#</code> 纯粹是出于工作需要，但作为一个 <code>Java</code> 开发者，我有体会到为什么有人说 "C# is Java done right"。</p>
         `
       },
       cpp: {
         description: `
-          <p>我在工作中学习了 <code>C++</code>。我主要负责在一些web服务器程序中追加新功能。</p>
+          <p>这也是我在工作当中学到的一门新语言。我目前主要负责在一些后端程序中追加新功能。</p>
         `
       },
       mysql: {
@@ -774,12 +816,12 @@ export default {
       },
       linux: {
         description: `
-          <p>我工作用Linux，家里也用Linux，即使我睡着了，我的程序也运行在Linux上。服务器上用Debian，工作站上用Arch。</p>
+          <p>我工作用Linux，家里也用Linux，即使我在睡觉我的程序也运行在Linux上。我喜欢在服务器上用Debian，工作站上用Arch。</p>
         `
       },
       bash: {
         description: `
-          <p>我尝试过zsh，但仍然更喜欢bash的简单性，而且它是很多系统上的标配。</p>
+          <p>我尝试过zsh，但还是更喜欢bash的简洁性，并且它也是很多系统上的标配。</p>
         `
       },
       lua: {
@@ -797,8 +839,14 @@ export default {
           <p>在ApolloEye经常会用到它。</p>
         `
       },
+      phaser: {
+        description: `<p>最近开始学习用<code>Phaser3</code>开发2D游戏。</p>`,
+      },
+      tiled: {
+        description: `<p>设计平面RPG地图是我最近的新爱好。</p>`,
+      },
       sub: {
-        title: "熟悉的技术",
+        title: "使用过",
       },
     },
     projects: {

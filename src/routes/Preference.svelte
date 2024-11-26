@@ -5,7 +5,7 @@
   import store from "./stores";
   import ToggleSwitch from "./ToggleSwitch.svelte";
   import Dropdown from "./Dropdown.svelte";
-    import type { LanguageType } from "$lib/data/translations";
+  import type { LanguageType } from "$lib/data/translations";
 
   const unsubscribe = store.subscribe(store => {
     // theme
@@ -29,7 +29,31 @@
 </script>
 
 <Card transparent>
-  <Dropdown bind:selected={$store.pref.lang} options={langOptions} />
-  <ToggleSwitch label={$t('pref.darkMode')} bind:checked={$store.pref.dark} />
+  <div class="entries">
+    <div class="lang">
+      <i class="fa-solid fa-globe"></i>
+      <Dropdown bind:selected={$store.pref.lang} options={langOptions} />
+    </div>
+    <ToggleSwitch label={$t('pref.darkMode')} bind:checked={$store.pref.dark} />
+  </div>
 </Card>
+
+<style>
+  .entries {
+    display: flex;
+    flex-direction: column;
+    gap: var(--gap-medium);
+  }
+
+  .lang {
+    display: flex;
+    align-items: center;
+    gap: var(--gap-small);
+  }
+
+  .lang i {
+    font-size: 1.2em;
+    color: var(--fg-3);
+  }
+</style>
 

@@ -18,7 +18,7 @@
       <h2><span>@</span> {$t('home.links.title')}</h2>
       <p>
         <i class="fa-solid fa-feather-pointed"></i>
-        <a href="https://blog.junyi.me/" target="_blank">My blog</a>
+        <a href="https://blog.junyi.me/" target="_blank">{$t('home.links.blog')}</a>
       </p>
       <p>
         <i class="fa-brands fa-github"></i>

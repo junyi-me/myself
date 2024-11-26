@@ -15,6 +15,21 @@
 </select>
 
 <style>
+  select {
+    font-size: 1rem;
+    border: 1px solid var(--fg-3);
+    border-radius: var(--radius);
+    background-color: var(--bg-2);
+    color: var(--fg-1);
+  }
 
+  select:focus {
+    outline: none;
+    border-color: var(--primary);
+  }
+
+  option {
+    padding: var(--gap-tiny);
+  }
 </style>
 

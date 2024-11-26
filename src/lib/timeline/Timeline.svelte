@@ -1,5 +1,4 @@
 <script lang="ts">
-  import { t } from "$lib/i18n";
   import Event from "./Event.svelte";
   import type { IslandType, TimeEventType } from "./types";
 
@@ -45,7 +44,8 @@
       const iid = id;
       lvlLands[level].push({
         id: iid,
-        label: $t(event.txTitle) + " @ " + $t(event.txOrg),
+        txTitle: event.txTitle,
+        txOrg: event.txOrg,
         offset,
         width,
         color: event.color,

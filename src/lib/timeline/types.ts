@@ -8,8 +8,11 @@ export type TimeEventType = {
 };
 
 export type IslandType = {
+
+    label(label: any): unknown;
   id: number;
-  label: string;
+  txTitle: string;
+  txOrg: string;
   onClick: () => void;
   color: string;
   offset: number;
