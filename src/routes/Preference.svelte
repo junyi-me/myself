@@ -7,6 +7,13 @@
   import Dropdown from "./Dropdown.svelte";
   import type { LanguageType } from "$lib/data/translations";
 
+  export let onConfirm: () => void = () => {};
+  const confirmWithDelay = () => {
+    setTimeout(() => {
+      onConfirm();
+    }, 300);
+  };
+
   const unsubscribe = store.subscribe(store => {
     // theme
     if (store.pref.dark) {
@@ -36,12 +43,12 @@
           <i class="fa-solid fa-globe"></i>
         </td>
         <td>
-          <Dropdown bind:selected={$store.pref.lang} options={langOptions} />
+          <Dropdown bind:selected={$store.pref.lang} options={langOptions} onChange={onConfirm} />
         </td>
       </tr>
       <tr class="entry">
         <td>
-          <ToggleSwitch bind:checked={$store.pref.dark} />
+          <ToggleSwitch bind:checked={$store.pref.dark} onChange={confirmWithDelay} />
         </td>
         <td>
           <p>{$t('pref.darkMode')}</p>
@@ -62,7 +69,7 @@
   }
 
   td:nth-child(1) {
-    text-align: right;
+    text-align: center;
   }
 
   td:nth-child(2) {

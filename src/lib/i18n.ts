@@ -1,7 +1,7 @@
 import { derived, writable } from "svelte/store";
 import translations, { type LanguageType } from "./data/translations";
 
-export const locale = writable("en");
+export const locale = writable<LanguageType>("en");
 export const locales = Object.keys(translations);
 
 type ReplaceVars = {
@@ -32,8 +32,22 @@ function translate(locale: LanguageType, key: string, vars: ReplaceVars) {
 
   return text;
 }
-
 export const t = derived(locale, ($locale) => (key: string, vars: ReplaceVars = {}) =>
   translate($locale as LanguageType, key, vars)
 );
+
+const localeMap: Record<LanguageType, string> = {
+  en: "en-US",
+  jp: "ja-JP",
+  zh: "zh-CN",
+}
+
+function formatDate(date: Date, locale: LanguageType) {
+  const formattedDate = date.toLocaleDateString(localeMap[locale], {
+    year: "numeric",
+    month: "short"
+  });
+  return formattedDate;
+}
+export const dt = derived(locale, ($locale) => (date: Date) => formatDate(date, $locale as LanguageType));
 

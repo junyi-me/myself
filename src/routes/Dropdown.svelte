@@ -4,11 +4,12 @@
     label: string;
   };
 
+  export let onChange: (value: string) => void = () => {};
   export let options: OptionType[];
   export let selected: string;
 </script>
 
-<select bind:value={selected}>
+<select bind:value={selected} on:change={() => onChange(selected)}>
   {#each options as { value, label }}
     <option value={value} selected={value === selected}>{label}</option>
   {/each}

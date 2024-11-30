@@ -1,8 +1,9 @@
 <script lang="ts">
   import type { ExperienceType } from '$lib/types';
-  import { t } from '$lib/i18n';
+  import { dt, t } from '$lib/i18n';
   import { handleAnchorClick } from '$lib/interact';
   import { techs, type TechKeyType } from '$lib/data/techs';
+    import { onMount } from 'svelte';
 
   export let exp: ExperienceType;
 
@@ -18,23 +19,22 @@
     return sub;
   }
 
-  const formatDate = (date: Date) => {
-    const formattedDate = date.toLocaleDateString("en-US", {
-      year: "numeric",
-      month: "short"
-    });
-    return formattedDate;
-  }
-
-  const getFormattedDuration = (startDate: Date, endDate?: Date) => {
+  const getDurationYM = (startDate: Date, endDate?: Date) => {
     if (!endDate) {
       endDate = new Date();
     }
     const diffDays = Math.floor((endDate.getTime() - startDate.getTime()) / (1000 * 60 * 60 * 24));
     const years = Math.floor(diffDays / 365);
     const months = Math.floor((diffDays % 365) / 30);
-    return `${years}${$t('home.exp.years')} ${months}${$t('home.exp.months')}`;
+    // return `${years}${$t('home.exp.years')} ${months}${$t('home.exp.months')}`;
+    return [years, months];
   }
+
+  let years: number;
+  let months: number;
+  onMount(() => {
+    [years, months] = getDurationYM(exp.startDate, exp.endDate);
+  });
 </script>
 
 <div class="container" style="border-left: 2px solid {exp.color}">
@@ -42,9 +42,9 @@
     <h2>{$t(exp.txTitle)} {$t('exp.at')} {$t(exp.txOrg)}</h2>
     <div class="time">
       <p class="period" style="background-color: {exp.color}">
-        {formatDate(exp.startDate)} ~ {exp.endDate ? formatDate(exp.endDate) : $t('home.exp.present')}
+        {$dt(exp.startDate)} ~ {exp.endDate ? $dt(exp.endDate) : $t('home.exp.present')}
       </p>
-      <p class="duration">{getFormattedDuration(exp.startDate, exp.endDate)}</p>
+      <p class="duration">{`${years}${$t('home.exp.years')} ${months}${$t('home.exp.months')}`}</p>
     </div>
     {@html $t(exp.txDescription)}
   </div>

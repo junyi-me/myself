@@ -46,7 +46,7 @@
     </ol>
   </Card>
 
-  <Preference />
+  <Preference onConfirm={onNavigate} />
 </div>
 
 <style>

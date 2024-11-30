@@ -13,7 +13,10 @@
   <Card>
     <div class="template">
       <h1>{$t(article.txTitle)}</h1>
-      {@html $t(article.txContent)}
+      {@html $t(article.txContent, {
+        "k3s": '<a href="https://blog.junyi.me/p/hosting-an-https-website-on-a-ha-k3s-cluster/" target="_blank">bare-metal kubernetes cluster</a>',
+        "github": '<a href="https://github.com/jywang99/linux_config" target="_blank">GitHub</a>',
+      })}
     </div>
     <slot />
   </Card>

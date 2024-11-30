@@ -233,7 +233,7 @@ export default {
         title: "Hi,",
         content: `
           <p>Welcome to my personal website. I'm Junyi Wang, a professional and hobbyist software engineer.</p>
-          <p>My primary areas of interest are web development and self-hosting. The website you are seeing right now is hosted on a <a href="https://blog.junyi.me/p/hosting-an-https-website-on-a-ha-k3s-cluster/" target="_blank">bare-metal kubernetes cluster</a> (also the blog itself), and I'm planning to self-host more web services in the future.</p>
+          <p>My primary areas of interest are web development and self-hosting. The website you are seeing right now is hosted on a {{k3s}} (also the blog itself), and I'm planning to self-host more web services in the future.</p>
           <p>By the way, I use <code>vim (Neovim)</code> and <code>Arch</code>. If you are interested, my dot files are all on my <a href="https://github.com/jywang99/linux_config" target="_blank">GitHub</a>.</p>
           `,
       },
@@ -497,7 +497,7 @@ export default {
         title: "はじめに",
         content: `
           <p>私のポートフォリオサイトへようこそ。私はアメリカでソフトウェアエンジニアをしている者で、趣味でもコードを書いたりしています。</p>
-          <p>主に興味を持っている分野はウェブ開発とセルフホスティングです。このサイトも自作の<a href="https://blog.junyi.me/p/hosting-an-https-website-on-a-ha-k3s-cluster" target="_blank">ベアメタルKubernetesクラスタ</a>からホスティングしています。将来的にはもっと多くのウェブサービスをセルフホスティングしようと考えています。</p>
+          <p>主に興味を持っている分野はウェブ開発とセルフホスティングです。このサイトも自作の{{k3s}}からホスティングしています。将来的にはもっと多くのウェブサービスをセルフホスティングしようと考えています。</p>
           <p>By the way, I use <code>vim (Neovim)</code> and <code>Arch</code>. If you are interested, my dot files are all on my <a href="https://github.com/jywang99/linux_config" target="_blank">GitHub</a>.</p>
         `,
       },
@@ -755,8 +755,8 @@ export default {
         title: "你好，",
         content: `
           <p>欢迎来到我的个人网站。我是王君毅，一名专业和业余软件工程师。</p>
-          <p>我主要关注的领域是web开发和自管托 (self-hosting)。该网页和我的博客都管托于我自己的<a href="https://blog.junyi.me/p/hosting-an-https-website-on-a-ha-k3s-cluster" target="_blank">裸金属Kubernetes集群</a>，以后还打算管托更多的web service。</p>
-          <p>By the way, I use <code>vim (Neovim)</code> and <code>Arch</code>. If you are interested, my dot files are all on my <a href="https://github.com/jywang99/linux_config" target="_blank">GitHub</a>.</p>
+          <p>我主要关注的领域是web开发和自管托 (self-hosting)。该网页和我的博客都管托于我自己的{{k3s}}，以后还打算管托更多的web service。</p>
+          <p>By the way, I use <code>vim (Neovim)</code> and <code>Arch</code>. If you are interested, my dot files are all on my {{github}}.</p>
         `
       },
       tech: {

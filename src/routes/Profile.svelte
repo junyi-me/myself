@@ -17,16 +17,16 @@
     <Card transparent>
       <h2><span>@</span> {$t('home.links.title')}</h2>
       <p>
-        <i class="fa-solid fa-feather-pointed"></i>
-        <a href="https://blog.junyi.me/" target="_blank">{$t('home.links.blog')}</a>
+        <i class="fa-brands fa-linkedin"></i>
+        <a href="https://www.linkedin.com/in/junyi-wang-976a94199/" target="_blank">LinkedIn</a>
       </p>
       <p>
         <i class="fa-brands fa-github"></i>
-        <a href="https://github.com/jywang99" target="_blank">jywang99</a>
+        <a href="https://github.com/jywang99" target="_blank">GitHub</a>
       </p>
       <p>
-        <i class="fa-brands fa-linkedin"></i>
-        <a href="https://www.linkedin.com/in/junyi-wang-976a94199/" target="_blank">Junyi Wang</a>
+        <i class="fa-solid fa-feather-pointed"></i>
+        <a href="https://blog.junyi.me/" target="_blank">{$t('home.links.blog')}</a>
       </p>
       <p>
         <i class="fa-regular fa-envelope"></i>
