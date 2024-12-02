@@ -1,6 +1,7 @@
 <script lang="ts">
   import Card from "$lib/Card.svelte";
   import { t } from "$lib/i18n";
+    import { downloadPdf } from "$lib/pdf/pdf";
   import '@fortawesome/fontawesome-free/css/all.min.css'
 </script>
 
@@ -31,6 +32,10 @@
       <p>
         <i class="fa-regular fa-envelope"></i>
         <a href="mailto:junyi.wang.007@gmail.com">{$t('home.links.email')}</a>
+      </p>
+      <p>
+        <i class="fa-solid fa-download"></i>
+        <button on:click={downloadPdf}>{$t('home.links.download')}</button>
       </p>
     </Card>
   </div>
@@ -69,6 +74,16 @@
 
   p {
     margin: 0.5em 0;
+  }
+
+  p button {
+    background: none;
+    border: none;
+    color: var(--accent);
+    cursor: pointer;
+    font-size: 1em;
+    padding: 0;
+    border-bottom: 1px solid var(--accent);
   }
 </style>
 

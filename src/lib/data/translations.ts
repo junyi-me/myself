@@ -9,6 +9,7 @@ type TranscriptType = {
       title: string,
       blog: string,
       email: string,
+      download: string,
     },
     intro: {
       title: string,
@@ -207,6 +208,13 @@ type TranscriptType = {
   pref: {
     darkMode: string,
   },
+  pdf: {
+    fileName: string,
+    summary: {
+      title: string,
+      content: string,
+    }
+  }
 }
 
 type TranslationType = {
@@ -216,7 +224,7 @@ type TranslationType = {
 }
 export type LanguageType = keyof TranslationType;
 
-export default {
+const translation: TranslationType = {
   en: {
     home: {
       name: "Junyi Wang",
@@ -228,6 +236,7 @@ export default {
         title: "Links",
         blog: "My blog",
         email: "Email me",
+        download: "Download PDF",
       },
       intro: {
         title: "Hi,",
@@ -480,6 +489,13 @@ export default {
     pref: {
       darkMode: "Dark mode",
     },
+    pdf: {
+      fileName: "junyi_wang_resume",
+      summary: {
+        title: "Summary",
+        content: "Software engineer primarily working in the field of full-stack web development. Experienced in developing both serverless and dockerized applications. Proficient in Go, Java, Python, and C#. Currently working at Nagrastar LLC as a software engineer.",
+      }
+    }
   },
   jp: {
     home: {
@@ -492,6 +508,7 @@ export default {
         title: "外部リンク",
         blog: "ブログ",
         email: "メール",
+        download: "PDFダウンロード",
       },
       intro: {
         title: "はじめに",
@@ -738,6 +755,13 @@ export default {
     pref: {
       darkMode: "ダークモード",
     },
+    pdf: {
+      fileName: "王君毅_resume",
+      summary: {
+        title: "サマリー",
+        content: "TODO",
+      }
+    }
   },
   zh: {
     home: {
@@ -750,6 +774,7 @@ export default {
         title: "链接",
         blog: "博客",
         email: "邮件",
+        download: "下载PDF",
       },
       intro: {
         title: "你好，",
@@ -1030,6 +1055,14 @@ export default {
     pref: {
       darkMode: "暗色模式",
     },
+    pdf: {
+      fileName: "王君毅_简历",
+      summary: {
+        title: "简介",
+        content: "TODO",
+      }
+    }
   },
-} as TranslationType;
+};
+export default translation;
 
