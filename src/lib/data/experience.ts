@@ -20,72 +20,17 @@ const experience: ExperienceType[] = [
       {
         txTitle: "exp.nagrastar.ns_manager.title",
         txDescription: "exp.nagrastar.ns_manager.description",
-        techs: [
-          {
-            key: "python",
-            sub: ["flask", "sqlalchemy"],
-          },
-          {
-            key: "html_css_js",
-          },
-          {
-            key: "docker",
-          },
-          {
-            key: "linux"
-          },
-        ],
+        techs: [ "python", "html_css_js", "docker", "linux", ],
       },
       {
         txTitle: "exp.nagrastar.ns_events.title",
         txDescription: "exp.nagrastar.ns_events.description",
-        techs: [
-          {
-            key: "python",
-          },
-          {
-            key: "html_css_js",
-          },
-          {
-            key: "docker",
-          },
-          {
-            key: "kubernetes",
-          },
-          {
-            key: "linux"
-          },
-        ],
+        techs: [ "python", "html_css_js", "docker", "kubernetes", "linux", ],
       },
       {
         txTitle: "exp.nagrastar.ns_publish.title",
         txDescription: "exp.nagrastar.ns_publish.description",
-        techs: [
-          {
-            key: "python",
-          },
-          {
-            key: "csharp",
-          },
-          {
-            key: "cpp",
-          },
-          {
-            key: "html_css_js",
-          },
-          {
-            key: "docker",
-          },
-          {
-            key: "kubernetes",
-          },
-          {
-            key: "linux"
-          },
-          {
-            key: "selenium",
-          },
-        ],
+        techs: [ "python", "csharp", "cpp", "html_css_js", "docker", "kubernetes", "linux", "selenium", ],
       },
     ],
   },
@@ -99,59 +44,17 @@ const experience: ExperienceType[] = [
       {
         txTitle: "exp.apolloeye.logrpa.title",
         txDescription: "exp.apolloeye.logrpa.description",
-        techs: [
-          {
-            key: "java",
-          },
-          {
-            key: "selenium",
-          },
-          {
-            key: "gcp",
-          },
-          {
-            key: "linux"
-          },
-        ],
+        techs: [ "java", "selenium", "gcp", "linux", ],
       },
       {
         txTitle: "exp.apolloeye.aeweb.title",
         txDescription: "exp.apolloeye.aeweb.description",
-        techs: [
-          {
-            key: "java",
-          },
-          {
-            key: "selenium",
-          },
-          {
-            key: "gcp",
-          },
-          {
-            key: "linux"
-          },
-        ],
+        techs: [ "java", "selenium", "gcp", "linux", ],
       },
       {
         txTitle: "exp.apolloeye.aemonitor.title",
         txDescription: "exp.apolloeye.aemonitor.description",
-        techs: [
-          {
-            key: "java",
-          },
-          {
-            key: "selenium",
-          },
-          {
-            key: "docker",
-          },
-          {
-            key: "aws",
-          },
-          {
-            key: "linux"
-          },
-        ],
+        techs: [ "java", "selenium", "docker", "aws", "linux", ],
       },
     ],
   },
@@ -166,34 +69,12 @@ const experience: ExperienceType[] = [
       {
         txTitle: "exp.prussian.prussian.title",
         txDescription: "exp.prussian.prussian.description",
-        techs: [
-          {
-            key: "react",
-            sub: ["reactnative", "redux"],
-          },
-          {
-            key: "aws",
-          },
-          {
-            key: "dynamodb"
-          },
-        ],
+        techs: [ "react", "aws", "dynamodb", ],
       },
       {
         txTitle: "exp.prussian.tinky.title",
         txDescription: "exp.prussian.tinky.description",
-        techs: [
-          {
-            key: "react",
-          },
-          {
-            key: "aws",
-            sub: ["lambda", "api_gw", "dynamodb", "s3", "cognito", "cloudfront", "route53", "cloudwatch"],
-          },
-          {
-            key: "dynamodb"
-          },
-        ],
+        techs: [ "react", "aws", "dynamodb", ],
       },
     ],
   },

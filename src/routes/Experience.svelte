@@ -2,22 +2,10 @@
   import type { ExperienceType } from '$lib/types';
   import { dt, t } from '$lib/i18n';
   import { handleAnchorClick } from '$lib/interact';
-  import { techs, type TechKeyType } from '$lib/data/techs';
+  import { techs } from '$lib/data/techs';
     import { onMount } from 'svelte';
 
   export let exp: ExperienceType;
-
-  const findSubtech = (techKey: TechKeyType, subtechKey: string) => {
-    const tech = techs[techKey];
-    if (!tech.sub) {
-      throw new Error(`Subtech ${subtechKey} not found in tech ${techKey}`);
-    }
-    const sub = tech.sub.find(sub => sub.key === subtechKey);
-    if (!sub) {
-      throw new Error(`Subtech ${subtechKey} not found in tech ${techKey}`);
-    }
-    return sub;
-  }
 
   const getDurationYM = (startDate: Date, endDate?: Date) => {
     if (!endDate) {
@@ -56,14 +44,9 @@
     </ul>
     <div class="tech">
       {#each proj.techs as tech}
-        <a href={`#tech-${tech.key}`} on:click={e => handleAnchorClick(e, e => {if (!e.classList.contains("focus")) e.click()})}>
-          <img src={techs[tech.key].img} alt={techs[tech.key].name} />
-          <span>{techs[tech.key].name}</span>
-          {#if tech.sub && tech.sub.length > 0}
-            <span >&nbsp;(</span>
-            <span style="margin-right: .5em">{tech.sub.map(s => findSubtech(tech.key, s).name).join(", ")}</span>
-            <span style="margin-left: -.5em">)</span>
-          {/if}
+        <a href={`#tech-${tech}`} on:click={e => handleAnchorClick(e, e => {if (!e.classList.contains("focus")) e.click()})}>
+          <img src={techs[tech].img} alt={techs[tech].name} />
+          <span>{techs[tech].name}</span>
         </a>
       {/each}
     </div>

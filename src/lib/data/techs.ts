@@ -294,6 +294,12 @@ const techsRaw = {
         link: "https://helm.sh/",
         img: "images/helm.svg",
       },
+      {
+        key: "argocd",
+        name: "Argo CD",
+        link: "https://argo-cd.readthedocs.io/en/stable/",
+        img: "images/argocd.png",
+      },
     ]
   },
   aws: {
@@ -461,6 +467,13 @@ const techsRaw = {
     img: "images/lua256.png",
     projects: [ techProjects.neovim, ],
   },
+  vim: {
+    key: "vim",
+    txDescription: "tech.vim.description",
+    name: "Vim",
+    link: "https://www.vim.org/",
+    img: "images/vim256.png",
+  },
   neovim: {
     key: "neovim",
     txDescription: "tech.neovim.description",
@@ -504,6 +517,13 @@ const techsRaw = {
     link: "https://www.mapeditor.org/",
     img: "images/tiled.png",
   },
+  ansible: {
+    key: "ansible",
+    txDescription: "tech.ansible.description",
+    name: "Ansible",
+    link: "https://www.ansible.com/",
+    img: "images/ansible.png",
+  },
 };
 export type TechKeyType = keyof typeof techsRaw;
 export const techs: Record<TechKeyType, TechType> = techsRaw;
@@ -535,12 +555,16 @@ const techCategoriesRaw = {
     techs.aws,
     techs.gcp,
   ],
+  automation: [
+    techs.selenium,
+    techs.ansible,
+  ],
   others: [
     techs.linux,
     techs.bash,
+    techs.vim,
     techs.lua,
     techs.neovim,
-    techs.selenium,
   ],
   gamedev: [
     techs.phaser,

@@ -99,6 +99,9 @@ type TranscriptType = {
     lua: {
       description: string,
     },
+    vim: {
+      description: string,
+    },
     neovim: {
       description: string,
     },
@@ -109,6 +112,9 @@ type TranscriptType = {
       description: string,
     },
     tiled: {
+      description: string,
+    },
+    ansible: {
       description: string,
     },
     sub: {
@@ -248,6 +254,7 @@ export default {
         cicd: "CI/CD",
         cloud: "Cloud",
         gamedev: "Game Development",
+        automation: "Automation",
         others: "Others",
       },
       certs: {
@@ -334,6 +341,9 @@ export default {
       lua: {
         description: `<p>My entire Neovim config is written in Lua.</p>`,
       },
+      vim: {
+        description: `<p>vim is among the first things I install on a new server.</p>`,
+      },
       neovim: {
         description: `<p>Best editor I've ever used. Currently typing this in Neovim</p>`,
       },
@@ -345,6 +355,9 @@ export default {
       },
       tiled: {
         description: `<p>Having a great time tinkering with 2D top-down RPG maps.</p>`,
+      },
+      ansible: {
+        description: `<p>I'm using Ansible to automate things in my home lab, such as updating and installing packages on servers.</p>`,
       },
       sub: {
         title: "Familiar with",
@@ -596,6 +609,9 @@ export default {
       lua: {
         description: "<p>私のNeovimの設定はすべて<code>Lua</code>で書かれています。</p>",
       },
+      vim: {
+        description: `<p>新しいサーバーを構築するとき、最初に入れるパッケージのひとつがvimです。</p>`,
+      },
       neovim: {
         description: "<p>今まで出会ってきた中で、文句なしに最高のエディタです。この文章もNeovimで書いています。</p>",
       },
@@ -607,6 +623,9 @@ export default {
       },
       tiled: {
         description: "<p>ポケモンのような2D RPGマップを設計したりしています。</p>",
+      },
+      ansible: {
+        description: `<p>Ansibleを使用して、自宅のサーバー上のパッケージの更新やインストールなどを自動化しています。</p>`,
       },
       sub: {
         title: "経験のあるツール",
@@ -881,6 +900,9 @@ export default {
           <p>我的整个Neovim配置都是用Lua写的。</p>
         `
       },
+      vim: {
+        description: `<p>我搭建新服务器的时候第一个安装的就是vim。</p>`,
+      },
       neovim: {
         description: `
           <p>我最爱的编辑器。转个网页全都是用它写的。</p>
@@ -896,6 +918,9 @@ export default {
       },
       tiled: {
         description: `<p>设计平面RPG地图是我最近的新爱好。</p>`,
+      },
+      ansible: {
+        description: `<p>我经常会在家里的服务器上用Ansible自动化一些任务，比如更新和安装一些软件包。</p>`,
       },
       sub: {
         title: "使用过",

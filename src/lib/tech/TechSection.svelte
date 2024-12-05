@@ -15,6 +15,7 @@
     { key: 'database', txTitle: 'home.tech.database'},
     { key: 'ci_cd', txTitle: 'home.tech.cicd'},
     { key: 'cloud', txTitle: 'home.tech.cloud'},
+    { key: 'automation', txTitle: 'home.tech.automation'},
     { key: 'gamedev', txTitle: 'home.tech.gamedev'},
     { key: 'others', txTitle: 'home.tech.others'},
   ];
