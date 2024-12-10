@@ -23,6 +23,7 @@ type TranscriptType = {
       cicd: string,
       cloud: string,
       gamedev: string,
+      automation: string,
       others: string,
     },
     certs: {
@@ -222,7 +223,7 @@ type TranslationType = {
 }
 export type LanguageType = keyof TranslationType;
 
-export default {
+const translations: TranslationType = {
   en: {
     home: {
       name: "Junyi Wang",
@@ -523,6 +524,7 @@ export default {
         cicd: "CI/CD",
         cloud: "クラウド",
         gamedev: "ゲーム開発",
+        automation: "自動化",
         others: "その他",
       },
       certs: {
@@ -787,6 +789,7 @@ export default {
         cicd: "CI/CD",
         cloud: "云端",
         gamedev: "游戏开发",
+        automation: "自动化",
         others: "其他",
       },
       certs: {
@@ -1056,5 +1059,6 @@ export default {
       darkMode: "暗色模式",
     },
   },
-} as TranslationType;
+};
+export default translations;
 
