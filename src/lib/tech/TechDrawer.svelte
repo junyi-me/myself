@@ -5,7 +5,7 @@
   import SubTech from './SubTech.svelte';
   import TechProject from './TechProject.svelte';
 
-  export let tech: TechType;
+  let { tech }: { tech: TechType; } = $props();
 </script>
 
 {#key tech.name}

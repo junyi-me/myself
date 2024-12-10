@@ -4,7 +4,7 @@
   import type { TimeEventType } from "$lib/timeline/types";
   import Experience from "./Experience.svelte";
 
-  let focus = experience[0];
+  let focus = $state(experience[0]);
   let anchor: HTMLDivElement;
   const events: TimeEventType[] = experience.map(exp => {
     return {

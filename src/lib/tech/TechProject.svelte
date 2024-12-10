@@ -2,7 +2,7 @@
   import { t } from "$lib/i18n";
   import type { PProjectType } from "$lib/types";
 
-  export let proj: PProjectType;
+  let { proj }: { proj: PProjectType; } = $props();
 </script>
 
 <div class="container">

@@ -5,18 +5,23 @@
   import TechDrawer from "./TechDrawer.svelte";
   import { t } from "$lib/i18n";
 
-  export let txTitle: string;
-  export let techList: TechType[];
-  export let row: number;
-  export let focusRow: number;
-
-  let focusIndex: number | null = null;
-  let tech;
-
-  $: if (row !== focusRow) {
-    focusIndex = null;
+  interface Props {
+    txTitle: string;
+    techList: TechType[];
+    row: number;
+    focusRow: number;
   }
-  $: tech = techList[focusIndex ?? 0]
+  let { txTitle, techList, row, focusRow = $bindable() }: Props = $props();
+
+  let focusIndex: number | null = $state(null);
+  let tech = $derived(techList[focusIndex ?? 0]);
+
+  $effect(() => {
+    if (row !== focusRow) {
+      focusIndex = null;
+    }
+  });
+  
 </script>
 
 <div class="container">

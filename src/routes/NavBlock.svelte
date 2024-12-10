@@ -1,20 +1,23 @@
-<script>
+<script lang="ts">
   import { slide } from "svelte/transition";
+  
+  interface Props {
+    href?: string|null;
+    text: string;
+    children?: import('svelte').Snippet;
+  }
+  let { href = null, text, children }: Props = $props();
 
-  /** @type string | null **/
-  export let href = null;
-  export let text;
-
-  let open = false;
+  let open = $state(false);
 </script>
 
-<div class="outer" on:mouseleave={() => open = false} role="tooltip">
+<div class="outer" onmouseleave={() => open = false} role="tooltip">
   {#if href}
-    <a {href} class="navlink" class:active={open} on:mouseenter={() => open = true}>
+    <a {href} class="navlink" class:active={open} onmouseenter={() => open = true}>
       {text}
     </a>
   {:else}
-    <span class="navlink" class:active={open} on:mouseenter={() => open = true} role="tooltip">
+    <span class="navlink" class:active={open} onmouseenter={() => open = true} role="tooltip">
       {text}
     </span>
   {/if}
@@ -22,7 +25,7 @@
   <div class="tooltip" role="tooltip">
     {#if open}
       <div role="tooltip" out:slide>
-        <slot />
+        {@render children?.()}
       </div>
     {/if}
   </div>

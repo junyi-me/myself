@@ -2,14 +2,17 @@
   import { onDestroy } from "svelte";
   import store from "../../routes/stores";
 
-  export let key: string;
-  export let name: string;
-  export let img: string;
-  export let darkImg: string|undefined;
-  export let onClick: () => void;
-  export let focus = false;
+  interface Props {
+    key: string;
+    name: string;
+    img: string;
+    darkImg: string|undefined;
+    onClick: () => void;
+    focus?: boolean;
+  }
+  let { key, name, img, darkImg, onClick, focus = false }: Props = $props();
 
-  let dark = false;
+  let dark = $state(false);
   const unsubscribe = store.subscribe(store => {
     dark = store.pref.dark;
   });
@@ -17,7 +20,7 @@
 </script>
 
 <div>
-  <button class="tech" on:click={onClick} class:focus={focus} id={`tech-${key}`}>
+  <button class="tech" onclick={onClick} class:focus={focus} id={`tech-${key}`}>
     <div>
       <img src={(dark && darkImg != undefined) ? darkImg : img} alt={name} />
     </div>

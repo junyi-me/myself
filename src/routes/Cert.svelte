@@ -1,7 +1,7 @@
 <script lang="ts">
   import type { CertType } from "$lib/data/certifications";
 
-  export let cert: CertType;
+  let { cert }: { cert: CertType; } = $props();
 </script>
 
 <a class="cert" href={cert.url} target="_blank">

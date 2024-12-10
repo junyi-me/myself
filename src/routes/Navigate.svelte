@@ -6,7 +6,7 @@
   import { handleAnchorClick } from "$lib/interact";
   import Preference from "./Preference.svelte";
 
-  export let onNavigate: () => void = () => {};
+  let { onNavigate = () => {} }: { onNavigate?: () => void; } = $props();
 
   const getY = (id: string) => {
     const el = document.getElementById(id);
@@ -40,7 +40,7 @@
     <ol>
       {#each articleList as article}
         <li>
-          <a href={`#${article.key}`} on:click={handleNavigate}>{$t(article.txTitle)}</a>
+          <a href={`#${article.key}`} onclick={handleNavigate}>{$t(article.txTitle)}</a>
         </li>
       {/each}
     </ol>

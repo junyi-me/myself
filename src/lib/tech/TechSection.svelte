@@ -8,7 +8,7 @@
     txTitle: string;
   };
 
-  let techCats: TechCategoryType[]|null = null;
+  let techCats: TechCategoryType[]|null = $state(null);
   techCats = [
     { key: 'frontend', txTitle: 'home.tech.frontend'},
     { key: 'backend', txTitle: 'home.tech.backend'},
@@ -20,7 +20,7 @@
     { key: 'others', txTitle: 'home.tech.others'},
   ];
 
-  let focusRow = -1;
+  let focusRow = $state(-1);
 </script>
 
 <div>

@@ -2,7 +2,7 @@
   import Event from "./Event.svelte";
   import type { IslandType, TimeEventType } from "./types";
 
-  export let events: TimeEventType[] = [];
+  let { events = [] }: { events?: TimeEventType[]; } = $props();
 
   const TIMELINE_WIDTH = 1000;
   const minDate = Math.min(...events.map(event => event.startDate.getTime()));
@@ -33,11 +33,9 @@
         level++;
       }
 
-      let last = null;
       if (!lvlLands[level]) {
         lvlLands[level] = [];
       } else {
-        last = lvlLands[level][lvlLands[level].length - 1];
         const prevOffsetSum = lvlLands[level].map(e => e.offset + e.width).reduce((a, b) => a + b, 0);
         offset = offset - prevOffsetSum;
       }
@@ -61,11 +59,15 @@
     return lvlLands;
   }
 
-  let focusId = events.length - 1;
-  $: events[focusId].onClick();
+  let focusId = $state(events.length - 1);
+  $effect(() => {
+    events[focusId].onClick();
+  });
   let lvlLands = convertEventsToIslands(events);
   let outer: HTMLDivElement;
-  $: if (outer) outer.scrollLeft = TIMELINE_WIDTH;
+  $effect(() => {
+    if (outer) outer.scrollLeft = TIMELINE_WIDTH;
+  });
 </script>
 
 <div class="outer" bind:this={outer}>

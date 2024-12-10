@@ -1,9 +1,11 @@
-<script>
-  export let transparent = false;
+<script lang="ts">
+  import type { Snippet } from "svelte";
+
+  let { transparent = false, children }: { transparent?: boolean; children?: Snippet; } = $props();
 </script>
 
 <div class="container" class:transparent>
-  <slot />
+  {@render children?.()}
 </div>
 
 <style>

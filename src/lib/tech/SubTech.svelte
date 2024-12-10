@@ -1,7 +1,7 @@
 <script lang="ts">
   import type { SubTechType } from "$lib/types";
 
-  export let subTech: SubTechType;
+  let { subTech }: { subTech: SubTechType; } = $props();
 </script>
 
 <a href={subTech.link} target="_blank">

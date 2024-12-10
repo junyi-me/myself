@@ -8,8 +8,8 @@
   import Profile from './Profile.svelte';
   import NavTofu from './NavTofu.svelte';
 
-  let innerWidth = 0;
-  let innerHeight = 0;
+  let innerWidth = $state(0);
+  let innerHeight = $state(0);
 </script>
 
 <svelte:head>

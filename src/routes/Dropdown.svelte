@@ -3,13 +3,15 @@
     value: string;
     label: string;
   };
-
-  export let onChange: (value: string) => void = () => {};
-  export let options: OptionType[];
-  export let selected: string;
+  interface Props {
+    onChange?: (value: string) => void;
+    options: OptionType[];
+    selected: string;
+  }
+  let { onChange = () => {}, options, selected = $bindable() }: Props = $props();
 </script>
 
-<select bind:value={selected} on:change={() => onChange(selected)}>
+<select bind:value={selected} onchange={() => onChange(selected)}>
   {#each options as { value, label }}
     <option value={value} selected={value === selected}>{label}</option>
   {/each}

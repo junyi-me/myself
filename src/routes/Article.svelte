@@ -3,8 +3,9 @@
   import type { ArticleKeyType } from "$lib/data/articles";
   import Card from '$lib/Card.svelte';
   import articles from '$lib/data/articles';
+  import type { Snippet } from 'svelte';
 
-  export let key: ArticleKeyType;
+  let { key, children }: { key: ArticleKeyType; children?: Snippet } = $props();
 
   const article = articles[key];
 </script>
@@ -18,7 +19,7 @@
         "github": '<a href="https://github.com/jywang99/linux_config" target="_blank">GitHub</a>',
       })}
     </div>
-    <slot />
+    {@render children?.()}
   </Card>
 </div>
 

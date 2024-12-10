@@ -1,11 +1,10 @@
 <script lang="ts">
-  export let checked = false;
-  export let onChange = () => {};
+  let { checked = $bindable(false), onChange = () => {} }: { checked?: boolean; onChange?: any; } = $props();
 </script>
 
 <div class="container">
   <label class="switch">
-    <input type="checkbox" bind:checked on:change={onChange}>
+    <input type="checkbox" bind:checked onchange={onChange}>
     <span class="slider round"></span>
   </label>
 </div>

@@ -7,7 +7,7 @@
   import Dropdown from "./Dropdown.svelte";
   import type { LanguageType } from "$lib/data/translations";
 
-  export let onConfirm: () => void = () => {};
+  let { onConfirm = () => {} }: { onConfirm?: () => void; } = $props();
   const confirmWithDelay = () => {
     setTimeout(() => {
       onConfirm();

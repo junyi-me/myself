@@ -2,13 +2,12 @@
   import { t } from "$lib/i18n";
   import type { IslandType } from "./types";
 
-  export let island: IslandType;
-  export let blur = false;
+  let { island, blur = false }: { island: IslandType; blur?: boolean; } = $props();
 </script>
 
 <div class="container" class:blur>
   <button class="event" style="margin-left: {island.offset}px; width: {island.width}px; background-color: {island.color}" 
-    on:click={e => {
+    onclick={e => {
       e.currentTarget.scrollIntoView({ behavior: "smooth", block: "nearest", inline: "nearest" });
       island.onClick();
     }}>

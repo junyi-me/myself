@@ -3,9 +3,9 @@
   import { dt, t } from '$lib/i18n';
   import { handleAnchorClick } from '$lib/interact';
   import { techs } from '$lib/data/techs';
-    import { onMount } from 'svelte';
+  import { onMount } from 'svelte';
 
-  export let exp: ExperienceType;
+  let { exp }: { exp: ExperienceType; } = $props();
 
   const getDurationYM = (startDate: Date, endDate?: Date) => {
     if (!endDate) {
@@ -18,8 +18,8 @@
     return [years, months];
   }
 
-  let years: number;
-  let months: number;
+  let years: number = $state(0);
+  let months: number = $state(0);
   onMount(() => {
     [years, months] = getDurationYM(exp.startDate, exp.endDate);
   });
@@ -44,7 +44,7 @@
     </ul>
     <div class="tech">
       {#each proj.techs as tech}
-        <a href={`#tech-${tech}`} on:click={e => handleAnchorClick(e, e => {if (!e.classList.contains("focus")) e.click()})}>
+        <a href={`#tech-${tech}`} onclick={e => handleAnchorClick(e, e => {if (!e.classList.contains("focus")) e.click()})}>
           <img src={techs[tech].img} alt={techs[tech].name} />
           <span>{techs[tech].name}</span>
         </a>

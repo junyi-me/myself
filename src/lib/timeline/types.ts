@@ -8,8 +8,6 @@ export type TimeEventType = {
 };
 
 export type IslandType = {
-
-    label(label: any): unknown;
   id: number;
   txTitle: string;
   txOrg: string;

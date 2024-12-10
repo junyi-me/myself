@@ -1,10 +1,10 @@
 <script>
   import Navigate from "./Navigate.svelte";
 
-  let open = false;
+  let open = $state(false);
 </script>
 
-<button on:click={() => open = !open}>
+<button onclick={() => open = !open}>
   <div class="icon" class:open>
     {#if open}
       <i class="fas fa-times"></i>
