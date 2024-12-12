@@ -1,31 +1,62 @@
 <script lang="ts">
   import Card from "$lib/Card.svelte";
-  import { locale, t } from "$lib/i18n";
+  import { locale } from "$lib/i18n";
   import { onDestroy } from "svelte";
-  import store from "./stores";
-  import ToggleSwitch from "./ToggleSwitch.svelte";
+  import store, { type ThemeType } from "./stores";
   import Dropdown from "./Dropdown.svelte";
   import type { LanguageType } from "$lib/data/translations";
 
   let { onConfirm = () => {} }: { onConfirm?: () => void; } = $props();
-  const confirmWithDelay = () => {
-    setTimeout(() => {
-      onConfirm();
-    }, 300);
-  };
 
-  const unsubscribe = store.subscribe(store => {
-    // theme
-    if (store.pref.dark) {
+  const switchColor = (dark: boolean) => {
+    if (dark) {
       document.body.classList.add('dark');
     } else {
       document.body.classList.remove('dark');
     }
+  };
+
+  const mediaQuery = window.matchMedia('(prefers-color-scheme: dark)');
+  let switchFn: ((e: MediaQueryListEvent) => void) | null = null;
+
+  const switchTheme = (theme: ThemeType) => {
+    if (theme === 'auto') {
+      // Add the listener only if it doesn't exist
+      if (!switchFn) {
+        switchFn = (e: MediaQueryListEvent) => switchColor(e.matches);
+        mediaQuery.addEventListener('change', switchFn);
+      }
+      // Set the initial color based on current preference
+      switchColor(mediaQuery.matches);
+      return;
+    }
+
+    // Remove the listener if switching to a specific theme
+    if (switchFn) {
+      mediaQuery.removeEventListener('change', switchFn);
+      switchFn = null;
+    }
+    // Manually set the theme
+    switchColor(theme === 'dark');
+  };
+
+  // Subscribe to store changes
+  const unsubscribe = store.subscribe(store => {
+    // theme
+    const theme = store.pref.theme;
+    switchTheme(theme);
 
     // language
     $locale = store.pref.lang;
   });
-  onDestroy(unsubscribe);
+
+  // Cleanup on component destroy
+  onDestroy(() => {
+    if (switchFn) {
+      mediaQuery.removeEventListener('change', switchFn);
+    }
+    unsubscribe();
+  });
 
   type langOptType = { value: LanguageType, label: string };
   let langOptions: langOptType[] = [
@@ -33,6 +64,14 @@
     { value: 'jp', label: '日本語' },
     { value: 'zh', label: '中文' },
   ];
+
+  type themeOptType = { value: ThemeType, txLabel: string };
+  let themeOptions: themeOptType[] = [
+    { value: 'light', txLabel: 'pref.colorTheme.light' },
+    { value: 'dark', txLabel: 'pref.colorTheme.dark' },
+    { value: 'auto', txLabel: 'pref.colorTheme.auto' },
+  ];
+
 </script>
 
 <Card transparent>
@@ -48,10 +87,11 @@
       </tr>
       <tr class="entry">
         <td>
-          <ToggleSwitch bind:checked={$store.pref.dark} onChange={confirmWithDelay} />
+          <i class="fa-solid fa-sun"></i>
+          <i class="fa-solid fa-moon"></i>
         </td>
         <td>
-          <p>{$t('pref.darkMode')}</p>
+          <Dropdown bind:selected={$store.pref.theme} options={themeOptions} onChange={onConfirm} />
         </td>
       </tr>
     </tbody>
@@ -74,10 +114,6 @@
 
   td:nth-child(2) {
     padding-left: var(--gap-tiny);
-  }
-
-  .entry p {
-    margin: 0;
   }
 </style>
 

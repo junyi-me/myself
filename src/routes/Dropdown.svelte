@@ -1,7 +1,10 @@
 <script lang="ts">
+  import { t } from "$lib/i18n";
+
   type OptionType = {
     value: string;
-    label: string;
+    label?: string;
+    txLabel?: string;
   };
   interface Props {
     onChange?: (value: string) => void;
@@ -12,8 +15,16 @@
 </script>
 
 <select bind:value={selected} onchange={() => onChange(selected)}>
-  {#each options as { value, label }}
-    <option value={value} selected={value === selected}>{label}</option>
+  {#each options as { value, label, txLabel }}
+    <option value={value} selected={value === selected}>
+      {#if label}
+        {label}
+      {:else if txLabel}
+        {$t(txLabel)}
+      {:else}
+        {value}
+      {/if}
+    </option>
   {/each}
 </select>
 

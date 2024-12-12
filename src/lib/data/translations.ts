@@ -212,7 +212,12 @@ type TranscriptType = {
     },
   },
   pref: {
-    darkMode: string,
+    colorTheme: {
+      title: string,
+      dark: string,
+      light: string,
+      auto: string,
+    },
   },
 }
 
@@ -492,7 +497,12 @@ const translations: TranslationType = {
       },
     },
     pref: {
-      darkMode: "Dark mode",
+      colorTheme: {
+        title: "Color Theme",
+        dark: "Dark",
+        light: "Light",
+        auto: "Auto",
+      },
     },
   },
   jp: {
@@ -757,7 +767,12 @@ const translations: TranslationType = {
       },
     },
     pref: {
-      darkMode: "ダークモード",
+      colorTheme: {
+        title: "カラーテーマ",
+        dark: "ダーク",
+        light: "ライト",
+        auto: "自動",
+      },
     },
   },
   zh: {
@@ -1056,7 +1071,12 @@ const translations: TranslationType = {
       },
     },
     pref: {
-      darkMode: "暗色模式",
+      colorTheme: {
+        title: "颜色主题",
+        dark: "深色",
+        light: "浅色",
+        auto: "自动",
+      },
     },
   },
 };
