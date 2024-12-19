@@ -6,8 +6,22 @@
     <link rel="stylesheet" href="%sveltekit.assets%/css/global.css" />
 		<meta name="viewport" content="width=device-width, initial-scale=1" />
 		%sveltekit.head%
+    <script>
+      (function() {
+        // Check localStorage for theme
+        const pref = JSON.parse(localStorage.getItem('content') || '{}').pref || {};
+        const theme = pref.theme || 'auto';
+
+        if (theme === 'dark' || (theme === 'auto' && window.matchMedia('(prefers-color-scheme: dark)').matches)) {
+          document.documentElement.dataset.scheme = 'dark';
+        } else {
+          document.documentElement.dataset.scheme = 'light';
+        }
+      })();
+    </script>
 	</head>
 	<body data-sveltekit-preload-data="hover">
 		<div style="display: contents">%sveltekit.body%</div>
 	</body>
 </html>
+

@@ -10,9 +10,9 @@
 
   const switchColor = (dark: boolean) => {
     if (dark) {
-      document.body.classList.add('dark');
+      document.documentElement.dataset.scheme = 'dark';
     } else {
-      document.body.classList.remove('dark');
+      document.documentElement.dataset.scheme = 'light';
     }
   };
 

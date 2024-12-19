@@ -1,4 +1,5 @@
-body {
+/* light mode style variables */
+[data-scheme='light'] {
     --bg-1: hsl(0, 0%, 100%);
     --bg-2: #f5f5fa;
     --bg-3: hsl(206, 20%, 80%);
@@ -13,7 +14,26 @@ body {
     --link: hsl(208, 77%, 47%);
     --link-hover: hsl(208, 77%, 55%);
     --link-active: hsl(208, 77%, 40%);
+}
 
+/* dark mode style variables */
+[data-scheme='dark'] {
+    --bg-1: hsl(0, 0%, 18%);
+    --bg-2: #3f3f3f;
+    --bg-3: hsl(0, 0%, 40%);
+    --fg-1: hsl(0, 0%, 90%);
+    --fg-2: hsl(0, 0%, 70%);
+    --fg-3: hsl(0, 0%, 60%);
+
+    --highlight: #4c4c3c;
+    --accent: #ff4500;
+
+    --link: hsl(206, 96%, 72%);
+    --link-hover: hsl(206, 96%, 78%);
+    --link-active: hsl(206, 96%, 64%);
+}
+
+body {
     --card-border: 1px solid var(--bg-3);
     --card-bg: var(--bg-1);
     --card-border-radius: 10px;
@@ -99,22 +119,6 @@ code {
     font-size: 0.9em;
     padding: 0.15rem 0.3rem;
     border-radius: var(--border-radius);
-}
-
-body.dark {
-    --bg-1: hsl(0, 0%, 18%);
-    --bg-2: #3f3f3f;
-    --bg-3: hsl(0, 0%, 40%);
-    --fg-1: hsl(0, 0%, 90%);
-    --fg-2: hsl(0, 0%, 70%);
-    --fg-3: hsl(0, 0%, 60%);
-
-    --highlight: #4c4c3c;
-    --accent: #ff4500;
-
-    --link: hsl(206, 96%, 72%);
-    --link-hover: hsl(206, 96%, 78%);
-    --link-active: hsl(206, 96%, 64%);
 }
 
 .highlight {

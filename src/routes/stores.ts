@@ -14,7 +14,7 @@ const stored = localStorage.content;
 const store: Writable<StoreType> = writable(stored ? JSON.parse(stored) : {
   pref: {
     lang: 'en',
-    dark: 'auto',
+    theme: 'auto',
   }
 });
 
