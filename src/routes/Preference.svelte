@@ -2,32 +2,33 @@
   import Card from "$lib/Card.svelte";
   import { locale } from "$lib/i18n";
   import { onDestroy } from "svelte";
-  import store, { type ThemeType } from "./stores";
   import Dropdown from "./Dropdown.svelte";
   import type { LanguageType } from "$lib/data/translations";
+  import store from "./stores";
+  import ToggleSwitch from "./ToggleSwitch.svelte";
 
   let { onConfirm = () => {} }: { onConfirm?: () => void; } = $props();
-
-  const switchColor = (dark: boolean) => {
-    if (dark) {
-      document.documentElement.dataset.scheme = 'dark';
-    } else {
-      document.documentElement.dataset.scheme = 'light';
-    }
-  };
 
   const mediaQuery = window.matchMedia('(prefers-color-scheme: dark)');
   let switchFn: ((e: MediaQueryListEvent) => void) | null = null;
 
-  const switchTheme = (theme: ThemeType) => {
-    if (theme === 'auto') {
+  const switchThemeColor = (dark: boolean) => document.documentElement.dataset.scheme = dark ? 'dark' : 'light';
+
+  const switchTheme = (userDark: boolean, systemTheme: boolean) => {
+    if (systemTheme) {
       // Add the listener only if it doesn't exist
       if (!switchFn) {
-        switchFn = (e: MediaQueryListEvent) => switchColor(e.matches);
+        switchFn = (e: MediaQueryListEvent) => switchThemeColor(e.matches);
         mediaQuery.addEventListener('change', switchFn);
       }
-      // Set the initial color based on current preference
-      switchColor(mediaQuery.matches);
+
+      // Set the color based on current system preference
+      switchThemeColor(mediaQuery.matches);
+      // also update store, for other components to react
+      // store.update((current) => {
+      //   current.pref.darkTheme = mediaQuery.matches;
+      //   return current;
+      // });
       return;
     }
 
@@ -37,14 +38,13 @@
       switchFn = null;
     }
     // Manually set the theme
-    switchColor(theme === 'dark');
+    switchThemeColor(userDark);
   };
 
   // Subscribe to store changes
   const unsubscribe = store.subscribe(store => {
     // theme
-    const theme = store.pref.theme;
-    switchTheme(theme);
+    switchTheme(store.pref.darkTheme, store.pref.systemTheme);
 
     // language
     $locale = store.pref.lang;
@@ -64,14 +64,6 @@
     { value: 'jp', label: '日本語' },
     { value: 'zh', label: '中文' },
   ];
-
-  type themeOptType = { value: ThemeType, txLabel: string };
-  let themeOptions: themeOptType[] = [
-    { value: 'light', txLabel: 'pref.colorTheme.light' },
-    { value: 'dark', txLabel: 'pref.colorTheme.dark' },
-    { value: 'auto', txLabel: 'pref.colorTheme.auto' },
-  ];
-
 </script>
 
 <Card transparent>
@@ -87,12 +79,19 @@
       </tr>
       <tr class="entry">
         <td>
-          <i class="fa-solid fa-sun"></i>
-          <i class="fa-solid fa-moon"></i>
+          <i class="fa-solid fa-eye"></i>
         </td>
         <td>
-          <Dropdown bind:selected={$store.pref.theme} options={themeOptions} onChange={onConfirm} />
+          <ToggleSwitch bind:checked={$store.pref.systemTheme} onChange={onConfirm} />
         </td>
+        {#if $store.pref.systemTheme === false}
+            <td>
+              <i class="fa-solid fa-moon"></i>
+            </td>
+            <td>
+              <ToggleSwitch bind:checked={$store.pref.darkTheme} onChange={onConfirm} />
+            </td>
+        {/if}
       </tr>
     </tbody>
   </table>

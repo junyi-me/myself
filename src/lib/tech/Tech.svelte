@@ -14,7 +14,7 @@
 
   let dark = $state(false);
   const unsubscribe = store.subscribe(store => {
-    dark = store.pref.dark;
+    dark = store.pref.darkTheme;
   });
   onDestroy(unsubscribe);
 </script>
