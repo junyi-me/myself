@@ -75,3 +75,5 @@ store.subscribe(value => {
 
 export default store;
 
+export const toastStore = writable<string | null>(null);
+

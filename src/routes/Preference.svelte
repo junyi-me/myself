@@ -1,12 +1,12 @@
 <script lang="ts">
   import Card from "$lib/Card.svelte";
-  import { locale } from "$lib/i18n";
+  import { locale, t } from "$lib/i18n";
   import { onDestroy } from "svelte";
   import Dropdown from "./Dropdown.svelte";
   import type { LanguageType } from "$lib/data/translations";
-  import store from "./stores";
   import ToggleSwitch from "./ToggleSwitch.svelte";
   import { fade } from "svelte/transition";
+  import store, { toastStore } from "$lib/stores";
 
   let { onConfirm = () => {} }: { onConfirm?: () => void; } = $props();
 
@@ -26,6 +26,25 @@
     { value: 'jp', label: '日本語' },
     { value: 'zh', label: '中文' },
   ];
+
+  const onSysThemeChange = () => {
+    const val = $store.pref.systemTheme;
+    $toastStore = $t(`pref.colorTheme.toast.${val ? 'switchToSystem' : 'switchToManual'}`);
+    if (val) {
+      onConfirm();
+    }
+  };
+
+  const onUserThemeChange = () => {
+    const val = $store.pref.darkTheme;
+    $toastStore = $t(`pref.colorTheme.toast.${val ? 'switchToDark' : 'switchToLight'}`);
+    onConfirm();
+  };
+
+  const onLangChange = () => {
+    $toastStore = langOptions.find(opt => opt.value === $store.pref.lang)?.label ?? '';
+    onConfirm();
+  };
 </script>
 
 <Card transparent>
@@ -37,7 +56,7 @@
             <i class="fa-solid fa-moon"></i>
           </td>
           <td>
-            <ToggleSwitch bind:checked={$store.pref.darkTheme} onChange={onConfirm} />
+            <ToggleSwitch bind:checked={$store.pref.darkTheme} onChange={onUserThemeChange} />
           </td>
         </tr>
       {/if}
@@ -46,7 +65,7 @@
           <i class="fa-solid fa-eye"></i>
         </td>
         <td>
-          <ToggleSwitch bind:checked={$store.pref.systemTheme} onChange={onConfirm} />
+          <ToggleSwitch bind:checked={$store.pref.systemTheme} onChange={onSysThemeChange} />
         </td>
       </tr>
       <tr class="lang">
@@ -54,7 +73,7 @@
           <i class="fa-solid fa-globe"></i>
         </td>
         <td>
-          <Dropdown bind:selected={$store.pref.lang} options={langOptions} onChange={onConfirm} />
+          <Dropdown bind:selected={$store.pref.lang} options={langOptions} onChange={onLangChange} />
         </td>
       </tr>
     </tbody>

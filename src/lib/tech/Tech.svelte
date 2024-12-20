@@ -1,5 +1,5 @@
 <script lang="ts">
-  import store from "../../routes/stores";
+  import store from "$lib/stores";
 
   interface Props {
     key: string;

@@ -217,6 +217,12 @@ type TranscriptType = {
       dark: string,
       light: string,
       auto: string,
+      toast: {
+        switchToDark: string,
+        switchToLight: string,
+        switchToSystem: string,
+        switchToManual: string,
+      }
     },
   },
 }
@@ -502,6 +508,12 @@ const translations: TranslationType = {
         dark: "Dark",
         light: "Light",
         auto: "Auto",
+        toast: {
+          switchToDark: "Switched to dark theme",
+          switchToLight: "Switched to light theme",
+          switchToSystem: "Switched to system theme",
+          switchToManual: "Switched off system theme",
+        }
       },
     },
   },
@@ -772,6 +784,12 @@ const translations: TranslationType = {
         dark: "ダーク",
         light: "ライト",
         auto: "自動",
+        toast: {
+          switchToDark: "テーマ：ダークモード",
+          switchToLight: "テーマ：ライトモード",
+          switchToSystem: "テーマ：システム設定",
+          switchToManual: "テーマ：手動設定",
+        }
       },
     },
   },
@@ -1076,6 +1094,12 @@ const translations: TranslationType = {
         dark: "深色",
         light: "浅色",
         auto: "自动",
+        toast: {
+          switchToDark: "色调：深色模式",
+          switchToLight: "色调：浅色模式",
+          switchToSystem: "色调：系统设置",
+          switchToManual: "色调：手动设置",
+        }
       },
     },
   },
