@@ -10,14 +10,15 @@ export type StoreType = {
   pref: PrefType;
 }
 
-const stored = localStorage.content;
-const store: Writable<StoreType> = writable(stored ? JSON.parse(stored) : {
+const defaultStore: StoreType = {
   pref: {
     lang: 'en',
     darkTheme: false,
     systemTheme: true
   }
-});
+}
+const stored = localStorage.content;
+const store: Writable<StoreType> = writable(stored ? JSON.parse(stored) : defaultStore);
 
 const mediaQuery = window.matchMedia('(prefers-color-scheme: dark)');
 let switchFn: ((e: MediaQueryListEvent) => void) | null = null;
@@ -50,7 +51,24 @@ const switchTheme = (userDark: boolean, systemTheme: boolean) => {
   switchDarkTheme(userDark);
 };
 
+const validateStore = (store: StoreType) => {
+  if (
+    typeof store.pref.lang !== 'string' ||
+    !store.pref.lang ||
+    typeof store.pref.darkTheme !== 'boolean' ||
+    typeof store.pref.systemTheme !== 'boolean'
+  ) {
+    return false;
+  }
+  return true;
+}
+
 store.subscribe(value => {
+  if (!validateStore(value)) {
+    console.warn('Invalid store, resetting to default', value);
+    store.set(defaultStore);
+    value = defaultStore;
+  }
   localStorage.content = JSON.stringify(value);
   switchTheme(value.pref.darkTheme, value.pref.systemTheme);
 });
