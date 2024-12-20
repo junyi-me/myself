@@ -6,55 +6,17 @@
   import type { LanguageType } from "$lib/data/translations";
   import store from "./stores";
   import ToggleSwitch from "./ToggleSwitch.svelte";
+  import { fade } from "svelte/transition";
 
   let { onConfirm = () => {} }: { onConfirm?: () => void; } = $props();
 
-  const mediaQuery = window.matchMedia('(prefers-color-scheme: dark)');
-  let switchFn: ((e: MediaQueryListEvent) => void) | null = null;
-
-  const switchThemeColor = (dark: boolean) => document.documentElement.dataset.scheme = dark ? 'dark' : 'light';
-
-  const switchTheme = (userDark: boolean, systemTheme: boolean) => {
-    if (systemTheme) {
-      // Add the listener only if it doesn't exist
-      if (!switchFn) {
-        switchFn = (e: MediaQueryListEvent) => switchThemeColor(e.matches);
-        mediaQuery.addEventListener('change', switchFn);
-      }
-
-      // Set the color based on current system preference
-      switchThemeColor(mediaQuery.matches);
-      // also update store, for other components to react
-      // store.update((current) => {
-      //   current.pref.darkTheme = mediaQuery.matches;
-      //   return current;
-      // });
-      return;
-    }
-
-    // Remove the listener if switching to a specific theme
-    if (switchFn) {
-      mediaQuery.removeEventListener('change', switchFn);
-      switchFn = null;
-    }
-    // Manually set the theme
-    switchThemeColor(userDark);
-  };
-
   // Subscribe to store changes
   const unsubscribe = store.subscribe(store => {
-    // theme
-    switchTheme(store.pref.darkTheme, store.pref.systemTheme);
-
-    // language
     $locale = store.pref.lang;
   });
 
   // Cleanup on component destroy
   onDestroy(() => {
-    if (switchFn) {
-      mediaQuery.removeEventListener('change', switchFn);
-    }
     unsubscribe();
   });
 
@@ -69,7 +31,25 @@
 <Card transparent>
   <table>
     <tbody class="entries">
-      <tr class="entry lang">
+      {#if $store.pref.systemTheme === false}
+        <tr transition:fade>
+          <td>
+            <i class="fa-solid fa-moon"></i>
+          </td>
+          <td>
+            <ToggleSwitch bind:checked={$store.pref.darkTheme} onChange={onConfirm} />
+          </td>
+        </tr>
+      {/if}
+      <tr>
+        <td>
+          <i class="fa-solid fa-eye"></i>
+        </td>
+        <td>
+          <ToggleSwitch bind:checked={$store.pref.systemTheme} onChange={onConfirm} />
+        </td>
+      </tr>
+      <tr class="lang">
         <td>
           <i class="fa-solid fa-globe"></i>
         </td>
@@ -77,28 +57,12 @@
           <Dropdown bind:selected={$store.pref.lang} options={langOptions} onChange={onConfirm} />
         </td>
       </tr>
-      <tr class="entry">
-        <td>
-          <i class="fa-solid fa-eye"></i>
-        </td>
-        <td>
-          <ToggleSwitch bind:checked={$store.pref.systemTheme} onChange={onConfirm} />
-        </td>
-        {#if $store.pref.systemTheme === false}
-            <td>
-              <i class="fa-solid fa-moon"></i>
-            </td>
-            <td>
-              <ToggleSwitch bind:checked={$store.pref.darkTheme} onChange={onConfirm} />
-            </td>
-        {/if}
-      </tr>
     </tbody>
   </table>
 </Card>
 
 <style>
-  .entry i {
+  tr i {
     font-size: 1.2em;
     color: var(--fg-3);
   }

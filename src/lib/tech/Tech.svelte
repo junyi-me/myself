@@ -1,5 +1,4 @@
 <script lang="ts">
-  import { onDestroy } from "svelte";
   import store from "../../routes/stores";
 
   interface Props {
@@ -11,18 +10,12 @@
     focus?: boolean;
   }
   let { key, name, img, darkImg, onClick, focus = false }: Props = $props();
-
-  let dark = $state(false);
-  const unsubscribe = store.subscribe(store => {
-    dark = store.pref.darkTheme;
-  });
-  onDestroy(unsubscribe);
 </script>
 
 <div>
-  <button class="tech" onclick={onClick} class:focus={focus} id={`tech-${key}`}>
+  <button class="tech" onclick={onClick} class:focus id={`tech-${key}`}>
     <div>
-      <img src={(dark && darkImg != undefined) ? darkImg : img} alt={name} />
+      <img src={($store.pref.darkTheme && darkImg != undefined) ? darkImg : img} alt={name} />
     </div>
     <p>{name}</p>
   </button>
