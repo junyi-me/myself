@@ -48,6 +48,14 @@ const techsRaw = {
     name: "Svelte",
     link: "https://svelte.dev/",
     img: "images/svelte256.png",
+    sub: [
+      {
+        key: "sveltekit",
+        name: "SvelteKit",
+        link: "https://svelte.dev/docs/kit/introduction",
+        img: "images/svelte256.png",
+      },
+    ],
     projects: [ techProjects.thisWebsite, ],
   },
   react: {
@@ -124,6 +132,12 @@ const techsRaw = {
         name: "database/sql",
         link: "https://pkg.go.dev/database/sql",
         img: "images/gopher.svg",
+      },
+      {
+        key: "pgx",
+        name: "jackc/pgx",
+        link: "https://github.com/jackc/pgx",
+        img: "images/github256.png",
       },
     ],
   },
@@ -424,6 +438,18 @@ const techsRaw = {
         link: "https://ubuntu.com/",
         img: "images/ubuntu256.png",
       },
+      {
+        key: "nfs",
+        name: "NFS",
+        link: "https://docs.kernel.org/admin-guide/nfs/index.html",
+        img: "images/linux256.png",
+      },
+      {
+        key: "kvm",
+        name: "libvirt/KVM",
+        link: "https://libvirt.org/",
+        img: "images/libvirt64.png",
+      },
     ],
   },
   bash: {
@@ -562,9 +588,9 @@ const techCategoriesRaw = {
   others: [
     techs.linux,
     techs.bash,
-    techs.vim,
-    techs.lua,
     techs.neovim,
+    techs.lua,
+    techs.vim,
   ],
   gamedev: [
     techs.phaser,

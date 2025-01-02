@@ -7,30 +7,12 @@
 <div class="container">
   <div class="avatar">
     <Card transparent>
-      <img src="images/avatar.jpg" alt="avatar" />
+      <img src="images/avatar.webp" alt="avatar" />
       <h2>{$t('home.name')}</h2>
       <p>{$t('home.headline')}</p>
-    </Card>
-  </div>
-
-  <div>
-    <Card transparent>
-      <h2><span>@</span> {$t('home.links.title')}</h2>
       <p>
-        <i class="fa-brands fa-linkedin"></i>
-        <a href="https://www.linkedin.com/in/junyi-wang-976a94199/" target="_blank">LinkedIn</a>
-      </p>
-      <p>
-        <i class="fa-brands fa-github"></i>
-        <a href="https://github.com/jywang99" target="_blank">GitHub</a>
-      </p>
-      <p>
-        <i class="fa-solid fa-feather-pointed"></i>
-        <a href="https://blog.junyi.me/" target="_blank">{$t('home.links.blog')}</a>
-      </p>
-      <p>
-        <i class="fa-regular fa-envelope"></i>
-        <a href="mailto:junyi.wang.007@gmail.com">{$t('home.links.email')}</a>
+        <i class="fa-solid fa-link"></i>
+        <a href="https://junyi.me/">{$t('home.links.title')}</a>
       </p>
     </Card>
   </div>
@@ -46,10 +28,6 @@
 
   h2 {
     color: var(--fg-3);
-  }
-
-  h2 span {
-    color: var(--accent);
   }
 
   .avatar {
