@@ -36,7 +36,7 @@
     <Article key='exp'>
       <ExperienceSection />
     </Article>
-    <p class="cp">© 2024 Junyi Wang</p>
+    <p class="cp">© 2024-{new Date().getFullYear()} Junyi Wang</p>
   </div>
   {#if innerWidth > 1200}
     <div class="navigate sticky">

@@ -148,6 +148,10 @@ type TranscriptType = {
       name: string,
       description: string,
     },
+    my_domain: {
+      name: string,
+      description: string,
+    },
     k3s: {
       title: string,
     },
@@ -403,6 +407,10 @@ const translations: TranslationType = {
       },
       k3s: {
         title: "Hosting an HTTPS website on a HA k3s cluster" ,
+      },
+      my_domain: {
+        name: "My Domain",
+        description: "Everything on this domain, including subdomains, is self-hosted on a k3s cluster.",
       },
     },
     exp: {
@@ -683,6 +691,10 @@ const translations: TranslationType = {
       },
       k3s: {
         title: "Hosting an HTTPS website on a HA k3s cluster" ,
+      },
+      my_domain: {
+        name: "このドメイン",
+        description: "サブドメインを含むこのドメイン上のサービスを全て、k3sクラスター上でセルフホスティングしています。",
       },
     },
     exp: {
@@ -990,6 +1002,10 @@ const translations: TranslationType = {
       },
       k3s: {
         title: "Hosting an HTTPS website on a HA k3s cluster" ,
+      },
+      my_domain: {
+        name: "该域名",
+        description: "该域名上的所有服务，包括子域名，都是在k3s集群上自托管的。",
       },
     },
     exp: {

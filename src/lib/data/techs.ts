@@ -37,6 +37,12 @@ const techProjectsRaw = {
     link: "https://github.com/jywang99/neovim",
     img: "images/github256.png",
   },
+  myDomain: {
+    txTitle: "projects.my_domain.name",
+    txDescription: "projects.my_domain.description",
+    link: "https://junyi.me",
+    img: "images/github256.png",
+  }
 };
 export type TechProjectKeyType = keyof typeof techProjectsRaw;
 export const techProjects: Record<TechProjectKeyType, PProjectType> = techProjectsRaw;
@@ -295,6 +301,7 @@ const techsRaw = {
     name: "Kubernetes",
     link: "https://kubernetes.io/",
     img: "images/kubernetes256.png",
+    projects: [ techProjects.myDomain, ],
     sub: [
       {
         key: "k3s",
