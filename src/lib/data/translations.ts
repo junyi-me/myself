@@ -67,6 +67,9 @@ type TranscriptType = {
     cpp: {
       description: string,
     },
+    sveltekit: {
+      description: string,
+    },
     mysql: {
       description: string,
     },
@@ -149,6 +152,10 @@ type TranscriptType = {
       description: string,
     },
     my_domain: {
+      name: string,
+      description: string,
+    },
+    town: {
       name: string,
       description: string,
     },
@@ -323,6 +330,9 @@ const translations: TranslationType = {
       cpp: {
         description: `<p><code>C++</code> is another language I learned at work. I was mainly given tasks to implement new features in some web server programs. Working with the linker was a pain.</p>`,
       },
+      sveltekit: {
+        description: `<p><code>SvelteKit</code> has become my favoriate way to develop both SPAs and full-stack web apps.</p>`
+      },
       mysql: {
         description: `<p>I've been using <code>MySQL</code> throughout my time at ApolloEye. At my current job, I've gotten also some experience with <code>Oracle DB</code> and <code>PostgreSQL</code>.</p>`,
       },
@@ -411,6 +421,10 @@ const translations: TranslationType = {
       my_domain: {
         name: "My Domain",
         description: "Everything on this domain, including subdomains, is self-hosted on a k3s cluster.",
+      },
+      town: {
+        name: "Town",
+        description: "My attempt at creating a 2D top-down RPG game, currently left unfinished...",
       },
     },
     exp: {
@@ -608,6 +622,9 @@ const translations: TranslationType = {
       cpp: {
         description: "<p><code>C++</code>も仕事で学んだ言語の一つです。主にサーバープログラムに新機能を実装するタスクを任されていました。リンカーにはいつも苦戦を強いられています。</p>",
       },
+      sveltekit: {
+        description: "<p>最近はSPAでもフルスタック開発でも、<code>SvelteKit</code>を重宝しています。</p>",
+      },
       mysql: {
         description: "<p>ApolloEyeでの仕事を通じて<code>MySQL</code>を使い続けています。Nagrastarでは、<code>Oracle DB</code>や<code>PostgreSQL</code>にも触れる機会も度々ありました。</p>",
       },
@@ -695,6 +712,10 @@ const translations: TranslationType = {
       my_domain: {
         name: "このドメイン",
         description: "サブドメインを含むこのドメイン上のサービスを全て、k3sクラスター上でセルフホスティングしています。",
+      },
+      town: {
+        name: "Town",
+        description: "2DトップダウンRPGゲームの制作を試みましたが、現在は未完です...",
       },
     },
     exp: {
@@ -892,6 +913,11 @@ const translations: TranslationType = {
           <p>这也是我在工作当中学到的一门新语言。我目前主要负责在一些后端程序中追加新功能。</p>
         `
       },
+      sveltekit: {
+        description: `
+          <p>无论是SPA还是全栈开发，我都很享受用<code>SvelteKit</code>。</p>
+        `
+      },
       mysql: {
         description: `
           <p>我在 ApolloEye 期间一直在使用 <code>MySQL</code>。在目前的工作中，我也有机会接触到 <code>Oracle DB</code> 和 <code>PostgreSQL</code>。</p>
@@ -1006,6 +1032,10 @@ const translations: TranslationType = {
       my_domain: {
         name: "该域名",
         description: "该域名上的所有服务，包括子域名，都是在k3s集群上自托管的。",
+      },
+      town: {
+        name: "Town",
+        description: "这是我试图制作的2D顶视RPG游戏。未完待续...",
       },
     },
     exp: {

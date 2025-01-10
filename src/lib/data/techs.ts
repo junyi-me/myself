@@ -42,7 +42,13 @@ const techProjectsRaw = {
     txDescription: "projects.my_domain.description",
     link: "https://junyi.me",
     img: "images/github256.png",
-  }
+  },
+  town: {
+    txTitle: "projects.town.name",
+    txDescription: "projects.town.description",
+    link: "https://town.junyi.me",
+    img: "images/github256.png",
+  },
 };
 export type TechProjectKeyType = keyof typeof techProjectsRaw;
 export const techProjects: Record<TechProjectKeyType, PProjectType> = techProjectsRaw;
@@ -54,14 +60,6 @@ const techsRaw = {
     name: "Svelte",
     link: "https://svelte.dev/",
     img: "images/svelte256.png",
-    sub: [
-      {
-        key: "sveltekit",
-        name: "SvelteKit",
-        link: "https://svelte.dev/docs/kit/introduction",
-        img: "images/svelte256.png",
-      },
-    ],
     projects: [ techProjects.thisWebsite, ],
   },
   react: {
@@ -242,6 +240,22 @@ const techsRaw = {
         img: "images/civet64.png",
       },
     ]
+  },
+  sveltekit: {
+    key: "sveltekit",
+    txDescription: "tech.sveltekit.description",
+    name: "SvelteKit",
+    link: "https://svelte.dev/docs/kit/introduction",
+    img: "images/svelte256.png",
+    projects: [ techProjects.thisWebsite, ],
+    sub: [
+      {
+        key: "drizzle",
+        name: "Drizzle",
+        link: "https://orm.drizzle.team/",
+        img: "images/drizzle.png",
+      },
+    ],
   },
   mysql: {
     key: "mysql",
@@ -542,6 +556,7 @@ const techsRaw = {
     name: "Phaser",
     link: "https://phaser.io/",
     img: "images/phaser.png",
+    projects: [ techProjects.town, ],
   },
   tiled: {
     key: "tiled",
@@ -573,6 +588,7 @@ const techCategoriesRaw = {
     techs.python,
     techs.csharp,
     techs.cpp,
+    techs.sveltekit,
   ],
   database: [
     techs.postgres,
