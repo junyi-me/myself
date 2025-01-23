@@ -77,7 +77,9 @@ type TranscriptType = {
     phaser: TechType,
     tiled: TechType,
     ansible: TechType,
-    sub: TechType,
+    sub: {
+      title: string,
+    }
   },
   projects: {
     title: string,
