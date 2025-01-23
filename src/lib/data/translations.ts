@@ -1,3 +1,11 @@
+type TechType = {
+  description: string,
+}
+type ProjectType = {
+  name: string,
+  description: string,
+}
+
 type TranscriptType = {
   home: {
     name: string,
@@ -43,122 +51,45 @@ type TranscriptType = {
     },
   },
   tech: {
-    svelte: {
-      description: string,
-    },
-    react: {
-      description: string,
-    },
-    html_css_js: {
-      description: string,
-    },
-    golang: {
-      description: string,
-    },
-    java: {
-      description: string,
-    },
-    python: {
-      description: string,
-    },
-    csharp: {
-      description: string,
-    },
-    cpp: {
-      description: string,
-    },
-    sveltekit: {
-      description: string,
-    },
-    mysql: {
-      description: string,
-    },
-    postgres: {
-      description: string,
-    },
-    dynamodb: {
-      description: string,
-    },
-    github: {
-      description: string,
-    },
-    docker: {
-      description: string,
-    },
-    kubernetes: {
-      description: string,
-    },
-    aws: {
-      description: string,
-    },
-    gcp: {
-      description: string,
-    },
-    linux: {
-      description: string,
-    },
-    bash: {
-      description: string,
-    },
-    lua: {
-      description: string,
-    },
-    vim: {
-      description: string,
-    },
-    neovim: {
-      description: string,
-    },
-    selenium: {
-      description: string,
-    },
-    phaser: {
-      description: string,
-    },
-    tiled: {
-      description: string,
-    },
-    ansible: {
-      description: string,
-    },
-    sub: {
-      title: string,
-    },
+    svelte: TechType,
+    react: TechType,
+    html_css_js: TechType,
+    golang: TechType,
+    java: TechType,
+    python: TechType,
+    csharp: TechType,
+    cpp: TechType,
+    sveltekit: TechType,
+    mysql: TechType,
+    postgres: TechType,
+    dynamodb: TechType,
+    github: TechType,
+    docker: TechType,
+    kubernetes: TechType,
+    aws: TechType,
+    gcp: TechType,
+    linux: TechType,
+    bash: TechType,
+    lua: TechType,
+    vim: TechType,
+    neovim: TechType,
+    selenium: TechType,
+    phaser: TechType,
+    tiled: TechType,
+    ansible: TechType,
+    sub: TechType,
   },
   projects: {
     title: string,
-    this_website: {
-      name: string,
-      description: string,
-    },
-    cs_go: {
-      name: string,
-      description: string,
-    },
-    leetcode: {
-      name: string,
-      description: string,
-    },
-    neovim: {
-      name: string,
-      description: string,
-    },
-    business_card: {
-      name: string,
-      description: string,
-    },
-    thumbgen: {
-      name: string,
-      description: string,
-    },
-    my_domain: {
-      name: string,
-      description: string,
-    },
-    town: {
-      name: string,
-      description: string,
-    },
+    this_website: ProjectType,
+    cs_go: ProjectType,
+    leetcode: ProjectType,
+    neovim: ProjectType,
+    business_card: ProjectType,
+    thumbgen: ProjectType,
+    my_domain: ProjectType,
+    town: ProjectType,
+    review: ProjectType,
     k3s: {
       title: string,
     },
@@ -425,6 +356,10 @@ const translations: TranslationType = {
       town: {
         name: "Town",
         description: "My attempt at creating a 2D top-down RPG game, currently left unfinished...",
+      },
+      review: {
+        name: "Review Planner",
+        description: "A simple web app to plan review sessions.",
       },
     },
     exp: {
@@ -716,6 +651,10 @@ const translations: TranslationType = {
       town: {
         name: "Town",
         description: "2DトップダウンRPGゲームの制作を試みましたが、現在は未完です...",
+      },
+      review: {
+        name: "Review Planner",
+        description: "復習サイクルの管理を手助けするウェブアプリ。",
       },
     },
     exp: {
@@ -1030,12 +969,16 @@ const translations: TranslationType = {
         title: "Hosting an HTTPS website on a HA k3s cluster" ,
       },
       my_domain: {
-        name: "该域名",
+        name: "当前的域名",
         description: "该域名上的所有服务，包括子域名，都是在k3s集群上自托管的。",
       },
       town: {
         name: "Town",
         description: "这是我试图制作的2D顶视RPG游戏。未完待续...",
+      },
+      review: {
+        name: "Review Planner",
+        description: "一个帮助管理复习周期的网站。",
       },
     },
     exp: {

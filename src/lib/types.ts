@@ -6,7 +6,6 @@ export type ArticleType = {
 }
 
 export type SubTechType = {
-  key: string
   name: string;
   link: string;
   img: string;
