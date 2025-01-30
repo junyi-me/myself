@@ -50,5 +50,5 @@ jobs:
           KUBE_CONFIG: ${{ secrets.JYLAB_KUBE_CONFIG }}
         uses: actions-hub/kubectl@master
         with:
-          args: set image deployment/myself-deployment myself-front=${{ env.DOCKER_REPO }}:${{ env.DATE_TAG }}
+          args: set image deployment/myself-deployment myself=${{ env.DOCKER_REPO }}:${{ env.DATE_TAG }}
 
