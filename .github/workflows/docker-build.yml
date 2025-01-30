@@ -13,7 +13,7 @@ jobs:
     runs-on: ubuntu-latest
 
     outputs:
-      tagname: ${{ steps.set-tag.outputs.DATE_TAG }}
+      tagname: ${{ steps.set-tag.outputs.dateTag }}
 
     steps:
       # Checkout the repository code
@@ -31,8 +31,9 @@ jobs:
       - name: Set date tag
         id: set-tag
         run: |
-          echo "DATE_TAG=$(date +'%Y%m%d')" >> $GITHUB_ENV
-          echo "DATE_TAG=${{ env.DATE_TAG }}" >> $GITHUB_OUTPUT
+          tag=$(date +'%Y%m%d')
+          echo "DATE_TAG=$tag" >> $GITHUB_ENV
+          echo "dateTag=$tag" >> $GITHUB_OUTPUT
 
       # Build the Docker image with both tags
       - name: Build Docker image
@@ -47,7 +48,7 @@ jobs:
           docker push $DOCKER_REPO:${{ env.DATE_TAG }}
 
   deploy:
-    needs: build
+    needs: [build]
     runs-on: jylab-runner-set
 
     steps:
