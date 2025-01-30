@@ -26,6 +26,7 @@ jobs:
 
       # Set date tag as a variable
       - name: Set date tag
+        id: set-tag
         run: echo "DATE_TAG=$(date +'%Y%m%d')" >> $GITHUB_ENV
 
       # Build the Docker image with both tags
@@ -40,6 +41,9 @@ jobs:
           docker push $DOCKER_REPO:release
           docker push $DOCKER_REPO:${{ env.DATE_TAG }}
 
+    outputs:
+      tagname: ${{ steps.set-tag.outputs.DATE_TAG }}
+
   deploy:
     needs: build
     runs-on: jylab-runner-set
@@ -50,5 +54,5 @@ jobs:
           KUBE_CONFIG: ${{ secrets.JYLAB_KUBE_CONFIG }}
         uses: actions-hub/kubectl@master
         with:
-          args: set image deployment/myself-deployment myself=${{ env.DOCKER_REPO }}:${{ env.DATE_TAG }}
+          args: set image deployment/myself-deployment myself=${{ env.DOCKER_REPO }}:${{ needs.build.outputs.tagname }}
 
