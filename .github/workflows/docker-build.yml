@@ -32,7 +32,7 @@ jobs:
         id: set-tag
         run: |
           echo "DATE_TAG=$(date +'%Y%m%d')" >> $GITHUB_ENV
-          echo "DATE_TAG=${{ env.DATE_TAG }} >> $GITHUB_OUTPUT
+          echo "DATE_TAG=${{ env.DATE_TAG }}" >> $GITHUB_OUTPUT
 
       # Build the Docker image with both tags
       - name: Build Docker image
