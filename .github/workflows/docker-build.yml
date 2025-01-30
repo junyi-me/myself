@@ -12,6 +12,9 @@ jobs:
   build:
     runs-on: ubuntu-latest
 
+    outputs:
+      tagname: ${{ steps.set-tag.outputs.DATE_TAG }}
+
     steps:
       # Checkout the repository code
       - name: Checkout code
@@ -27,7 +30,9 @@ jobs:
       # Set date tag as a variable
       - name: Set date tag
         id: set-tag
-        run: echo "DATE_TAG=$(date +'%Y%m%d')" >> $GITHUB_ENV
+        run: |
+          echo "DATE_TAG=$(date +'%Y%m%d')" >> $GITHUB_ENV
+          echo "DATE_TAG=${{ env.DATE_TAG }} >> $GITHUB_OUTPUT
 
       # Build the Docker image with both tags
       - name: Build Docker image
@@ -40,9 +45,6 @@ jobs:
         run: |
           docker push $DOCKER_REPO:release
           docker push $DOCKER_REPO:${{ env.DATE_TAG }}
-
-    outputs:
-      tagname: ${{ steps.set-tag.outputs.DATE_TAG }}
 
   deploy:
     needs: build
