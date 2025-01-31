@@ -57,5 +57,5 @@ jobs:
           KUBE_CONFIG: ${{ secrets.JYLAB_KUBE_CONFIG }}
         uses: actions-hub/kubectl@master
         with:
-          args: set image deployment/myself-deployment myself=${{ env.DOCKER_REPO }}:${{ needs.build.outputs.tagname }}
+          args: rollout restart -n myself deployment/myself-deployment
 

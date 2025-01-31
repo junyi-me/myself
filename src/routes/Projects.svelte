@@ -7,7 +7,12 @@
   {#each projects as proj}
     <a class="proj" href={proj.link} target="_blank">
       <img src={proj.img} alt={proj.txTitle} />
-      <h4>{$t(proj.txTitle)}</h4>
+      <div class="text">
+        <h4>{$t(proj.txTitle)}</h4>
+        {#if proj.txDescription}
+          <p>{$t(proj.txDescription)}</p>
+        {/if}
+      </div>
     </a>
   {/each}
 </div>
@@ -31,11 +36,21 @@
     box-shadow: var(--card-shadow);
   }
 
+  .text {
+    padding: var(--gap-small);
+  }
+
   .proj h4 {
     margin: 0;
-    padding: var(--gap-small);
+    margin-bottom: var(--gap-small);
     color: var(--fg-1);
     border-radius: 0 0 var(--card-border-radius) var(--card-border-radius);
+  }
+
+  .proj p {
+    margin: 0;
+    color: var(--fg-2);
+    line-height: 1;
   }
 
   img {
