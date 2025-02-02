@@ -34,4 +34,11 @@
   .cert:hover {
     background-color: var(--bg-2);
   }
+
+  @media screen and (max-width: 800px) {
+    .cert {
+      width: 120px;
+      height: 120px;
+    }
+  }
 </style>

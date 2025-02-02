@@ -45,6 +45,7 @@
     margin-bottom: var(--gap-small);
     color: var(--fg-1);
     border-radius: 0 0 var(--card-border-radius) var(--card-border-radius);
+    font-weight: bold;
   }
 
   .proj p {
@@ -58,6 +59,25 @@
     max-height: 80px;
     object-fit: cover;
     border-radius: var(--card-border-radius) var(--card-border-radius) 0 0;
+  }
+
+  @media screen and (max-width: 800px) {
+    .container {
+      display: auto;
+    }
+
+    .proj {
+      width: 100%;
+      height: auto;
+      flex-direction: row;
+    }
+
+    img {
+      max-width: 80px;
+      max-height: 80px;
+      aspect-ratio: 1 / 1;
+      border-radius: var(--card-border-radius) 0 0 var(--card-border-radius);
+    }
   }
 </style>
 
