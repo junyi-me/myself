@@ -40,6 +40,6 @@ jobs:
       - name: Build, tag, and push
         run: |
           DATE_TAG=prd-$(date +'%Y%m%d')
-          docker -t $DOCKER_REPO:$DATE_TAG .
+          docker build -t $DOCKER_REPO:$DATE_TAG .
           docker push $DOCKER_REPO:$DATE_TAG
 
