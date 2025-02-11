@@ -10,36 +10,27 @@ env:
 
 jobs:
   build:
-    runs-on: ubuntu-latest
-
+    runs-on: jylab-runner-set
     steps:
-      # Checkout the repository code
       - name: Checkout code
         uses: actions/checkout@v3
 
-      # Log in to Docker Hub
       - name: Log in to Docker Hub
         uses: docker/login-action@v2
         with:
           username: ${{ secrets.DOCKER_USERNAME }}
           password: ${{ secrets.DOCKER_PASSWORD }}
 
-      # Set date tag as a variable
-      - name: Set date tag
-        id: set-tag
-        run: |
-          tag=$(date +'%Y%m%d')
-          echo "DATE_TAG=$tag" >> $GITHUB_ENV
-
-      # Build the Docker image with both tags
-      - name: Build Docker image
-        run: |
-          docker build -t $DOCKER_REPO:release \
-                       -t $DOCKER_REPO:${{ env.DATE_TAG }} .
-
       - name: Build, tag, and push
         run: |
-          DATE_TAG=prd-$(date +'%Y%m%d')
-          docker build -t $DOCKER_REPO:$DATE_TAG .
-          docker push $DOCKER_REPO:$DATE_TAG
+          if [ $BRANCH_NAME == 'master' ]; then
+            branchTag=prd
+          else
+            branchTag=$BRANCH_NAME
+          fi
+          dateTag=$branchTag-$(date +'%Y%m%d')
+
+          docker build -t $DOCKER_REPO:$dateTag -t $DOCKER_REPO:$branchTag .
+          docker push $DOCKER_REPO:$dateTag
+          docker push $DOCKER_REPO:$branchTag
 

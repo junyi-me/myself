@@ -318,10 +318,10 @@ const techsRaw = {
         img: "images/helm.svg",
       },
       {
-        name: "Argo CD",
-        link: "https://argo-cd.readthedocs.io/en/stable/",
-        img: "images/argocd.png",
-      },
+        name: "Kustomize",
+        link: "https://kustomize.io/",
+        img: "images/kustomize.png",
+      }
     ]
   },
   aws: {
@@ -539,6 +539,57 @@ const techsRaw = {
     link: "https://www.ansible.com/",
     img: "images/ansible.png",
   },
+  traefik: {
+    key: "traefik",
+    txDescription: "tech.traefik.description",
+    name: "Traefik",
+    link: "https://traefik.io/traefik/",
+    img: "images/traefik.png",
+    projects: [ techProjects.myDomain, ],
+  },
+  nginx: {
+    key: "nginx",
+    txDescription: "tech.nginx.description",
+    name: "Nginx",
+    link: "https://www.nginx.com/",
+    img: "images/nginx.png",
+    sub: [
+      {
+        key: "nginx_reverse_proxy",
+        name: "Nginx Reverse Proxy",
+        link: "https://docs.nginx.com/nginx/admin-guide/web-server/reverse-proxy/",
+        img: "images/nginx.png",
+      },
+      {
+        key: "ngx_http_auth_request_module",
+        name: "Nginx HTTP Auth Request Module",
+        link: "http://nginx.org/en/docs/http/ngx_http_auth_request_module.html",
+        img: "images/nginx.png",
+      },
+    ]
+  },
+  proxmox: {
+    key: "proxmox",
+    txDescription: "tech.proxmox.description",
+    name: "Proxmox",
+    link: "https://www.proxmox.com/",
+    img: "images/proxmox.png",
+  },
+  argocd: {
+    key: "argocd",
+    txDescription: "tech.argocd.description",
+    name: "Argo CD",
+    link: "https://argo-cd.readthedocs.io/en/stable/",
+    img: "images/argocd.png",
+    sub: [
+      {
+        key: "image_updater",
+        name: "Argo CD Image Updater",
+        link: "https://argocd-image-updater.readthedocs.io/en/stable/",
+        img: "images/argocd.png",
+      },
+    ]
+  }
 };
 export type TechKeyType = keyof typeof techsRaw;
 export const techs: Record<TechKeyType, TechType> = techsRaw;
@@ -565,11 +616,15 @@ const techCategoriesRaw = {
   ci_cd: [
     techs.github,
     techs.docker,
-    techs.kubernetes,
+    techs.argocd,
   ],
-  cloud: [
+  infra: [
     techs.aws,
     techs.gcp,
+    techs.proxmox,
+    techs.kubernetes,
+    techs.traefik,
+    techs.nginx,
   ],
   automation: [
     techs.selenium,

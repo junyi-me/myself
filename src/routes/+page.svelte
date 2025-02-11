@@ -23,7 +23,10 @@
     <Profile />
   </div>
   <div class="content">
-    <Article key='intro' />
+    <Article key='intro' fills={{
+      "k3s": '<a href="https://blog.junyi.me/p/hosting-an-https-website-on-a-ha-k3s-cluster-through-ssh/" target="_blank">bare-metal kubernetes cluster</a>',
+      "github": '<a href="https://github.com/jywang99/linux_config" target="_blank">GitHub</a>',
+    }} />
     <Article key='tech' >
       <TechSection />
     </Article>

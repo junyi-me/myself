@@ -14,7 +14,7 @@
     { key: 'backend', txTitle: 'home.tech.backend'},
     { key: 'database', txTitle: 'home.tech.database'},
     { key: 'ci_cd', txTitle: 'home.tech.cicd'},
-    { key: 'cloud', txTitle: 'home.tech.cloud'},
+    { key: 'infra', txTitle: 'home.tech.infra'},
     { key: 'automation', txTitle: 'home.tech.automation'},
     { key: 'gamedev', txTitle: 'home.tech.gamedev'},
     { key: 'others', txTitle: 'home.tech.others'},

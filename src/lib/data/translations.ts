@@ -29,7 +29,7 @@ type TranscriptType = {
       backend: string,
       database: string,
       cicd: string,
-      cloud: string,
+      infra: string,
       gamedev: string,
       automation: string,
       others: string,
@@ -77,6 +77,10 @@ type TranscriptType = {
     phaser: TechType,
     tiled: TechType,
     ansible: TechType,
+    traefik: TechType,
+    nginx: TechType,
+    proxmox: TechType,
+    argocd: TechType,
     sub: {
       title: string,
     }
@@ -208,7 +212,7 @@ const translations: TranslationType = {
         backend: "Backend",
         database: "Database",
         cicd: "CI/CD",
-        cloud: "Cloud",
+        infra: "Infrastructure",
         gamedev: "Game Development",
         automation: "Automation",
         others: "Others",
@@ -228,8 +232,8 @@ const translations: TranslationType = {
         content: `
           <p>I graduated from <a href="https://www.bc.edu/">Boston College</a> in summer 2022, and since then, I have been working as a software engineer in a few different companies.</p>
         `,
-        years: "yr",
-        months: "mo",
+        years: "years",
+        months: "months",
         present: "present",
       },
     },
@@ -320,6 +324,18 @@ const translations: TranslationType = {
       },
       sub: {
         title: "Familiar with",
+      },
+      traefik: {
+        description: `<p>Traefik was the default ingress controller that came with my k3s cluster, and after using it for a while and doing various configurations, I find myself liking it.</p>`,
+      },
+      nginx: {
+        description: `<p>I have mainly used Nginx to serve static files, including some static websites. This website is served with Nginx inside a docker container.</p>`,
+      },
+      proxmox: {
+        description: `<p>All my VMs in my home lab are running with the configuration of: Proxmox + VM (Debian) + Kubernetes/NFS.</p>`,
+      },
+      argocd: {
+        description: `<p>Argo CD is such a great tool for managing kubernetes workloads. Paired with Kustomize, it serves as a GitOps tool as well. I successfully automated some CI/CD pipelines with this setup.</p>`,
       },
     },
     projects: {
@@ -503,7 +519,7 @@ const translations: TranslationType = {
         backend: "バックエンド",
         database: "データベース",
         cicd: "CI/CD",
-        cloud: "クラウド",
+        infra: "インフラ",
         gamedev: "ゲーム開発",
         automation: "自動化",
         others: "その他",
@@ -616,6 +632,18 @@ const translations: TranslationType = {
       sub: {
         title: "経験のあるツール",
       },
+      traefik: {
+        description: "<p>Traefikはk3sクラスターに最初から付属していたingress controllerなので使い始めましたが、しばらくいじっているうちに気に入りました。</p>",
+      },
+      nginx: {
+        description: "<p>静的ファイルやウェブサイトをホストするためによく使っています。このサイトもdockerコンテナ内でNginxを走らせてホストしています。</p>",
+      },
+      proxmox: {
+        description: "<p>私の自宅鯖はすべて Proxmox + VM (Debian) + Kubernetes/NFS の構成で動いています。</p>",
+      },
+      argocd: {
+        description: "<p>Argo CD はもはや私の個人開発には欠かせない存在になりました。CI/CDパイプラインのセットアップからデプロイ済みのアプリケーションの状態管理まで、色々お世話になっています。</p>",
+      }
     },
     projects: {
       title: "プロジェクト",
@@ -794,7 +822,7 @@ const translations: TranslationType = {
         backend: "后端",
         database: "数据库",
         cicd: "CI/CD",
-        cloud: "云端",
+        infra: "基础设施",
         gamedev: "游戏开发",
         automation: "自动化",
         others: "其他",
@@ -940,6 +968,18 @@ const translations: TranslationType = {
       sub: {
         title: "使用过",
       },
+      traefik: {
+        description: "<p>Traefik 是我在 k3s 集群上使用的 ingress controller。</p>",
+      },
+      nginx: {
+        description: "<p>我经常用它来托管静态文件和网站。这个网站也是用docker容器里的Nginx托管的。</p>",
+      },
+      proxmox: {
+        description: "<p>我所有的个人服务器都由 Proxmox + VM (Debian) + Kubernetes/NFS 的组合运行。</p>",
+      },
+      argocd: {
+        description: "<p>Argo CD 现在是我个人开发中不可或缺的一部分。它帮助我设置 CI/CD pipeline 并管理我的应用程序。</p>",
+      }
     },
     projects: {
       title: "个人项目",

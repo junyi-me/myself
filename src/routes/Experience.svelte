@@ -3,7 +3,6 @@
   import { dt, t } from '$lib/i18n';
   import { handleAnchorClick } from '$lib/interact';
   import { techs } from '$lib/data/techs';
-  import { onMount } from 'svelte';
 
   let { exp }: { exp: ExperienceType; } = $props();
 
@@ -12,15 +11,18 @@
       endDate = new Date();
     }
     const diffDays = Math.floor((endDate.getTime() - startDate.getTime()) / (1000 * 60 * 60 * 24));
-    const years = Math.floor(diffDays / 365);
-    const months = Math.floor((diffDays % 365) / 30);
-    // return `${years}${$t('home.exp.years')} ${months}${$t('home.exp.months')}`;
+    let years = Math.floor(diffDays / 365);
+    let months = Math.floor((diffDays % 365) / 30);
+    if( months === 12) {
+      years++;
+      months = 0;
+    }
     return [years, months];
   }
 
   let years: number = $state(0);
   let months: number = $state(0);
-  onMount(() => {
+  $effect(() => {
     [years, months] = getDurationYM(exp.startDate, exp.endDate);
   });
 </script>
@@ -32,7 +34,14 @@
       <p class="period" style="background-color: {exp.color}">
         {$dt(exp.startDate)} ~ {exp.endDate ? $dt(exp.endDate) : $t('home.exp.present')}
       </p>
-      <p class="duration">{`${years}${$t('home.exp.years')} ${months}${$t('home.exp.months')}`}</p>
+      <p class="duration">
+        {#if years > 0}
+          {years} {$t('home.exp.years')}
+        {/if}
+        {#if months > 0}
+          {months} {$t('home.exp.months')}
+        {/if}
+      </p>
     </div>
     {@html $t(exp.txDescription)}
   </div>

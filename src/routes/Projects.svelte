@@ -45,7 +45,7 @@
     margin-bottom: var(--gap-small);
     color: var(--fg-1);
     border-radius: 0 0 var(--card-border-radius) var(--card-border-radius);
-    font-weight: bold;
+    font-weight: 600;
   }
 
   .proj p {
