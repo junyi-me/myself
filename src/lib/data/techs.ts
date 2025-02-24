@@ -589,7 +589,14 @@ const techsRaw = {
         img: "images/argocd.png",
       },
     ]
-  }
+  },
+  ceph: {
+    key: "ceph",
+    txDescription: "tech.ceph.description",
+    name: "Ceph",
+    link: "phttps://ceph.io/",
+    img: "images/ceph.png",
+  },
 };
 export type TechKeyType = keyof typeof techsRaw;
 export const techs: Record<TechKeyType, TechType> = techsRaw;
@@ -625,6 +632,7 @@ const techCategoriesRaw = {
     techs.kubernetes,
     techs.traefik,
     techs.nginx,
+    techs.ceph,
   ],
   automation: [
     techs.selenium,

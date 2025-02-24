@@ -1,7 +1,7 @@
 <script lang="ts">
   import Card from "$lib/Card.svelte";
   import { locale, t } from "$lib/i18n";
-  import { onDestroy } from "svelte";
+  import { onDestroy, onMount } from "svelte";
   import Dropdown from "./Dropdown.svelte";
   import type { LanguageType } from "$lib/data/translations";
   import ToggleSwitch from "./ToggleSwitch.svelte";
@@ -45,6 +45,14 @@
     $toastStore = langOptions.find(opt => opt.value === $store.pref.lang)?.label ?? '';
     onConfirm();
   };
+
+  onMount(() => {
+    const urlParams = new URLSearchParams(window.location.search);
+    const lang = urlParams.get("lang");
+    if (lang && langOptions.some(opt => opt.value === lang)) {
+      $store.pref.lang = lang as LanguageType;
+    }
+  });
 </script>
 
 <Card transparent>

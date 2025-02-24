@@ -18,7 +18,7 @@
 
   @media screen and (max-width: 1200px) {
     .container {
-      padding: var(--gap-medium);
+      padding: var(--gap-medium) var(--gap-small);
     }
   }
 

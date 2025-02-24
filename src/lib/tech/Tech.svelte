@@ -66,6 +66,7 @@
     .tech {
       margin-right: var(--gap-tiny);
       margin-bottom: var(--gap-tiny);
+      padding: var(--gap-small);
     }
 
     .tech p {

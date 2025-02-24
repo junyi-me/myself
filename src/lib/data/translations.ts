@@ -81,6 +81,7 @@ type TranscriptType = {
     nginx: TechType,
     proxmox: TechType,
     argocd: TechType,
+    ceph: TechType,
     sub: {
       title: string,
     }
@@ -337,6 +338,9 @@ const translations: TranslationType = {
       argocd: {
         description: `<p>Argo CD is such a great tool for managing kubernetes workloads. Paired with Kustomize, it serves as a GitOps tool as well. I successfully automated some CI/CD pipelines with this setup.</p>`,
       },
+      ceph: {
+        description: `<p>Every piece of data in my home lab is now stored on a Ceph cluster. By setting this up, I eliminated yet another single point of failure in my home lab, and I'm quite happy with it.</p>`,
+      }
     },
     projects: {
       title: "Projects",
@@ -643,7 +647,10 @@ const translations: TranslationType = {
       },
       argocd: {
         description: "<p>Argo CD はもはや私の個人開発には欠かせない存在になりました。CI/CDパイプラインのセットアップからデプロイ済みのアプリケーションの状態管理まで、色々お世話になっています。</p>",
-      }
+      },
+      ceph: {
+        description: "<p>自宅鯖にはオーバーキルな気もしましたが、Cephを導入することによってストレージ面での単一障害点を解消することができたので、とても満足しています。</p>",
+      },
     },
     projects: {
       title: "プロジェクト",
@@ -979,7 +986,10 @@ const translations: TranslationType = {
       },
       argocd: {
         description: "<p>Argo CD 现在是我个人开发中不可或缺的一部分。它帮助我设置 CI/CD pipeline 并管理我的应用程序。</p>",
-      }
+      },
+      ceph: {
+        description: "<p>Ceph帮助我解决了一个数据存储方面的单点故障。</p>",
+      },
     },
     projects: {
       title: "个人项目",
