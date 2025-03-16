@@ -66,6 +66,12 @@
     flex: 1;
   }
 
+  .profile {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+  }
+
   .content {
     flex: 3;
     display: flex;

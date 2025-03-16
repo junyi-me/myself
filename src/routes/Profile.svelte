@@ -4,49 +4,44 @@
   import '@fortawesome/fontawesome-free/css/all.min.css'
 </script>
 
-<div class="container">
-  <div class="avatar">
-    <Card transparent>
-      <img src="images/avatar.webp" alt="avatar" />
-      <h2>{$t('home.name')}</h2>
-      <p>{$t('home.headline')}</p>
-      <p>
-        <i class="fa-solid fa-link"></i>
-        <a href="https://junyi.me/">{$t('home.links.title')}</a>
-      </p>
-    </Card>
-  </div>
-</div>
+<Card transparent>
+  <img src="images/avatar.webp" alt="avatar" />
+  <h2>{$t('home.name')}</h2>
+  <p>{$t('home.headline')}</p>
+  <a href="https://junyi.me/">
+    <i class="fa-solid fa-link"></i>
+    {$t('home.links.title')}
+  </a>
+  <a href="https://share.junyi.me/resume_en.pdf" target="_blank">
+    <i class="fa-solid fa-download"></i>
+    {$t('home.actions.download')}
+  </a>
+</Card>
 
 <style>
-  .container {
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
-    height: 100%;
-  }
-
-  h2 {
-    color: var(--fg-3);
-  }
-
-  .avatar {
-    display: flex;
-    flex-direction: column;
-  }
-
-  .avatar img {
+  img {
     width: 10em;
     height: 10em;
     border-radius: 50%;
   }
 
-  .avatar h2 {
+  a {
+    display: flex;
+    align-items: center;
+    padding: var(--gap-tiny) 0;
+  }
+
+  h2 {
     color: var(--accent);
   }
 
   p {
     margin: 0.5em 0;
+  }
+
+  i {
+    color: var(--fg-1);
+    padding-right: var(--gap-tiny);
   }
 </style>
 

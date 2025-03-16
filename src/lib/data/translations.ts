@@ -49,6 +49,9 @@ type TranscriptType = {
       months: string,
       present: string,
     },
+    actions: {
+      download: string,
+    }
   },
   tech: {
     svelte: TechType,
@@ -236,6 +239,9 @@ const translations: TranslationType = {
         years: "years",
         months: "months",
         present: "present",
+      },
+      actions: {
+        download: "Download Resume (PDF)",
       },
     },
     tech: {
@@ -543,6 +549,9 @@ const translations: TranslationType = {
         months: "ヶ月",
         present: "現在",
       },
+      actions: {
+        download: "履歴書をダウンロード (英語)",
+      },
     },
     tech: {
       svelte: {
@@ -848,6 +857,9 @@ const translations: TranslationType = {
         years: "年",
         months: "个月",
         present: "至今",
+      },
+      actions: {
+        download: "下载简历 (英文)",
       },
     },
     tech: {

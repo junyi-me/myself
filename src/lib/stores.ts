@@ -21,16 +21,15 @@ const stored = localStorage.content;
 const store: Writable<StoreType> = writable(stored ? JSON.parse(stored) : defaultStore);
 
 const mediaQuery = window.matchMedia('(prefers-color-scheme: dark)');
-let switchFn: ((e: MediaQueryListEvent) => void) | null = null;
-
 const switchDarkTheme = (dark: boolean) => document.documentElement.dataset.scheme = dark ? 'dark' : 'light';
+let switchFn: ((e: MediaQueryListEvent) => void) = (e: MediaQueryListEvent) => switchDarkTheme(e.matches);
+
+mediaQuery.addEventListener('change', switchFn);
+
 const switchTheme = (userDark: boolean, systemTheme: boolean) => {
   if (systemTheme) {
     // Add the listener only if it doesn't exist
-    if (!switchFn) {
-      switchFn = (e: MediaQueryListEvent) => switchDarkTheme(e.matches);
-      mediaQuery.addEventListener('change', switchFn);
-    }
+    mediaQuery.addEventListener('change', switchFn);
 
     // Set the color based on current system preference
     switchDarkTheme(mediaQuery.matches);
@@ -41,13 +40,11 @@ const switchTheme = (userDark: boolean, systemTheme: boolean) => {
         return current;
       });
     }
+    return;
   }
 
   // Remove the listener if switching to a specific theme
-  if (switchFn) {
-    mediaQuery.removeEventListener('change', switchFn);
-    switchFn = null;
-  }
+  mediaQuery.removeEventListener('change', switchFn);
   switchDarkTheme(userDark);
 };
 
