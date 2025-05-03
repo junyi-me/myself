@@ -68,7 +68,7 @@
 
     .proj {
       width: 100%;
-      height: auto;
+      min-height: auto;
       flex-direction: row;
     }
 

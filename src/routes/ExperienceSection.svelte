@@ -38,7 +38,7 @@
     if (!timeline) return;
 
     const now = new Date();
-    const trans = get(t); // use the updated translation function
+    const trans = get(t); // use the updated translation function: cannot use $t since called from subscribe
 
     const its = experience.map((exp, index) => ({
       id: index,
@@ -54,7 +54,7 @@
     timeline.fit();
   }
 
-  locale.subscribe((e) => {
+  locale.subscribe(() => {
     populateTimeline();
   });
 </script>
