@@ -1,52 +1,70 @@
 <script lang="ts">
   import experience from "$lib/data/experience";
-  import type { TimeEventType } from "$lib/timeline/types";
   import { onMount } from "svelte";
   import Experience from "./Experience.svelte";
   import { DataSet, Timeline } from "vis-timeline/standalone";
+  import { locale, t } from "$lib/i18n";
+  import { get } from "svelte/store";
 
-  let focus = $state(experience[0]);
-  let anchor: HTMLDivElement;
-  const events: TimeEventType[] = experience.map(exp => {
-    return {
-      txTitle: exp.txTitle,
-      txOrg: exp.txOrg,
-      startDate: exp.startDate,
-      endDate: exp.endDate,
-      color: exp.color,
-      onClick: () => {
-        focus = exp;
-      },
-    };
-  });
+  let focus = $state(0);
 
   let container: HTMLDivElement;
-  onMount(() => {
-    const items = new DataSet([
-      { id: 1, content: 'item 1', start: '2013-04-20' },
-      { id: 2, content: 'item 2', start: '2013-04-14' },
-      { id: 3, content: 'item 3', start: '2013-04-18' },
-      { id: 4, content: 'item 4', start: '2013-04-16', end: '2013-04-19' },
-      { id: 5, content: 'item 5', start: '2013-04-25' },
-      { id: 6, content: 'item 6', start: '2013-04-27' }
-    ]);
-    const options = {};
-    const timeline = new Timeline(container, items, options);
+  let timeline: Timeline;
+  const initTimeline = () => {
+    const options = {
+      type: "range",
+      margin: {
+        item: {
+          horizontal: 0,
+        },
+      },
+    };
+    // @ts-ignore
+    timeline = new Timeline(container, [], options);
 
-    // Add click event
     timeline.on("click", function (properties) {
-      console.log(properties);
-      if(properties.item){
-        const item = items.get(properties.item);
-      }
+      if (properties.item === null) return;
+      const item = timeline.getEventProperties(properties.item);
+      // @ts-ignore
+      focus = item.event;
     });
+  };
+  onMount(() => {
+    initTimeline();
+    populateTimeline();
   });
 
+  const populateTimeline = () => {
+    if (!timeline) return;
+
+    const now = new Date();
+    const trans = get(t); // use the updated translation function
+
+    const its = experience.map((exp, index) => ({
+      id: index,
+      content: trans(exp.txTitle) + " @ " + trans(exp.txOrg),
+      start: exp.startDate,
+      end: exp.endDate ?? now,
+      style: "background-color: " + exp.color,
+    }));
+    const items = new DataSet(its);
+    timeline.setItems(items);
+
+    const exps = [...experience];
+    timeline.setWindow(
+      exps.sort((a, b) => a.startDate.getTime() - b.startDate.getTime())[0].startDate,
+      exps[experience.length - 1].endDate ?? now
+    );
+  }
+
+  locale.subscribe((e) => {
+    populateTimeline();
+  });
 </script>
 
-<div bind:this={anchor}>
+<div>
   <div bind:this={container} id="timeline"></div>
-  <Experience exp={focus} />
+  <Experience exp={experience[focus]} />
 </div>
 
 <style>
