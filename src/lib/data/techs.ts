@@ -11,49 +11,49 @@ const techProjectsRaw = {
     txTitle: "projects.business_card.name",
     txDescription: "projects.business_card.description",
     link: "http://businesscardjy.com.s3-website-us-east-1.amazonaws.com/",
-    img: "images/github256.png",
+    img: "images/github.png",
   },
   thumbgen: {
     txTitle: "projects.thumbgen.name",
     txDescription: "projects.thumbgen.description",
     link: "https://github.com/jywang99/thumbgen",
-    img: "images/github256.png",
+    img: "images/github.png",
   },
   csgo: {
     txTitle: "projects.cs_go.name",
     txDescription: "projects.cs_go.description",
     link: "https://github.com/jywang99/cs_go",
-    img: "images/github256.png",
+    img: "images/github.png",
   },
   leetcode: {
     txTitle: "projects.leetcode.name",
     txDescription: "projects.leetcode.description",
     link: "https://github.com/jywang99/leetcode",
-    img: "images/github256.png",
+    img: "images/github.png",
   },
   neovim: {
     txTitle: "projects.neovim.name",
     txDescription: "projects.neovim.description",
     link: "https://github.com/jywang99/neovim",
-    img: "images/github256.png",
+    img: "images/github.png",
   },
   myDomain: {
     txTitle: "projects.my_domain.name",
     txDescription: "projects.my_domain.description",
     link: "https://junyi.me",
-    img: "images/github256.png",
+    img: "images/github.png",
   },
   town: {
     txTitle: "projects.town.name",
     txDescription: "projects.town.description",
     link: "https://town.junyi.me",
-    img: "images/github256.png",
+    img: "images/github.png",
   },
   review: {
     txTitle: "projects.review.name",
     txDescription: "projects.review.description",
     link: "https://review.junyi.me/",
-    img: "images/github256.png",
+    img: "images/github.png",
   },
 };
 export type TechProjectKeyType = keyof typeof techProjectsRaw;
@@ -65,7 +65,7 @@ const techsRaw = {
     txDescription: "tech.svelte.description",
     name: "Svelte",
     link: "https://svelte.dev/",
-    img: "images/svelte256.png",
+    img: "images/svelte.png",
     projects: [ techProjects.thisWebsite, ],
   },
   react: {
@@ -73,18 +73,18 @@ const techsRaw = {
     txDescription: "tech.react.description",
     name: "React",
     link: "https://react.dev/",
-    img: "images/react128.png",
+    img: "images/react.png",
     projects: [ techProjects.businessCard, ],
     sub: [
       {
         name: "React Native",
         link: "https://reactnative.dev/",
-        img: "images/react128.png",
+        img: "images/react.png",
       },
       {
         name: "Redux",
         link: "https://redux.js.org/",
-        img: "images/redux256.png",
+        img: "images/redux.png",
       },
     ],
   },
@@ -93,27 +93,27 @@ const techsRaw = {
     txDescription: "tech.html_css_js.description",
     name: "HTML/CSS/JS",
     link: "https://developer.mozilla.org/en-US/docs/Web/HTML",
-    img: "images/html_css_js256.png",
+    img: "images/html_css_js.png",
     sub: [
       {
         name: "htmx",
         link: "https://htmx.org/",
-        img: "images/htmx192.png",
+        img: "images/htmx.png",
       },
       {
         name: "jQuery",
         link: "https://jquery.com/",
-        img: "images/jquery256.png",
+        img: "images/jquery.png",
       },
       {
         name: "TypeScript",
         link: "https://www.typescriptlang.org/",
-        img: "images/typescript256.png",
+        img: "images/typescript.png",
       },
       {
         name: "Bootstrap",
         link: "https://getbootstrap.com/",
-        img: "images/bootstrap256.png",
+        img: "images/bootstrap.png",
       },
     ],
   },
@@ -122,13 +122,13 @@ const techsRaw = {
     txDescription: "tech.golang.description",
     name: "Go",
     link: "https://go.dev/",
-    img: "images/go256.png",
+    img: "images/go.png",
     projects: [ techProjects.thumbgen, techProjects.csgo, techProjects.leetcode, ],
     sub: [
       {
         name: "labstack/echo",
         link: "https://echo.labstack.com/",
-        img: "images/echo220.png",
+        img: "images/echo.png",
       },
       {
         name: "database/sql",
@@ -152,12 +152,12 @@ const techsRaw = {
     txDescription: "tech.java.description",
     name: "Java",
     link: "https://www.java.com/",
-    img: "images/java256.png",
+    img: "images/java.png",
     sub: [
       {
         name: "Spring Boot",
         link: "https://spring.io/projects/spring-boot",
-        img: "images/springboot256.png",
+        img: "images/springboot.png",
       },
       {
         name: "Maven",
@@ -167,12 +167,12 @@ const techsRaw = {
       {
         name: "Spring Data JPA",
         link: "https://spring.io/projects/spring-data-jpa",
-        img: "images/jpa256.png",
+        img: "images/jpa.png",
       },
       {
         name: "JUnit",
         link: "https://junit.org/junit5/",
-        img: "images/junit256.png",
+        img: "images/junit.png",
       },
       {
         name: "Mockito",
@@ -186,17 +186,17 @@ const techsRaw = {
     txDescription: "tech.python.description",
     name: "Python",
     link: "https://www.python.org/",
-  img: "images/python256.png",
+  img: "images/python.png",
     sub: [
       {
         name: "Flask",
         link: "https://flask.palletsprojects.com/",
-        img: "images/flask256.png",
+        img: "images/flask.png",
       },
       {
         name: "Django",
         link: "https://www.djangoproject.com/",
-        img: "images/django256.png",
+        img: "images/django.png",
       },
       {
         name: "SQLAlchemy",
@@ -210,12 +210,12 @@ const techsRaw = {
     txDescription: "tech.csharp.description",
     name: "C#",
     link: "https://dotnet.microsoft.com/languages/csharp",
-    img: "images/csharp256.png",
+    img: "images/csharp.png",
     sub: [
       {
         name: ".NET",
         link: "https://dotnet.microsoft.com/",
-        img: "images/dotnet256.png",
+        img: "images/dotnet.png",
       },
     ]
   },
@@ -224,12 +224,12 @@ const techsRaw = {
     txDescription: "tech.cpp.description",
     name: "C++",
     link: "https://cplusplus.com/",
-    img: "images/cpp256.png",
+    img: "images/cpp.png",
     sub: [
       {
         name: "CivetWeb",
         link: "https://civetweb.github.io/civetweb/",
-        img: "images/civet64.png",
+        img: "images/civet.png",
       },
     ]
   },
@@ -238,7 +238,7 @@ const techsRaw = {
     txDescription: "tech.sveltekit.description",
     name: "SvelteKit",
     link: "https://svelte.dev/docs/kit/introduction",
-    img: "images/svelte256.png",
+    img: "images/svelte.png",
     projects: [ techProjects.thisWebsite, techProjects.review, ],
     sub: [
       {
@@ -254,7 +254,7 @@ const techsRaw = {
     txDescription: "tech.mysql.description",
     name: "MySQL",
     link: "https://www.mysql.com/",
-    img: "images/mysql256.png",
+    img: "images/mysql.png",
   },
   postgres: {
     key: "mysql",
@@ -268,20 +268,20 @@ const techsRaw = {
     txDescription: "tech.dynamodb.description",
     name: "DynamoDB",
     link: "https://aws.amazon.com/dynamodb/",
-    img: "images/dynamodb256.png",
+    img: "images/dynamodb.png",
   },
   github: {
     key: "github",
     txDescription: "tech.github.description",
     name: "GitHub",
     link: "github.com",
-    img: "images/github256.png",
-    darkImg: "images/github-dark256.png",
+    img: "images/github.png",
+    darkImg: "images/github-dark.png",
     sub: [
       {
         name: "GitHub Actions",
         link: "https://github.com/features/actions",
-        img: "images/github256.png",
+        img: "images/github.png",
       }
     ],
   },
@@ -290,12 +290,12 @@ const techsRaw = {
     txDescription: "tech.docker.description",
     name: "Docker",
     link: "https://www.docker.com/",
-    img: "images/docker256.png",
+    img: "images/docker.png",
     sub: [
       {
         name: "Docker Compose",
         link: "https://docs.docker.com/compose/",
-        img: "images/compose256.png",
+        img: "images/compose.png",
       },
     ]
   },
@@ -304,7 +304,7 @@ const techsRaw = {
     txDescription: "tech.kubernetes.description",
     name: "Kubernetes",
     link: "https://kubernetes.io/",
-    img: "images/kubernetes256.png",
+    img: "images/kubernetes.png",
     projects: [ techProjects.myDomain, ],
     sub: [
       {
@@ -334,57 +334,57 @@ const techsRaw = {
       {
         name: "Lambda",
         link: "https://aws.amazon.com/lambda/",
-        img: "images/lambda256.png",
+        img: "images/lambda.png",
       },
       {
         name: "EC2",
         link: "https://aws.amazon.com/ec2/",
-        img: "images/ec2256.png",
+        img: "images/ec2.png",
       },
       {
         name: "API Gateway",
         link: "https://aws.amazon.com/api-gateway/",
-        img: "images/api_gw256.png",
+        img: "images/api_gw.png",
       },
       {
         name: "DynamoDB",
         link: "https://aws.amazon.com/dynamodb/",
-        img: "images/dynamodb256.png",
+        img: "images/dynamodb.png",
       },
       {
         name: "S3",
         link: "https://aws.amazon.com/s3/",
-        img: "images/s3256.png",
+        img: "images/s3.png",
       },
       {
         name: "Route 53",
         link: "https://aws.amazon.com/route53/",
-        img: "images/route53256.png",
+        img: "images/route53.png",
       },
       {
         name: "CloudFront",
         link: "https://aws.amazon.com/cloudfront/",
-        img: "images/cloudfront256.png",
+        img: "images/cloudfront.png",
       },
       {
         name: "IAM",
         link: "https://aws.amazon.com/iam/",
-        img: "images/iam256.png",
+        img: "images/iam.png",
       },
       {
         name: "Cognito",
         link: "https://aws.amazon.com/cognito/",
-        img: "images/cognito256.png",
+        img: "images/cognito.png",
       },
       {
         name: "CloudWatch",
         link: "https://aws.amazon.com/cloudwatch/",
-        img: "images/cloudwatch256.png",
+        img: "images/cloudwatch.png",
       },
       {
         name: "Step Functions",
         link: "https://aws.amazon.com/step-functions/",
-        img: "images/step_fn256.png",
+        img: "images/step_fn.png",
       },
     ],
     projects: [ techProjects.businessCard, ],
@@ -394,17 +394,17 @@ const techsRaw = {
     txDescription: "tech.gcp.description",
     name: "Google Cloud",
     link: "https://cloud.google.com/",
-    img: "images/gcp256.png",
+    img: "images/gcp.png",
     sub: [
       {
         name: "Compute Engine",
         link: "https://cloud.google.com/compute/",
-        img: "images/gce256.png",
+        img: "images/gce.png",
       },
       {
         name: "Cloud Storage",
         link: "https://cloud.google.com/storage/",
-        img: "images/gcs256.png",
+        img: "images/gcs.png",
       },
     ]
   },
@@ -413,12 +413,12 @@ const techsRaw = {
     txDescription: "tech.linux.description",
     name: "Linux",
     link: "https://archlinux.org/",
-    img: "images/linux256.png",
+    img: "images/linux.png",
     sub: [
       {
         name: "Arch Linux",
         link: "https://archlinux.org/",
-        img: "images/arch256.png",
+        img: "images/arch.png",
       },
       {
         name: "Debian",
@@ -428,19 +428,19 @@ const techsRaw = {
       {
         name: "Ubuntu",
         link: "https://ubuntu.com/",
-        img: "images/ubuntu256.png",
+        img: "images/ubuntu.png",
       },
       {
         key: "nfs",
         name: "NFS",
         link: "https://docs.kernel.org/admin-guide/nfs/index.html",
-        img: "images/linux256.png",
+        img: "images/linux.png",
       },
       {
         key: "kvm",
         name: "libvirt/KVM",
         link: "https://libvirt.org/",
-        img: "images/libvirt64.png",
+        img: "images/libvirt.png",
       },
     ],
   },
@@ -454,7 +454,7 @@ const techsRaw = {
       {
         name: "Vim",
         link: "https://www.vim.org/",
-        img: "images/vim256.png",
+        img: "images/vim.png",
       },
       {
         name: "Tmux",
@@ -478,7 +478,7 @@ const techsRaw = {
     txDescription: "tech.lua.description",
     name: "Lua",
     link: "https://lua.org/",
-    img: "images/lua256.png",
+    img: "images/lua.png",
     projects: [ techProjects.neovim, ],
   },
   vim: {
@@ -486,14 +486,14 @@ const techsRaw = {
     txDescription: "tech.vim.description",
     name: "Vim",
     link: "https://www.vim.org/",
-    img: "images/vim256.png",
+    img: "images/vim.png",
   },
   neovim: {
     key: "neovim",
     txDescription: "tech.neovim.description",
     name: "Neovim",
     link: "https://neovim.io/",
-    img: "images/neovim256.png",
+    img: "images/neovim.png",
     projects: [ techProjects.neovim, ],
   },
   selenium: {
@@ -501,13 +501,13 @@ const techsRaw = {
     txDescription: "tech.selenium.description",
     name: "Selenium",
     link: "https://www.selenium.dev/",
-    img: "images/selenium256.png",
+    img: "images/selenium.png",
     sub: [
       {
         key: "chrome_devtool",
         name: "Chrome DevTools",
         link: "https://developer.chrome.com/docs/devtools/",
-        img: "images/chrome256.png",
+        img: "images/chrome.png",
       },
       {
         key: "selenium_ide",
