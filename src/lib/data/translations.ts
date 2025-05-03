@@ -100,9 +100,7 @@ type TranscriptType = {
     my_domain: ProjectType,
     town: ProjectType,
     review: ProjectType,
-    k3s: {
-      title: string,
-    },
+    k3s: ProjectType,
   },
   exp: {
     at: string,
@@ -374,9 +372,6 @@ const translations: TranslationType = {
         name: "ThumbGen",
         description: "A commandline tool to generate thumbnails for videos.",
       },
-      k3s: {
-        title: "Hosting an HTTPS website on a HA k3s cluster" ,
-      },
       my_domain: {
         name: "My Domain",
         description: "Everything on this domain, including subdomains, is self-hosted on a k3s cluster.",
@@ -384,6 +379,10 @@ const translations: TranslationType = {
       town: {
         name: "Town",
         description: "My attempt at creating a 2D top-down RPG game, currently left unfinished...",
+      },
+      k3s: {
+        name: "My Kubernetes cluster" ,
+        description: "Hosting an HTTPS website on a HA k3s cluster at home.",
       },
       review: {
         name: "Review Planner",
@@ -687,9 +686,6 @@ const translations: TranslationType = {
         name: "ThumbGen",
         description: "動画のサムネイルを生成するコマンドラインツール。",
       },
-      k3s: {
-        title: "Hosting an HTTPS website on a HA k3s cluster" ,
-      },
       my_domain: {
         name: "このドメイン",
         description: "サブドメインを含むこのドメイン上のサービスを全て、k3sクラスター上でセルフホスティングしています。",
@@ -697,6 +693,10 @@ const translations: TranslationType = {
       town: {
         name: "Town",
         description: "2DトップダウンRPGゲームの制作を試みましたが、現在は未完です...",
+      },
+      k3s: {
+        name: "自宅Kubernetesクラスター",
+        description: "冗長構成のk3sクラスター上でHTTPSウェブサイトをホスティングしています。",
       },
       review: {
         name: "Review Planner",
@@ -1030,7 +1030,8 @@ const translations: TranslationType = {
         description: "一个用来为视频生成缩略图的命令行工具。",
       },
       k3s: {
-        title: "Hosting an HTTPS website on a HA k3s cluster" ,
+        name: "自家Kubernetes集群",
+        description: "在自己家里搭建的k3s集群上托管HTTPS网站。",
       },
       my_domain: {
         name: "当前的域名",

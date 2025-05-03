@@ -30,7 +30,7 @@
     border-radius: var(--card-border-radius);
     border: 1px solid var(--bg-3);
     width: 200px;
-    height: 180px;
+    min-height: 180px;
     box-sizing: border-box;
     text-decoration: none;
     box-shadow: var(--card-shadow);

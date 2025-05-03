@@ -48,13 +48,10 @@
       style: "background-color: " + exp.color,
     }));
     const items = new DataSet(its);
-    timeline.setItems(items);
 
-    const exps = [...experience];
-    timeline.setWindow(
-      exps.sort((a, b) => a.startDate.getTime() - b.startDate.getTime())[0].startDate,
-      exps[experience.length - 1].endDate ?? now
-    );
+    timeline.setItems(items);
+    timeline.setSelection(focus);
+    timeline.fit();
   }
 
   locale.subscribe((e) => {

@@ -129,3 +129,11 @@ code {
   transition: color var(--transition-linear), background-color var(--transition-linear);
 }
 
+.vis-item {
+    opacity: 0.6;
+}
+
+.vis-item.vis-selected {
+    opacity: 1;
+}
+
