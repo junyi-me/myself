@@ -9,13 +9,13 @@ const articlesRaw = {
     txTitle: 'home.tech.title',
     txContent: 'home.tech.content',
   },
-  'projects': {
-    txTitle: 'home.projects.title',
-    txContent: 'home.projects.content',
-  },
   'certs': {
     txTitle: 'home.certs.title',
     txContent: 'home.certs.content',
+  },
+  'projects': {
+    txTitle: 'home.projects.title',
+    txContent: 'home.projects.content',
   },
   'exp': {
     txTitle: 'home.exp.title',
