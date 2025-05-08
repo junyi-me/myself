@@ -41,7 +41,7 @@ const techProjectsRaw = {
     txTitle: "projects.my_domain.name",
     txDescription: "projects.my_domain.description",
     link: "https://junyi.me",
-    img: "images/github.png",
+    img: "https://junyi.me/favicon.png",
   },
   town: {
     txTitle: "projects.town.name",
@@ -66,7 +66,7 @@ const techsRaw = {
     name: "Svelte",
     link: "https://svelte.dev/",
     img: "images/svelte.png",
-    projects: [ techProjects.thisWebsite, ],
+    projects: [ techProjects.thisWebsite, techProjects.review, ],
   },
   react: {
     key: "react",
@@ -201,7 +201,7 @@ const techsRaw = {
       {
         name: "SQLAlchemy",
         link: "https://www.sqlalchemy.org/",
-        img: "images/sqlalchemy120.png",
+        img: "images/sqlalchemy.png",
       },
     ]
   },
@@ -263,6 +263,13 @@ const techsRaw = {
     link: "https://www.postgresql.org/",
     img: "images/postgres.png",
   },
+  oracledb: {
+    key: "oracledb",
+    txDescription: "tech.oracledb.description",
+    name: "Oracle DB",
+    link: "https://www.oracle.com/database/",
+    img: "images/oracledb.png",
+  },
   dynamodb: {
     key: "dynamodb",
     txDescription: "tech.dynamodb.description",
@@ -274,7 +281,7 @@ const techsRaw = {
     key: "github",
     txDescription: "tech.github.description",
     name: "GitHub",
-    link: "github.com",
+    link: "https://github.com",
     img: "images/github.png",
     darkImg: "images/github-dark.png",
     sub: [
@@ -282,6 +289,20 @@ const techsRaw = {
         name: "GitHub Actions",
         link: "https://github.com/features/actions",
         img: "images/github.png",
+      }
+    ],
+  },
+  gitlab: {
+    key: "gitlab",
+    txDescription: "tech.gitlab.description",
+    name: "GitLab",
+    link: "https://gitlab.com/",
+    img: "images/gitlab.png",
+    sub: [
+      {
+        name: "CI/CD pipelines",
+        link: "https://docs.gitlab.com/ci/pipelines/",
+        img: "images/gitlab.png",
       }
     ],
   },
@@ -513,7 +534,7 @@ const techsRaw = {
         key: "selenium_ide",
         name: "Selenium IDE",
         link: "https://www.selenium.dev/selenium-ide/",
-        img: "images/selenium-ide128.png",
+        img: "images/selenium-ide.png",
       },
     ],
   },
@@ -584,8 +605,14 @@ const techsRaw = {
     sub: [
       {
         key: "image_updater",
-        name: "Argo CD Image Updater",
+        name: "Image Updater",
         link: "https://argocd-image-updater.readthedocs.io/en/stable/",
+        img: "images/argocd.png",
+      },
+      {
+        key: "notifications",
+        name: "Notifications",
+        link: "https://argo-cd.readthedocs.io/en/stable/operator-manual/notifications/",
         img: "images/argocd.png",
       },
     ]
@@ -617,11 +644,13 @@ const techCategoriesRaw = {
   ],
   database: [
     techs.postgres,
+    techs.oracledb,
     techs.mysql,
     techs.dynamodb,
   ],
   ci_cd: [
     techs.github,
+    techs.gitlab,
     techs.docker,
     techs.argocd,
   ],
@@ -644,10 +673,6 @@ const techCategoriesRaw = {
     techs.neovim,
     techs.lua,
     techs.vim,
-  ],
-  gamedev: [
-    techs.phaser,
-    techs.tiled,
   ],
 };
 export type TechCategoryKeyType = keyof typeof techCategoriesRaw;

@@ -30,7 +30,6 @@ type TranscriptType = {
       database: string,
       cicd: string,
       infra: string,
-      gamedev: string,
       automation: string,
       others: string,
     },
@@ -65,8 +64,10 @@ type TranscriptType = {
     sveltekit: TechType,
     mysql: TechType,
     postgres: TechType,
+    oracledb: TechType,
     dynamodb: TechType,
     github: TechType,
+    gitlab: TechType,
     docker: TechType,
     kubernetes: TechType,
     aws: TechType,
@@ -77,8 +78,6 @@ type TranscriptType = {
     vim: TechType,
     neovim: TechType,
     selenium: TechType,
-    phaser: TechType,
-    tiled: TechType,
     ansible: TechType,
     traefik: TechType,
     nginx: TechType,
@@ -188,7 +187,7 @@ const translations: TranslationType = {
   en: {
     home: {
       name: "Junyi Wang",
-      headline: "Professional and hobbyist software engineer",
+      headline: "Full Stack Software Engineer, from infrastructure to frontend",
       nav: {
         title: "Table of contents",
       },
@@ -201,7 +200,7 @@ const translations: TranslationType = {
         title: "Hi,",
         content: `
           <p>Welcome to my personal website. I'm Junyi Wang, a professional and hobbyist software engineer.</p>
-          <p>My primary areas of interest are web development and self-hosting. The website you are seeing right now is hosted on a {{k3s}} (also the blog itself), and I'm planning to self-host more web services in the future.</p>
+          <p>My primary areas of interest are web development and self-hosting. The website you are seeing right now is hosted on a {{k3s}}, and I'm planning to self-host more web services in the future.</p>
           <p>By the way, I use <code>vim (Neovim)</code> and <code>Arch</code>. If you are interested, my dot files are all on my <a href="https://github.com/jywang99/linux_config" target="_blank">GitHub</a>.</p>
           `,
       },
@@ -215,7 +214,6 @@ const translations: TranslationType = {
         database: "Database",
         cicd: "CI/CD",
         infra: "Infrastructure",
-        gamedev: "Game Development",
         automation: "Automation",
         others: "Others",
       },
@@ -244,7 +242,7 @@ const translations: TranslationType = {
     },
     tech: {
       svelte: {
-        description: `<p>This is the first website I am creating using <code>Svelte</code>. I had been curious about it for quite a while, and am very excited to finally give it a try.</p>`,
+        description: `<p><code>Svelte</code> has become my go-to frontend framework for making websites, since the first time I learned to use it to build this website.</p>`,
       },
       react: {
         description: `<p>Used this one extensively during my time at Prussian, and also on some private projects. Also have some experience on <code>React Native</code>.</p>
@@ -281,11 +279,17 @@ const translations: TranslationType = {
       postgres: {
         description: `<p>Recently I have been using <code>PostgreSQL</code> a lot in my personal projects.</p>`,
       },
+      oracledb: {
+        description: `<p><code>Oracle Database</code> is widely used in corporate world, including some places I have worked.</p>`,
+      },
       dynamodb: {
-        description: `<p>I first learned about this in Prussian. Although learning to think in the NoSQL way was hard, I ended up designing and implementing some schemas to be used in serverless stacks, and it wasn't as bad as I thought!</p>`,
+        description: `<p>DynamoDB was heavily used in the serverless architecture we implemented at Prussian.</p>`,
       },
       github: {
         description: `<p>Using it since around 2017.</p>`,
+      },
+      gitlab: {
+        description: `<p>GitLab is the second DevOps platform that I have used. Mostly for work.</p>`,
       },
       docker: {
         description: `<p>After using it for quite some time at work, I decided to sit down and learn thoroughly about it. Now everything that I host is deployed with docker, and I didn't regret a single bit doing that.</p>`,
@@ -316,13 +320,7 @@ const translations: TranslationType = {
         description: `<p>Best editor I've ever used. Currently typing this in Neovim</p>`,
       },
       selenium: {
-        description: `<p>Using this one extensively at ApolloEye. Gets its job done.</p>`,
-      },
-      phaser: {
-        description: `<p>Recently I started learning 2D game development using <code>Phaser3</code>.</p>`,
-      },
-      tiled: {
-        description: `<p>Having a great time tinkering with 2D top-down RPG maps.</p>`,
+        description: `<p>I have used Selenium at both Apollo Eye and Nagrastar, sometimes to crawl the web, and other times for UI testing.</p>`,
       },
       ansible: {
         description: `<p>I'm using Ansible to automate things in my home lab, such as updating and installing packages on servers.</p>`,
@@ -337,10 +335,10 @@ const translations: TranslationType = {
         description: `<p>I have mainly used Nginx to serve static files, including some static websites. This website is served with Nginx inside a docker container.</p>`,
       },
       proxmox: {
-        description: `<p>All my VMs in my home lab are running with the configuration of: Proxmox + VM (Debian) + Kubernetes/NFS.</p>`,
+        description: `<p>It's powering all the workloads that I have in my home lab.</p>`,
       },
       argocd: {
-        description: `<p>Argo CD is such a great tool for managing kubernetes workloads. Paired with Kustomize, it serves as a GitOps tool as well. I successfully automated some CI/CD pipelines with this setup.</p>`,
+        description: `<p>Argo CD is such a great tool for managing kubernetes workloads. Paired with <code>Kustomize</code>, it serves as a GitOps tool as well. I have experience automating some CI/CD pipelines with this setup, both at work and at home.</p>`,
       },
       ceph: {
         description: `<p>Every piece of data in my home lab is now stored on a Ceph cluster. By setting this up, I eliminated yet another single point of failure in my home lab, and I'm quite happy with it.</p>`,
@@ -361,7 +359,7 @@ const translations: TranslationType = {
         description: "Leetcode problems solved in Go.",
       },
       neovim: {
-        name: "My Neovim config",
+        name: "Neovim configuration",
         description: "My Neovim config.",
       },
       business_card: {
@@ -529,7 +527,6 @@ const translations: TranslationType = {
         database: "データベース",
         cicd: "CI/CD",
         infra: "インフラ",
-        gamedev: "ゲーム開発",
         automation: "自動化",
         others: "その他",
       },
@@ -596,11 +593,17 @@ const translations: TranslationType = {
       postgres: {
         description: "<p>最近の個人プロジェクトでは<code>PostgreSQL</code>をよく使っています。</p>",
       },
+      oracledb: {
+        description: `<p><code>Oracle Database</code>は企業で広く使われているので、職場での使用経験があります。</p>`,
+      },
       dynamodb: {
         description: "<p>初めて学んだのはPrussianでのことです。NoSQLの考え方を学ぶのは難しかったですが、最終的にはサーバーレススタックで使用するスキーマの設計・実装を任されました。蓋を開けてみれば思ったほど難しくはありませんでした。</p>",
       },
       github: {
         description: "<p>2017年頃からずっと使っています。</p>",
+      },
+      gitlab: {
+        description: `<p>仕事では主にGitHubではなくGitLabを使用しています。</p>`
       },
       docker: {
         description: "<p>仕事でかなり頻繁に使用するので、しっかりと時間を作って学ぶことにしました。最近ではセルフホスティングをする際に必ずDockerを使うようになり、そのシンプルさと可搬性に助けられています。</p>",
@@ -631,12 +634,6 @@ const translations: TranslationType = {
       },
       selenium: {
         description: "<p>ApolloEyeでの仕事でよく使っています。</p>",
-      },
-      phaser: {
-        description: "<p>最近、<code>Phaser3</code>を使った2Dゲーム開発を始めました。</p>",
-      },
-      tiled: {
-        description: "<p>ポケモンのような2D RPGマップを設計したりしています。</p>",
       },
       ansible: {
         description: `<p>Ansibleを使用して、自宅のサーバー上のパッケージの更新やインストールなどを自動化しています。</p>`,
@@ -839,7 +836,6 @@ const translations: TranslationType = {
         database: "数据库",
         cicd: "CI/CD",
         infra: "基础设施",
-        gamedev: "游戏开发",
         automation: "自动化",
         others: "其他",
       },
@@ -916,6 +912,9 @@ const translations: TranslationType = {
          <p>最近我在我的个人项目中经常使用 <code>PostgreSQL</code>。</p>
         `
       },
+      oracledb: {
+        description: `<p><code>Oracle Database</code> 是一个在企业中广泛使用的数据库，我也在工作中接触过。</p>`,
+      },
       dynamodb: {
         description: `
           <p>我在 Prussian 第一次接触到它。NoSQL 的思维方式对当时的我来说很陌生，但最终还是设计并实现了一些适用于无服务器堆栈的模式，结果并不像我想象的那么糟糕。</p>
@@ -925,6 +924,9 @@ const translations: TranslationType = {
         description: `
           <p>从2017年到现在一直离不开它。</p>
         `
+      },
+      gitlab: {
+        description: `<p>在工作当中最常用的DevOps工具是GitLab。</p>`,
       },
       docker: {
         description: `
@@ -975,12 +977,6 @@ const translations: TranslationType = {
           <p>在ApolloEye经常会用到它。</p>
         `
       },
-      phaser: {
-        description: `<p>最近开始学习用<code>Phaser3</code>开发2D游戏。</p>`,
-      },
-      tiled: {
-        description: `<p>设计平面RPG地图是我最近的新爱好。</p>`,
-      },
       ansible: {
         description: `<p>我经常会在家里的服务器上用Ansible自动化一些任务，比如更新和安装一些软件包。</p>`,
       },
@@ -1006,8 +1002,8 @@ const translations: TranslationType = {
     projects: {
       title: "个人项目",
       this_website: {
-        name: "这个网站",
-        description: "你现在正在浏览的网站。",
+        name: "该网站",
+        description: "你正在浏览的网站。",
       },
       cs_go: {
         name: "CS Go",

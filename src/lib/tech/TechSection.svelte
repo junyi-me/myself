@@ -16,7 +16,6 @@
     { key: 'ci_cd', txTitle: 'home.tech.cicd'},
     { key: 'infra', txTitle: 'home.tech.infra'},
     { key: 'automation', txTitle: 'home.tech.automation'},
-    { key: 'gamedev', txTitle: 'home.tech.gamedev'},
     { key: 'others', txTitle: 'home.tech.others'},
   ];
 
