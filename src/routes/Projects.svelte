@@ -21,7 +21,7 @@
   .container {
     display: flex;
     flex-wrap: wrap;
-    gap: var(--gap-medium);
+    gap: var(--gap-small);
   }
 
   .proj {

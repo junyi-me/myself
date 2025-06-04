@@ -100,6 +100,7 @@ type TranscriptType = {
     town: ProjectType,
     review: ProjectType,
     k3s: ProjectType,
+    homelab: ProjectType,
   },
   exp: {
     at: string,
@@ -379,12 +380,16 @@ const translations: TranslationType = {
         description: "My attempt at creating a 2D top-down RPG game, currently left unfinished...",
       },
       k3s: {
-        name: "My Kubernetes cluster" ,
+        name: "Self-hosting",
         description: "Hosting an HTTPS website on a HA k3s cluster at home.",
       },
       review: {
         name: "Review Planner",
         description: "A simple web app to plan review sessions.",
+      },
+      homelab: {
+        name: "Home Lab",
+        description: "My home lab architecture that hosts all my self-hosted services.",
       },
     },
     exp: {
@@ -698,6 +703,10 @@ const translations: TranslationType = {
       review: {
         name: "Review Planner",
         description: "復習サイクルの管理を手助けするウェブアプリ。",
+      },
+      homelab: {
+        name: "自宅環境",
+        description: "セルフホスティングしているサービスを支える自宅のインフラアーキテクチャの紹介。",
       },
     },
     exp: {
@@ -1040,6 +1049,10 @@ const translations: TranslationType = {
       review: {
         name: "Review Planner",
         description: "一个帮助管理复习周期的网站。",
+      },
+      homelab: {
+        name: "自家服务器环境",
+        description: "支撑我各种自托管服务的基础设施架构。",
       },
     },
     exp: {
