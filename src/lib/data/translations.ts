@@ -202,7 +202,7 @@ const translations: TranslationType = {
         content: `
           <p>Welcome to my personal website. I'm Junyi Wang, a professional and hobbyist software engineer.</p>
           <p>My primary areas of interest are web development and self-hosting. The website you are seeing right now is hosted on a {{k3s}}, and I'm planning to self-host more web services in the future.</p>
-          <p>By the way, I use <code>vim (Neovim)</code> and <code>Arch</code>. If you are interested, my dot files are all on my <a href="https://github.com/jywang99/linux_config" target="_blank">GitHub</a>.</p>
+          <p>I use <code>vim (Neovim)</code> and <code>Arch</code> btw. If you are interested, my dot files are all on my <a href="https://github.com/jywang99/linux_config" target="_blank">GitHub</a>.</p>
           `,
       },
       tech: {
@@ -381,15 +381,15 @@ const translations: TranslationType = {
       },
       k3s: {
         name: "Self-hosting",
-        description: "Hosting an HTTPS website on a HA k3s cluster at home.",
+        description: "Hosting an HTTPS website on a k3s cluster through an SSH tunnel.",
       },
       review: {
         name: "Review Planner",
-        description: "A simple web app to plan review sessions.",
+        description: "A simple web app to plan and record review sessions.",
       },
       homelab: {
         name: "Home Lab",
-        description: "My home lab architecture that hosts all my self-hosted services.",
+        description: "My home lab architecture that powers all my self-hosted services.",
       },
     },
     exp: {
