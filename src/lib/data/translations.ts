@@ -243,60 +243,60 @@ const translations: TranslationType = {
     },
     tech: {
       svelte: {
-        description: `<p><code>Svelte</code> has become my go-to frontend framework for making websites, since the first time I learned to use it to build this website.</p>`,
+        description: `<p><code>Svelte</code> has become my go-to frontend framework, since the first time I learned how to use it to build this website.</p>`,
       },
       react: {
-        description: `<p>Used this one extensively during my time at Prussian, and also on some private projects. Also have some experience on <code>React Native</code>.</p>
-          <p>Used to be my go-to framework for any frontend development, but <code>Svelte</code> might replace it for my personal projects.</p>
+        description: `<p>I used <code>React</code> extensively during my time at Prussian, and also on some personal projects. I also have experience developing mobile applications with <code>React Native</code>.</p>
+          <p>It used to be my go-to framework for any frontend development, but <code>Svelte</code> has replaced it for my personal projects.</p>
           `,
       },
       html_css_js: {
-        description: `<p>This is where I started my journey of frontend development. Whatever framework I use, the knowledge of HTML/CSS/JS is still relevant.</p>`,
+        description: `<p>This is where I started my journey of frontend development. Whatever frontend framework I use, the knowledge of <code>HTML/CSS/JS</code> is still relevant.</p>`,
       },
       golang: {
-        description: `<p>I started learning Go in 2024, and have been using it for every chance I get since then. I'm really liking the simplicity and speed of this language. Coming from <code>Java</code> as my primary language, <code>Go</code> really gave me the agility in developing these smaller projects.</p>`,
+        description: `<p>I started learning <code>Go</code> in 2024, and have been using it for every chance I get since then. I'm really liking the simplicity and speed of this language. Coming from <code>Java</code> as my primary language, <code>Go</code> really gave me the agility in developing these smaller projects.</p>`,
       },
       java: {
         description: `
-          <p>This is the first programming language I learned (in a structured way), back in college. My dad is also a <code>Java</code> person, so he taught me a lot of fundamentals. I'm still writing a lot fo Java at Apollo Eye.</p>
-          <p>My experience with <code>Java</code> is mainly in developing web apps using <code>SpringBoot</code>, along with some CLI programs that run on servers.</p>
+          <p>This is the first programming language I learned back in college. My dad is also a <code>Java</code> person, so he taught me a lot of fundamentals. To this date, I'm still writing a lot fo Java at different companies and projects.</p>
+          <p>My experience with <code>Java</code> is mainly in developing web apps using <code>Spring Boot</code>.</p>
         `,
       },
       python: {
-        description: `<p><code>Python</code> is a very versatile language. I've written web servers, CLI tools, and a little bit of GUI applications all with it. Also tried learning towards the AI track with numpy/pandas and tensorflow, but didn't get too far. I might pick it up some day.</p>`,
+        description: `<p><code>Python</code> is a very versatile language. I've written web servers, CLI tools, and a little bit of GUI applications with it. Also tried learning towards the AI track with numpy/pandas and tensorflow, but didn't get too far. I might pick it up some day.</p>`,
       },
       csharp: {
         description: `<p>The first time I used <code>C#</code> was purely out of necessity at work, but coming from <code>Java</code>, I could see why some people say "C# is Java done right".</p>`,
       },
       cpp: {
-        description: `<p><code>C++</code> is another language I learned at work. I was mainly given tasks to implement new features in some web server programs. Working with the linker was a pain.</p>`,
+        description: `<p>I have worked with <p><code>C++</code> in areas like data processing and encryption, where speed is important. Also a bit of legacy server-side applications.</p>`,
       },
       sveltekit: {
-        description: `<p><code>SvelteKit</code> has become my favoriate way to develop both SPAs and full-stack web apps.</p>`
+        description: `<p><code>SvelteKit</code> has become my favoriate way to develop both SPAs and full-stack web apps. The ability to use Javascript throughout my stack is a huge advantage, and I like its resemblance to the plain <code>html/css/js</code> code on the frontend.</p>`
       },
       mysql: {
-        description: `<p>I've been using <code>MySQL</code> throughout my time at ApolloEye. At my current job, I've gotten also some experience with <code>Oracle DB</code> and <code>PostgreSQL</code>.</p>`,
+        description: `<p><code>MySQL</code> was the first <code>SQL</code> dialect that I learned, at Apollo Eye. Throughout my career, I also had chances to set up, configure, backup, and restore DB instances.</p>`,
       },
       postgres: {
-        description: `<p>Recently I have been using <code>PostgreSQL</code> a lot in my personal projects.</p>`,
+        description: `<p>I like using <code>PostgreSQL</code> in my home lab, for many workloads. It has a convenient and customizable docker image, a good command-line interface, and <code>pgAdmin</code> as GUI.</p>`,
       },
       oracledb: {
         description: `<p><code>Oracle Database</code> is widely used in corporate world, including some places I have worked.</p>`,
       },
       dynamodb: {
-        description: `<p>DynamoDB was heavily used in the serverless architecture we implemented at Prussian.</p>`,
+        description: `<p><code>DynamoDB</code> was the first NoSQL database that I used, at Prussian. We used it for multiple projects, and I was often involved in the design process.</p>`,
       },
       github: {
-        description: `<p>Using it since around 2017.</p>`,
+        description: `<p>Using <code>GitHub</code> it since around 2017.</p>`,
       },
       gitlab: {
-        description: `<p>GitLab is the second DevOps platform that I have used. Mostly for work.</p>`,
+        description: `<p><code>GitLab</code> is the second DevOps platform that I have used. Mostly for work.</p>`,
       },
       docker: {
-        description: `<p>After using it for quite some time at work, I decided to sit down and learn thoroughly about it. Now everything that I host is deployed with docker, and I didn't regret a single bit doing that.</p>`,
+        description: `<p>After using it for quite some time at work, I decided to sit down and learn thoroughly about it. Now everything that I self-host is is containerized, and I don't regret a single bit going down this path.</p>`,
       },
       kubernetes: {
-        description: `<p>I learned quite a bit of <code>Kubernetes</code> along with <code>Docker</code> at work. I had always been dreaming about having my own cluster, and I've finally done it.</p>`,
+        description: `<p>I learned quite a bit of <code>Kubernetes</code> along with <code>Docker</code> at work. I had always been dreaming about having my own Kubernetes cluster, and I've finally done it.</p>`,
       },
       aws: {
         description: `<p>At Prussian, I got a lot of experience working with the serverless stack on <code>AWS</code>. Have been using it a bit at ApolloEye as well.</p>
@@ -306,22 +306,22 @@ const translations: TranslationType = {
         description: `<p>Mostly been using their <code>Cloud Storage</code> and <code>Compute Engine</code> at ApolloEye.</p>`,
       },
       linux: {
-        description: `<p>I use Linux at work, I use Linux at home, and Linux is still running my deployed apps even when I'm asleep. Debian for servers, Arch for workstations.</p>`,
+        description: `<p>I use <code>Arch</code> as my daily driver at home, and <code>Proxmox</code> + <code>Debian</code> for home lab. When I absolutely have to use a Windows machine, WSL is a must.</p>`,
       },
       bash: {
-        description: `<p>I tried zsh, but still prefer bash for its simplicity, and the fact that I can use it on almost any host.</p>`,
+        description: `<p>I tried zsh at one point, but still prefer <code>bash</code> for its simplicity, and the fact that it's the default on almost any host.</p>`,
       },
       lua: {
         description: `<p>My entire Neovim config is written in Lua.</p>`,
       },
       vim: {
-        description: `<p>vim is among the first things I install on a new server.</p>`,
+        description: `<p><code>vim</code> is one of the first things I install on a fresh server.</p>`,
       },
       neovim: {
-        description: `<p>Best editor I've ever used. Currently typing this in Neovim</p>`,
+        description: `<p>Best editor I've ever used. Currently typing this in <code>Neovim</code></p>`,
       },
       selenium: {
-        description: `<p>I have used Selenium at both Apollo Eye and Nagrastar, sometimes to crawl the web, and other times for UI testing.</p>`,
+        description: `<p>I have used Selenium at both Apollo Eye and Nagrastar, sometimes to collect data from webpages, and other times for UI testing.</p>`,
       },
       ansible: {
         description: `<p>I'm using Ansible to automate things in my home lab, such as updating and installing packages on servers.</p>`,
@@ -330,19 +330,22 @@ const translations: TranslationType = {
         title: "Familiar with",
       },
       traefik: {
-        description: `<p>Traefik was the default ingress controller that came with my k3s cluster, and after using it for a while and doing various configurations, I find myself liking it.</p>`,
+        description: `<p>Traefik was the default ingress controller that came with my k3s cluster, and I've spend a good deal of time on configuring it in my home lab.</p>`,
       },
       nginx: {
-        description: `<p>I have mainly used Nginx to serve static files, including some static websites. This website is served with Nginx inside a docker container.</p>`,
+        description: `<p>I have mainly been using <code>Nginx</code> to serve static files, including some static websites. This website is served with Nginx inside a docker container.</p>`,
       },
       proxmox: {
-        description: `<p>It's powering all the workloads that I have in my home lab.</p>`,
+        description: `<p><code>Proxmox</code> is powering all the workloads that I have in my home lab.</p>
+         <p>In the past I also tried to manage everything through <code>virsh</code>, but it's just so much easier to manage everything with <code>Proxmox</code>, including <code>Ceph</code>.</p>`,
       },
       argocd: {
-        description: `<p>Argo CD is such a great tool for managing kubernetes workloads. Paired with <code>Kustomize</code>, it serves as a GitOps tool as well. I have experience automating some CI/CD pipelines with this setup, both at work and at home.</p>`,
+        description: `<p><code>Argo CD</code> now manages almost everything that I deploy on my Kubernetes cluster.</p>
+          <p>At first I was only interested in the Image Updater for CI/CD pipelines, but the ability to manage all my workloads declaratively stuck with me, and now I can't live without it.</p>`,
       },
       ceph: {
-        description: `<p>Every piece of data in my home lab is now stored on a Ceph cluster. By setting this up, I eliminated yet another single point of failure in my home lab, and I'm quite happy with it.</p>`,
+        description: `<p>Every piece of data in my home lab is now stored on a Ceph cluster, with 3 replicas.</p>
+          <p>I use <code>ceph-rbd</code> for databases, and <code>ceph-fs</code> for static files. Both of them are configured as storage backend in my Kubernetes cluster.</p>`,
       }
     },
     projects: {
@@ -385,7 +388,7 @@ const translations: TranslationType = {
       },
       review: {
         name: "Review Planner",
-        description: "A simple web app to plan and record review sessions.",
+        description: "A simple web app to plan and keep track of review sessions.",
       },
       homelab: {
         name: "Home Lab",

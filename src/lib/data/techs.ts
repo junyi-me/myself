@@ -262,6 +262,14 @@ const techsRaw = {
     name: "PostgreSQL",
     link: "https://www.postgresql.org/",
     img: "images/postgres.png",
+    projects: [ techProjects.review, ],
+    sub: [
+      {
+        name: "pgAdmin",
+        link: "https://www.pgadmin.org/",
+        img: "images/pgadmin.png",
+      },
+    ]
   },
   oracledb: {
     key: "oracledb",

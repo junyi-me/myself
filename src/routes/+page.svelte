@@ -14,6 +14,7 @@
 
 <svelte:head>
   <title>Junyi Wang</title> 
+  <meta name="description" content="Junyi Wang's personal website, showcasing his software engineering skills, projects, and experience.">
 </svelte:head>
 
 <svelte:window bind:innerWidth bind:innerHeight />
